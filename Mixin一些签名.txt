@@ -1,0 +1,966 @@
+=== Mixin 信息提取总结 (纯文本版) ===
+
+【目标类】: AbstractBlock (接口)
+  - Mixin类名: AbstractBlockAccessor
+  - @Accessor方法: boolean meteor$isCollidable()
+
+【目标类】: AbstractBlock (抽象类)
+  - Mixin类名: AbstractBlockMixin
+  - @Inject方法 (1): private void onGetAmbientOcclusionLightLevel(BlockState state, BlockView world, BlockPos pos, CallbackInfoReturnable<Float> info)
+    注入目标方法: getAmbientOcclusionLightLevel
+  - @Inject方法 (2): private void onRenderingSeed(BlockState state, BlockPos pos, CallbackInfoReturnable<Long> cir)
+    注入目标方法: getRenderingSeed
+
+【目标类】: AbstractBlock.AbstractBlockState (抽象类)
+  - Mixin类名: AbstractBlockStateMixin
+  - @Inject方法: private void modifyPos(BlockPos pos, CallbackInfoReturnable<Vec3d> info)
+    注入目标方法: getModelOffset
+
+【目标类】: AbstractBoatEntity (抽象类)
+  - Mixin类名: AbstractBoatEntityMixin
+  - @Inject方法: private void onTickInvokeMove(CallbackInfo info)
+    注入目标方法: tick (在调用 move 方法处)
+  - @ModifyExpressionValue方法 (1): private boolean modifyPressingLeft(boolean original)
+    修改目标字段: updatePaddles 方法中的 pressingLeft 字段
+  - @ModifyExpressionValue方法 (2): private boolean modifyPressingRight(boolean original)
+    修改目标字段: updatePaddles 方法中的 pressingRight 字段
+
+【目标类】: AbstractClientPlayerEntity (接口)
+  - Mixin类名: AbstractClientPlayerEntityAccessor
+  - @Accessor方法: void meteor$setPlayerListEntry(PlayerListEntry entry)
+
+【目标类】: AbstractClientPlayerEntity (抽象类)
+  - Mixin类名: AbstractClientPlayerEntityMixin
+  - @Inject方法: private void onGetPlayerListEntry(CallbackInfoReturnable<PlayerListEntry> info)
+    注入目标方法: getPlayerListEntry
+
+【目标类】: AbstractFurnaceScreenHandler (抽象类)
+  - Mixin类名: AbstractFurnaceScreenHandlerMixin
+  - @Shadow方法: protected abstract boolean isSmeltable(ItemStack itemStack)
+
+【目标类】: AbstractFurnaceScreen (抽象类，泛型<T extends AbstractFurnaceScreenHandler>)
+  - Mixin类名: AbstractFurnaceScreenMixin
+  - 构造函数: public AbstractFurnaceScreenMixin(T container, PlayerInventory playerInventory, Text name)
+
+【目标类】: AbstractSignBlockEntityRenderer (抽象类)
+  - Mixin类名: AbstractSignBlockEntityRendererMixin
+  - @ModifyExpressionValue方法: private int loopTextLengthProxy(int i)
+    修改目标: renderText 方法中的整型常量
+
+【目标类】: AbstractSignEditScreen (接口)
+  - Mixin类名: AbstractSignEditScreenAccessor
+  - @Accessor方法: SignBlockEntity meteor$getSign()
+
+【目标类】: AbstractSignEditScreen (抽象类)
+  - Mixin类名: AbstractSignEditScreenMixin
+  - @ModifyExpressionValue方法: private Stream<Text> modifyTranslatableText(Stream<Text> original)
+    修改目标: 构造函数中的 IntStream.mapToObj(...) 调用
+
+【目标类】: ArmorFeatureRenderer (抽象类，泛型<S extends BipedEntityRenderState, M extends BipedEntityModel<S>, A extends BipedEntityModel<S>>)
+  - Mixin类名: ArmorFeatureRendererMixin
+  - @Inject方法: private void onRender(MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, S bipedEntityRenderState, float f, float g, CallbackInfo ci)
+    注入目标方法: render
+
+【目标类】: BakedQuad (抽象类)
+  - Mixin类名: BakedQuadMixin
+  - @Shadow字段: @Final private int[] vertexData
+
+【目标类】: BannerBlockEntityRenderer (抽象类)
+  - Mixin类名: BannerBlockEntityRendererMixin
+  - @Shadow方法: public abstract void render(BannerBlockEntity bannerBlockEntity, float tickDelta, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int light, int overlay, Vec3d vec3d)
+  - @Inject方法 (1): private void injectRender1(BannerBlockEntity bannerBlockEntity, float tickDelta, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int light, int overlay, Vec3d vec3d, CallbackInfo ci)
+    注入目标方法: render (头部)
+  - @Inject方法 (2): private void injectRender2(BannerBlockEntity bannerBlockEntity, float tickDelta, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int light, int overlay, Vec3d vec3d, CallbackInfo ci, @Local(ordinal = 1) float rotation, @Local BannerBlockModel bannerBlockModel)
+    注入目标方法: render (在特定调用处，捕获局部变量)
+
+【目标类】: BeaconBlockEntityRenderer (抽象类，泛型<T extends BlockEntity & BeamEmitter>)
+  - Mixin类名: BeaconBlockEntityRendererMixin
+  - @Inject方法: private void onRender(T entity, float tickProgress, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, Vec3d cameraPos, CallbackInfo ci)
+    注入目标方法: render
+
+【目标类】: BeaconScreen (抽象类)
+  - Mixin类名: BeaconScreenMixin
+  - @Shadow方法: protected abstract <T extends ClickableWidget> void addButton(T button)
+  - 构造函数: public BeaconScreenMixin(BeaconScreenHandler handler, PlayerInventory inventory, Text title)
+  - @Inject方法 (1): private void changeButtons(CallbackInfo ci)
+    注入目标方法: init (在特定调用后)
+  - @Inject方法 (2): private void onDrawBackground(DrawContext context, float delta, int mouseX, int mouseY, CallbackInfo ci)
+    注入目标方法: drawBackground (尾部)
+
+【目标类】: BiomeColors (抽象类)
+  - Mixin类名: BiomeColorsMixin
+  - @Inject方法 (1): private static void onGetWaterColor(BlockRenderView world, BlockPos pos, CallbackInfoReturnable<Integer> info)
+    注入目标方法: getWaterColor (静态方法)
+  - @Inject方法 (2): private static void onGetFoliageColor(BlockRenderView world, BlockPos pos, CallbackInfoReturnable<Integer> info)
+    注入目标方法: getFoliageColor (静态方法)
+  - @Inject方法 (3): private static void onGetGrassColor(BlockRenderView world, BlockPos pos, CallbackInfoReturnable<Integer> info)
+    注入目标方法: getGrassColor (静态方法)
+
+【目标类】: BlockCollisionSpliterator (抽象类)
+  - Mixin类名: BlockCollisionSpliteratorMixin
+  - @WrapOperation方法: private VoxelShape onComputeNextCollisionBox(ShapeContext instance, BlockState blockState, CollisionView collisionView, BlockPos blockPos, Operation<VoxelShape> original)
+    包装目标方法: computeNext 中对 getCollisionShape 的调用
+
+【目标类】: BlockColors (抽象类)
+  - Mixin类名: BlockColorsMixin
+  - @ModifyArg方法 (1): private static BlockColorProvider modifySpruceLeavesColor(BlockColorProvider provider)
+    修改目标: create 方法中 registerColorProvider 的第一个参数
+  - @ModifyArg方法 (2): private static BlockColorProvider modifyBirchLeavesColor(BlockColorProvider provider)
+    修改目标: create 方法中 registerColorProvider 的第一个参数
+
+=== 核心要点备忘 ===
+1. 注入目标：主要涉及方块渲染、实体行为、UI、颜色和碰撞。
+2. 签名模式：
+   - @Inject 方法参数 = 原方法参数 + CallbackInfo(Returnable)
+   - @Modify 方法参数 = (被修改值类型 original)
+   - @Shadow 签名必须与原版完全一致。
+3. 注意静态：BiomeColorsMixin 和 BlockColorsMixin 的方法是 static 的。
+4. 注意泛型：如 ArmorFeatureRendererMixin 的复杂泛型需保持一致。
+
+=== Mixin 信息提取总结 (纯文本版) ===
+
+【目标类】: BlockEntityRenderDispatcher
+- Mixin类名: BlockEntityRenderDispatcherMixin (抽象类)
+- @Inject方法: private <E extends BlockEntity> void onRenderEntity(E blockEntity, float tickDelta, MatrixStack matrix, VertexConsumerProvider vertexConsumerProvider, CallbackInfo info)
+- 注入目标方法: render(Lnet/minecraft/block/entity/BlockEntity;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;)V
+- 目的: 在渲染方块实体前触发事件，可取消渲染。
+
+【目标类】: BlockHitResult
+- Mixin类名: BlockHitResultAccessor (接口)
+- @Accessor方法: void meteor$setSide(Direction direction)
+- 目的: 提供设置碰撞面 (side) 字段的方法。
+
+【目标类】: BlockItem
+- Mixin类名: BlockItemMixin (抽象类)
+- @Shadow方法: protected abstract BlockState getPlacementState(ItemPlacementContext context)
+- @Inject方法: private void onPlace(ItemPlacementContext context, BlockState state, CallbackInfoReturnable<Boolean> info)
+- 注入目标方法: place(Lnet/minecraft/item/ItemPlacementContext;Lnet/minecraft/block/BlockState;)Z
+- 目的: 在放置方块前触发事件，可取消放置。
+- @ModifyVariable方法: private BlockState modifyState(BlockState state, ItemPlacementContext context)
+- 修改目标方法: place(Lnet/minecraft/item/ItemPlacementContext;)Lnet/minecraft/util/ActionResult;
+- 目的: 在特定调用处修改状态变量，用于防止幽灵方块。
+
+【目标类】: Block
+- Mixin类名: BlockMixin (抽象类)
+- 构造函数: public BlockMixin(Settings settings)
+- @ModifyReturnValue方法: public float getSlipperiness(float original)
+- 修改目标方法: getSlipperiness
+- 目的: 修改方块的滑度（用于Slippy等模块）。
+
+【目标类】: BlockModelRenderer
+- Mixin类名: BlockModelRendererMixin (抽象类)
+- @Inject方法 (2个):
+    private void onRenderSmooth(...) // 注入到 `renderSmooth` 和 `renderFlat` 方法头部
+    private void onRenderFlat(...)
+- 注入目标方法: renderSmooth, renderFlat
+- 目的: 在渲染方块模型前检查透明度（用于Xray），可取消渲染。
+- @ModifyArgs方法: private void modifyXrayAlpha(final Args args)
+- 修改目标方法: renderQuad 中对 `VertexConsumer.quad(...)` 的调用
+- 目的: 修改渲染四边形的透明度参数。
+- @ModifyReturnValue方法: private static boolean modifyShouldDrawFace(boolean original, BlockRenderView world, BlockState state, boolean cull, Direction side, BlockPos pos)
+- 修改目标方法: shouldDrawFace (静态方法)
+- 目的: 修改是否应该绘制方块某个面的判定（用于Xray）。
+
+【目标类】: BlockRenderManager
+- Mixin类名: BlockRenderManagerMixin (抽象类)
+- @Inject方法: private void renderDamage(BlockState state, BlockPos pos, BlockRenderView world, MatrixStack matrix, VertexConsumer vertexConsumer, CallbackInfo info)
+- 注入目标方法: renderDamage
+- 目的: 在渲染方块破坏进度时触发，可取消渲染。
+
+【目标类】: BlockState
+- Mixin类名: BlockStateMixin (抽象类)
+- 构造函数: public BlockStateMixin(Block block, Reference2ObjectArrayMap<Property<?>, Comparable<?>> propertyMap, MapCodec<BlockState> mapCodec)
+- 重写方法: public ActionResult onUse(World world, PlayerEntity player, BlockHitResult hit)
+- 目的: 在方块被使用时触发事件。
+
+【目标类】: BookEditScreen (书写书编辑界面)
+- Mixin类名: BookEditScreenMixin (抽象类)
+- 父类: Screen
+- 构造函数: public BookEditScreenMixin(Text title)
+- @Shadow字段: private List<String> pages; private int currentPage;
+- @Shadow方法: protected abstract void updatePage();
+- @Inject方法: private void onInit(CallbackInfo info)
+- 注入目标方法: init
+- 目的: 在界面初始化时添加“复制/粘贴”书页内容的按钮。
+
+【目标类】: BookScreen (阅读书界面)
+- Mixin类名: BookScreenMixin (抽象类)
+- 父类: Screen
+- 构造函数: public BookScreenMixin(Text title)
+- @Shadow字段: private BookScreen.Contents contents; private int pageIndex;
+- @Inject方法: private void onInit(CallbackInfo info)
+- 注入目标方法: init
+- 目的: 在界面初始化时添加“复制”书页内容和“编辑标题作者”按钮。
+
+【目标类】: BossBarHud (Boss血条渲染)
+- Mixin类名: BossBarHudMixin (抽象类)
+- @Inject方法: private void onRender(CallbackInfo info)
+- 注入目标方法: render
+- 目的: 在渲染Boss条前触发，可取消渲染。
+- @ModifyExpressionValue方法 (3个):
+    public Iterator<ClientBossBar> modifyBossBarIterator(Iterator<ClientBossBar> original) // 修改Boss条迭代器
+    public Text modifyBossBarName(Text original, @Local ClientBossBar clientBossBar) // 修改Boss条名称
+    public int modifySpacingConstant(int j) // 修改间距常量
+- 修改目标方法: render 中的相应调用
+- 目的: 分别用于修改Boss条列表、文本和间距。
+
+【目标类】: Box (碰撞箱)
+- Mixin类名: BoxMixin (抽象类)
+- @Shadow字段 (6个): public double minX, minY, minZ, maxX, maxY, maxZ (均为 @Final @Mutable)
+- 目的: 提供扩展和设置碰撞箱范围的方法。
+
+【目标类】: BrewingStandScreen (酿造台界面)
+- Mixin类名: BrewingStandScreenMixin (抽象类)
+- 父类: HandledScreen<BrewingStandScreenHandler>
+- 构造函数: public BrewingStandScreenMixin(BrewingStandScreenHandler container, PlayerInventory playerInventory, Text name)
+- 重写方法:
+    public void handledScreenTick() // 每帧调用，用于自动酿造模块
+    public void close() // 界面关闭时调用
+
+【目标类】: WorldRenderer.BrightnessGetter (内部接口/类)
+- Mixin类名: BrightnessGetterMixin (接口)
+- @ModifyVariable方法 (2个，均为静态):
+    private static int getLightmapCoordinatesModifySkyLight(int sky)
+    private static int getLightmapCoordinatesModifyBlockLight(int sky)
+- 修改目标方法: method_68890 (一个私有静态方法)
+- 目的: 修改光照计算中天空光和方块光的值（用于Fullbright全亮模块）。
+
+【目标类】: BundleItem (收纳袋)
+- Mixin类名: BundleItemMixin (类)
+- @Inject方法: private void onTooltipData(ItemStack stack, CallbackInfoReturnable<Optional<TooltipData>> cir)
+- 注入目标方法: getTooltipData
+- 目的: 在获取工具提示数据时触发事件，可自定义数据。
+
+【目标类】: BundleTooltipSubmenuHandler (收纳袋工具提示处理器)
+- Mixin类名: BundleTooltipSubmenuHandlerMixin (类)
+- @ModifyExpressionValue方法 (2个):
+    private int uncapBundleScrolling1(int original, ItemStack item, int slotId, int selectedItemIndex) // 修改 `sendPacket` 方法中的值
+    private int uncapBundleScrolling2(int original, double horizontal, double vertical, int slotId, ItemStack item) // 修改 `onScroll` 方法中的值
+- 修改目标方法: sendPacket, onScroll
+- 目的: 解除收纳袋滚动显示的数量限制。
+
+【目标类】: Camera (摄像机)
+- Mixin类名: CameraMixin (抽象类)
+- @Shadow字段: private boolean thirdPerson; private float yaw; private float pitch;
+- @Shadow方法: protected abstract void setRotation(float yaw, float pitch);
+- @Inject方法 (4个):
+    private void getSubmergedFluidState(CallbackInfoReturnable<CameraSubmersionType> ci) // 获取淹没状态
+    private void onClipToSpace(float desiredCameraDistance, CallbackInfoReturnable<Float> info) // 裁剪到空间
+    private void onUpdateHead(BlockView area, Entity focusedEntity, boolean thirdPerson, boolean inverseView, float tickDelta, CallbackInfo info) // update头部
+    private void onUpdateTail(...) // update尾部
+- 注入目标方法: getSubmersionType, clipToSpace, update
+- 目的: 分别用于取消液体覆盖、修改摄像机距离、记录tickDelta、强制第三人称。
+- @ModifyVariable方法: private float modifyClipToSpace(float d)
+- 修改目标方法: clipToSpace
+- 目的: 修改摄像机距离初始值。
+- @ModifyArgs方法 (2个):
+    private void onUpdateSetPosArgs(Args args) // 修改setPos的参数
+    private void onUpdateSetRotationArgs(Args args) // 修改setRotation的参数
+- 修改目标方法: update 中对 setPos 和 setRotation 的调用
+- 目的: 用于Freecam等模块修改摄像机位置和旋转。
+
+【目标类】: GlStateManager.CapabilityTracker (内部类)
+- Mixin类名: CapabilityTrackerMixin (抽象类)
+- @Shadow字段: private boolean state;
+- @Shadow方法: public abstract void setState(boolean state);
+- 目的: 提供获取和设置OpenGL状态的方法。
+
+【目标类】: CapeFeatureRenderer (披风渲染器)
+- Mixin类名: CapeFeatureRendererMixin (抽象类)
+- @ModifyExpressionValue方法: private Identifier modifyCapeTexture(Identifier original, MatrixStack matrices, VertexConsumerProvider consumers, int i, PlayerEntityRenderState state, float f, float g)
+- 修改目标方法: render 中对 SkinTextures.capeTexture() 的调用
+- 目的: 修改披风纹理（用于自定义披风）。
+
+【目标类】: ChatHud (聊天窗口)
+- Mixin类名: ChatHudAccessor (接口)
+- @Accessor方法:
+    List<ChatHudLine.Visible> meteor$getVisibleMessages()
+    List<ChatHudLine> meteor$getMessages()
+- 目的: 提供访问聊天历史内部列表的方法。
+
+【目标类】: ChatHudLine (聊天行)
+- Mixin类名: ChatHudLineMixin (抽象类)
+- @Shadow字段: private final Text content;
+- 目的: 为聊天行添加自定义ID和发送者信息的方法。
+
+=== 核心信息摘要 ===
+1.  本次分析涵盖了大量与**渲染、交互、界面、数据**相关的核心类。
+2.  关键注入技术：除 @Inject 外，广泛使用了 @ModifyVariable, @ModifyArgs, @ModifyExpressionValue, @ModifyReturnValue 等高级修改技术。
+3.  重要模式：
+    - 修改方法 (Modify) 的参数通常是 (被修改值类型 original, ...)。
+    - 注入方法 (Inject) 的参数是 (原方法参数..., CallbackInfo(Returnable))。
+    - 注意静态方法（如 BrightnessGetterMixin, BlockModelRendererMixin.modifyShouldDrawFace）。
+4.  代码用途：这些Mixin实现了全亮(Xray)、防幽灵方块、自由镜头(Freecam)、自定义披风、聊天记录、界面增强等众多高级功能的基础。
+
+=== Mixin 信息提取总结 (纯文本版) ===
+
+【目标类】: ChatHudLine.Visible (内部类)
+- Mixin类名: ChatHudLineVisibleMixin (抽象类)
+- 实现接口: IChatHudLineVisible
+- @Shadow字段: private final OrderedText content
+- @Unique字段: private int id; private GameProfile sender; private boolean startOfEntry
+- 目的: 为可见聊天行添加自定义ID、发送者信息和是否为消息开始的标记。
+
+【目标类】: ChatHud (聊天窗口主类)
+- Mixin类名: ChatHudMixin (抽象类)
+- 实现接口: IChatHud
+- @Shadow字段: 
+    private final MinecraftClient client
+    private final List<ChatHudLine.Visible> visibleMessages
+    private final List<ChatHudLine> messages
+- @Shadow方法:
+    public abstract void addMessage(Text message, @Nullable MessageSignatureData signatureData, @Nullable MessageIndicator indicator)
+    public abstract void addMessage(Text message)
+- @Inject方法 (共10个):
+    1. private void onAddMessageAfterNewChatHudLineVisible(ChatHudLine message, CallbackInfo ci)
+       目标方法: addVisibleMessage
+       目的: 在添加可见消息后设置其ID。
+    2. private void onAddMessageAfterNewChatHudLine(ChatHudLine message, CallbackInfo ci)
+       目标方法: addMessage(Lnet/minecraft/client/gui/hud/ChatHudLine;)V
+       目的: 在添加消息行后设置其ID。
+    3. private void onAddMessage(Text message, MessageSignatureData signatureData, MessageIndicator indicator, CallbackInfo ci)
+       目标方法: addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;Lnet/minecraft/client/gui/hud/MessageIndicator;)V
+       目的: 在添加消息前触发事件，可取消或修改消息。
+    4. private void onBreakChatMessageLines(ChatHudLine message, CallbackInfo ci, @Local List<OrderedText> list)
+       目标方法: addVisibleMessage
+       目的: 在特定调用处记录消息行数（用于防刷屏）。
+    5. private void onRemoveMessage(ChatHudLine message, CallbackInfo ci)
+       目标方法: addMessage(Lnet/minecraft/client/gui/hud/ChatHudLine;)V
+       目的: 在移除消息时调整内部行数列表。
+    6. private void onClear(boolean clearHistory, CallbackInfo ci)
+       目标方法: clear
+       目的: 清空聊天时同时清空内部行数列表。
+    7. private void onRefresh(CallbackInfo ci)
+       目标方法: refresh
+       目的: 刷新聊天时清空内部行数列表。
+- @ModifyExpressionValue方法 (共6个):
+    1. private ChatHudLine.Visible onAddMessage_modifyChatHudLineVisible(ChatHudLine.Visible line, @Local(ordinal = 1) int j)
+       目标方法: addVisibleMessage
+       目的: 修改新建的ChatHudLine.Visible对象，为其设置发送者和起始标记。
+    2. private ChatHudLine onAddMessage_modifyChatHudLine(ChatHudLine line)
+       目标方法: addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;Lnet/minecraft/client/gui/hud/MessageIndicator;)V
+       目的: 修改新建的ChatHudLine对象，为其设置发送者。
+    3. private int maxLength(int size)
+       目标方法: addMessage(Lnet/minecraft/client/gui/hud/ChatHudLine;)V
+       目的: 修改聊天历史最大长度常量（用于更长聊天）。
+    4. private int maxLengthVisible(int size)
+       目标方法: addVisibleMessage
+       目的: 修改可见消息最大长度常量（用于更长聊天）。
+    5. private int onRender_modifyWidth(int width)
+       目标方法: render
+       目的: 修改聊天渲染宽度。
+    6. private MessageIndicator onRender_modifyIndicator(MessageIndicator indicator)
+       目标方法: method_71992 (私有渲染方法)
+       目的: 修改消息指示器（用于隐藏签名提示）。
+- @ModifyReceiver方法 (1个):
+    private DrawContext onRender_beforeDrawTextWithShadow(DrawContext context, ...)
+    目标方法: method_71991 (私有渲染方法)
+    目的: 在绘制聊天文本前调用，用于绘制玩家头像等。
+- 其他: 包含大量与BetterChat模块交互的逻辑，用于增强聊天功能。
+
+【目标类】: ChatInputSuggestor (聊天输入建议器)
+- Mixin类名: ChatInputSuggestorMixin (抽象类)
+- @Shadow字段: 
+    private ParseResults<CommandSource> parse
+    private final TextFieldWidget textField
+    private boolean completingSuggestions
+    private CompletableFuture<Suggestions> pendingSuggestions
+    private ChatInputSuggestor.SuggestionWindow window
+- @Shadow方法: protected abstract void showCommandSuggestions()
+- @Inject方法:
+    public void onRefresh(CallbackInfo ci, @Local StringReader reader)
+    目标方法: refresh
+    目的: 修改命令建议的刷新逻辑，以支持自定义前缀（如“.”）。
+
+【目标类】: ChatScreen (聊天输入屏幕)
+- Mixin类名: ChatScreenMixin (抽象类) (优先级: 1001)
+- @Shadow字段: protected TextFieldWidget chatField
+- @Inject方法:
+    private void onInit(CallbackInfo info)
+    目标方法: init
+    目的: 在初始化时设置聊天框为无限长度（如果启用）。
+
+【目标类】: Chunk (区块)
+- Mixin类名: ChunkAccessor (接口)
+- @Accessor方法: Map<BlockPos, BlockEntity> getBlockEntities()
+    目的: 获取区块内的方块实体映射。
+
+【目标类】: ChunkBorderDebugRenderer (区块边界调试渲染器)
+- Mixin类名: ChunkBorderDebugRendererMixin (抽象类)
+- @Shadow字段: private final MinecraftClient client
+- @ModifyExpressionValue方法:
+    private ChunkPos render$getChunkPos(ChunkPos chunkPos)
+    目标方法: render
+    目的: 修改用于渲染的区块位置，以跟随自由摄像机(Freecam)。
+
+【目标类】: ChunkOcclusionDataBuilder (区块遮挡数据构建器)
+- Mixin类名: ChunkOcclusionDataBuilderMixin (抽象类)
+- @Inject方法:
+    private void onMarkClosed(BlockPos pos, CallbackInfo info)
+    目标方法: markClosed
+    目的: 在标记面为封闭时触发事件，可取消。
+
+【目标类】: ChunkSkyLightProvider (区块天空光提供器)
+- Mixin类名: ChunkSkyLightProviderMixin (抽象类)
+- @Inject方法:
+    private void recalculateLevel(long blockPos, long l, int lightLevel, CallbackInfo ci)
+    目标方法: method_51531 (私有方法)
+    目的: 在重新计算天空光等级时触发，可取消（用于停止天空光更新）。
+
+【目标类】: ClientChunkManager (客户端区块管理器)
+- Mixin类名: ClientChunkManagerAccessor (接口)
+- @Accessor方法: ClientChunkManager.ClientChunkMap meteor$getChunks()
+    目的: 获取内部区块映射。
+
+【目标类】: ClientChunkManager.ClientChunkMap (内部类)
+- Mixin类名: ClientChunkMapAccessor (接口)
+- @Accessor方法: AtomicReferenceArray<WorldChunk> meteor$getChunks()
+    目的: 获取内部区块数组。
+
+【目标类】: ClientConnection (客户端网络连接)
+- Mixin类名: ClientConnectionAccessor (接口)
+- @Accessor方法: Channel meteor$getChannel()
+    目的: 获取底层Netty通道。
+- Mixin类名: ClientConnectionMixin (抽象类)
+- @Inject方法 (共7个):
+    1. private void onHandlePacket(ChannelHandlerContext channelHandlerContext, Packet<?> packet, CallbackInfo ci)
+       目标方法: channelRead0 (Netty方法，用于接收数据包)
+       目的: 在数据包被处理前触发接收事件，可取消。处理Bundle包。
+    2. private void disconnect(Text disconnectReason, CallbackInfo ci)
+       目标方法: disconnect(Lnet/minecraft/text/Text;)V
+       目的: 在断开连接时，为HighwayBuilder模块添加统计信息到断开原因。
+    3. private static void onConnect(InetSocketAddress address, boolean useEpoll, ClientConnection connection, CallbackInfoReturnable<?> cir)
+       目标方法: connect (静态方法)
+       目的: 在连接建立时触发ServerConnectEndEvent。
+    4. private void onSendPacketHead(Packet<?> packet, @Nullable ChannelFutureListener channelFutureListener, CallbackInfo ci)
+       目标方法: send(Lnet/minecraft/network/packet/Packet;Lio/netty/channel/ChannelFutureListener;)V
+       目的: 在发送数据包前触发Send事件，可取消。
+    5. private void onSendPacketTail(Packet<?> packet, @Nullable ChannelFutureListener channelFutureListener, CallbackInfo ci)
+       目标方法: send (同上)
+       目的: 在发送数据包后触发Sent事件。
+    6. private void exceptionCaught(ChannelHandlerContext context, Throwable throwable, CallbackInfo ci)
+       目标方法: exceptionCaught (Netty异常捕获方法)
+       目的: 捕获网络异常，根据AntiPacketKick模块决定是否取消。
+    7. private static void onAddHandlers(ChannelPipeline pipeline, NetworkSide side, boolean local, PacketSizeLogger packetSizeLogger, CallbackInfo ci)
+       目标方法: addHandlers (静态方法)
+       目的: 在网络管道中添加SOCKS4/5代理处理器。
+- 目的: 这是网络包事件系统的核心，处理所有包的发送、接收和异常。
+
+【目标类】: ClientPlayerEntity (客户端玩家实体)
+- Mixin类名: ClientPlayerEntityAccessor (接口)
+- @Accessor方法 (3个):
+    void meteor$setMountJumpStrength(float strength)
+    void meteor$setTicksSinceLastPositionPacketSent(int ticks)
+- @Invoker方法 (1个):
+    boolean meteor$invokeCanSprint()
+- Mixin类名: ClientPlayerEntityMixin (抽象类)
+- 父类: AbstractClientPlayerEntity
+- 构造函数: public ClientPlayerEntityMixin(ClientWorld world, GameProfile profile)
+- @Shadow字段: public Input input
+- @Inject方法 (共9个):
+    1. private void onDropSelectedItem(boolean dropEntireStack, CallbackInfoReturnable<Boolean> info)
+       目标方法: dropSelectedItem
+       目的: 在丢弃物品前触发事件，可取消。
+    2. private void onIsSneaking(CallbackInfoReturnable<Boolean> info)
+       目标方法: isSneaking
+       目的: 修改潜行判定（用于Scaffold、Flight模块）。
+    3. private void onShouldSlowDown(CallbackInfoReturnable<Boolean> info)
+       目标方法: shouldSlowDown
+       目的: 修改是否应减速的判定（用于NoSlow潜行）。
+    4. private void onPushOutOfBlocks(double x, double d, CallbackInfo info)
+       目标方法: pushOutOfBlocks
+       目的: 在从方块中推出前触发，可取消（用于Velocity防方块推动）。
+    5. private void preTickMovement(CallbackInfo ci)
+       目标方法: tickMovement
+       目的: 在移动更新前触发PlayerTickMovementEvent。
+    6. private void onSendMovementPacketsHead(CallbackInfo info)
+       目标方法: sendMovementPackets
+       目的: 在发送移动包前触发SendMovementPacketsEvent.Pre。
+    7. private void onTickHasVehicleBeforeSendPackets(CallbackInfo info)
+       目标方法: tick (特定调用处)
+       目的: 同上，针对有载具的情况。
+    8. private void onSendMovementPacketsTail(CallbackInfo info)
+       目标方法: sendMovementPackets
+       目的: 在发送移动包后触发SendMovementPacketsEvent.Post。
+    9. private void onTickHasVehicleAfterSendPackets(CallbackInfo info)
+       目标方法: tick (特定调用处)
+       目的: 同上，针对有载具的情况。
+- @ModifyExpressionValue方法 (共6个):
+    1. private Screen modifyNauseaCurrentScreen(Screen original)
+       目标方法: tickNausea
+       目的: 修改造成恶心效果的当前屏幕判定（用于Portals模块）。
+    2. private boolean redirectUsingItem(boolean isUsingItem)
+       目标方法: applyMovementSpeedFactors
+       目的: 修改是否正在使用物品的判定（用于NoSlow物品减速）。
+    3. private float onHunger(float constant)
+       目标方法: canSprint
+       目的: 修改饥饿度常量（用于NoSlow饥饿减速）。
+    4. private PlayerInput isSneaking(PlayerInput original)
+       目标方法: tick
+       目的: 修改玩家输入，强制潜行状态（用于Sneak、NoSlow模块）。
+    5. private boolean modifyIsWalking(boolean original)
+       目标方法: canStartSprinting
+       目的: 修改是否在行走的判定（用于Sprint的Rage模式）。
+    6. private boolean modifyMovement(boolean original)
+       目标方法: tickMovement
+       目的: 同上，修改是否有向前移动的判定。
+- @WrapWithCondition方法 (1个):
+    private boolean wrapSetSprinting(ClientPlayerEntity instance, boolean b)
+    目标方法: tickMovement (对setSprinting的调用)
+    目的: 有条件地包裹设置疾跑状态的方法（用于Sprint模块）。
+
+=== 核心信息摘要 ===
+1.  聊天系统 (ChatHud, ChatScreen): 实现了完整的聊天增强（BetterChat），包括消息ID追踪、防刷屏、无限长度、自定义前缀建议、玩家头像等。
+2.  网络系统 (ClientConnection): 实现了核心的网络包事件系统（PacketEvent.Send/Receive/Sent），以及代理支持和防踢出。
+3.  玩家控制 (ClientPlayerEntity): 实现了大量玩家行为修改，涉及移动（Sprint, Sneak, Flight）、交互（NoSlow, Scaffold, Velocity）、状态（Portals）等核心模块。
+4.  区块与渲染 (Chunk...): 提供数据访问、修改渲染逻辑（自由摄像机、天空光、遮挡）等。
+5.  技术要点: 代码中大量使用了 @Local 捕获局部变量，以及 @ModifyExpressionValue 精准修改表达式值，是高效非侵入式修改的典范。
+
+=== Mixin 信息提取总结 (纯文本版) ===
+
+【目标类】: ClientPlayerInteractionManager (客户端玩家交互管理器)
+- Mixin类名: ClientPlayerInteractionManagerAccessor (接口)
+- @Accessor方法 (3个):
+    float meteor$getBreakingProgress()
+    void meteor$setCurrentBreakingProgress(float progress)
+    BlockPos meteor$getCurrentBreakingBlockPos()
+- Mixin类名: ClientPlayerInteractionManagerMixin (抽象类)
+- 实现接口: IClientPlayerInteractionManager
+- @Shadow字段: private int blockBreakingCooldown
+- @Shadow方法 (3个):
+    protected abstract void syncSelectedSlot()
+    public abstract boolean breakBlock(BlockPos pos)
+    public abstract void sendSequencedPacket(ClientWorld world, SequencedPacketCreator packetCreator)
+- @Inject方法 (共11个):
+    1. private void onClickSlot(int syncId, int slotId, int button, SlotActionType actionType, PlayerEntity player, CallbackInfo info)
+       目标方法: clickSlot
+       目的: 在点击物品槽时触发丢弃物品事件，可取消。
+    2. private void onAttackBlock(BlockPos blockPos, Direction direction, CallbackInfoReturnable<Boolean> info)
+       目标方法: attackBlock
+       目的: 在攻击方块前触发事件，可取消。内含SpeedMine秒挖逻辑。
+    3. public void interactBlock(ClientPlayerEntity player, Hand hand, BlockHitResult hitResult, CallbackInfoReturnable<ActionResult> cir)
+       目标方法: interactBlock
+       目的: 与方块交互前触发事件，可取消。
+    4. private void onAttackEntity(PlayerEntity player, Entity target, CallbackInfo info)
+       目标方法: attackEntity
+       目的: 攻击实体前触发事件，可取消。
+    5. private void onInteractEntity(PlayerEntity player, Entity entity, Hand hand, CallbackInfoReturnable<ActionResult> info)
+       目标方法: interactEntity
+       目的: 与实体交互前触发事件，可取消。
+    6. private void onDropCreativeStack(ItemStack stack, CallbackInfo info)
+       目标方法: dropCreativeStack
+       目的: 在创造模式丢弃物品栈前触发事件，可取消。
+    7. private void onBreakBlock(BlockPos blockPos, CallbackInfoReturnable<Boolean> info)
+       目标方法: breakBlock
+       目的: 破坏方块前触发事件，可取消。
+    8. private void onInteractItem(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> info)
+       目标方法: interactItem
+       目的: 使用物品前触发事件，可设置返回值。
+    9. private void onCancelBlockBreaking(CallbackInfo info)
+       目标方法: cancelBlockBreaking
+       目的: 取消方块破坏时，根据模块状态决定是否取消。
+- @Redirect方法 (3个，均用于修改 blockBreakingCooldown 字段):
+    1. private void creativeBreakDelayChange(ClientPlayerInteractionManager interactionManager, int value)
+       目标方法: updateBlockBreakingProgress
+    2. private void survivalBreakDelayChange(ClientPlayerInteractionManager interactionManager, int value)
+       目标方法: updateBlockBreakingProgress
+    3. private void creativeBreakDelayChange2(ClientPlayerInteractionManager interactionManager, int value)
+       目标方法: attackBlock
+    目的: 修改方块破坏冷却（用于BlockBreakingCooldownEvent）。
+- @ModifyExpressionValue方法 (1个):
+    private float modifyBlockBreakingDelta(float original)
+    目标方法: method_41930 (私有方法)
+    目的: 修改方块破坏进度计算，用于防止秒破(BreakDelay)。
+- 接口方法: void meteor$syncSelected() 用于调用 syncSelectedSlot。
+
+【目标类】: ClientPlayNetworkHandler (客户端游戏网络处理器)
+- Mixin类名: ClientPlayNetworkHandlerAccessor (接口)
+- @Accessor方法 (6个):
+    int meteor$getChunkLoadDistance()
+    MessageChain.Packer meteor$getMessagePacker()
+    LastSeenMessagesCollector meteor$getLastSeenMessagesCollector()
+    DynamicRegistryManager.Immutable meteor$getCombinedDynamicRegistries()
+    FeatureSet meteor$getEnabledFeatures()
+    static CommandTreeS2CPacket.NodeFactory<ClientCommandSource> meteor$getCommandNodeFactory()
+- Mixin类名: ClientPlayNetworkHandlerMixin (抽象类)
+- 父类: ClientCommonNetworkHandler
+- 构造函数: protected ClientPlayNetworkHandlerMixin(MinecraftClient client, ClientConnection connection, ClientConnectionState connectionState)
+- @Shadow字段: private ClientWorld world
+- @Shadow方法: public abstract void sendChatMessage(String content)
+- @Unique字段: private boolean ignoreChatMessage; private boolean worldNotNull
+- @Inject方法 (共13个):
+    1. private void onEntitySpawn(EntitySpawnS2CPacket packet, CallbackInfo info)
+       目标方法: onEntitySpawn
+       目的: 在实体生成前，根据NoRender模块取消特定实体。
+    2. private void onGameJoinHead(GameJoinS2CPacket packet, CallbackInfo info)
+       目标方法: onGameJoin
+       目的: 记录加入游戏前世界状态。
+    3. private void onGameJoinTail(GameJoinS2CPacket packet, CallbackInfo info)
+       目标方法: onGameJoin
+       目的: 在加入游戏后触发 GameLeftEvent 和 GameJoinedEvent。
+    4. private void onEnterReconfiguration(EnterReconfigurationS2CPacket packet, CallbackInfo info)
+       目标方法: onEnterReconfiguration
+       目的: 在进入重配置阶段后触发 GameLeftEvent。
+    5. private void onPlaySound(PlaySoundS2CPacket packet, CallbackInfo info)
+       目标方法: onPlaySound
+       目的: 触发播放声音包事件。
+    6. private void onChunkData(ChunkDataS2CPacket packet, CallbackInfo info)
+       目标方法: onChunkData
+       目的: 在区块数据加载后触发 ChunkDataEvent。
+    7. private void onContainerSlotUpdate(ScreenHandlerSlotUpdateS2CPacket packet, CallbackInfo info)
+       目标方法: onScreenHandlerSlotUpdate
+       目的: 在容器槽位更新后触发 ContainerSlotUpdateEvent。
+    8. private void onInventory(InventoryS2CPacket packet, CallbackInfo info)
+       目标方法: onInventory
+       目的: 在收到物品栏包后触发 InventoryEvent。
+    9. private void onEntitiesDestroy(EntitiesDestroyS2CPacket packet, CallbackInfo ci)
+       目标方法: onEntitiesDestroy
+       目的: 在实体被销毁时，为每个实体触发 EntityDestroyEvent。
+    10. private void onExplosionVelocity(ExplosionS2CPacket packet, CallbackInfo ci)
+       目标方法: onExplosion
+       目的: 在收到爆炸包时修改玩家击退速度（用于Velocity模块）。
+    11. private void onItemPickupAnimation(ItemPickupAnimationS2CPacket packet, CallbackInfo info)
+       目标方法: onItemPickupAnimation
+       目的: 在物品拾取动画时，触发 PickItemsEvent。
+    12. private void onSendChatMessage(String message, CallbackInfo ci)
+       目标方法: sendChatMessage
+       目的: 在发送聊天消息前处理。如果是命令（以“.”开头）则执行，否则触发SendMessageEvent。
+- 注意: 这是处理**接收**网络包的核心类，与 ClientConnectionMixin（处理发送和底层）配合。
+
+【目标类】: ClientWorld (客户端世界)
+- Mixin类名: ClientWorldMixin (抽象类)
+- @Shadow方法: @Nullable public abstract Entity getEntityById(int id)
+- @Inject方法 (共6个):
+    1. private void onAddEntity(Entity entity, CallbackInfo info)
+       目标方法: addEntity
+       目的: 在添加实体后触发 EntityAddedEvent。
+    2. private void onRemoveEntity(int entityId, Entity.RemovalReason removalReason, CallbackInfo info)
+       目标方法: removeEntity
+       目的: 在移除实体前触发 EntityRemovedEvent。
+    3. private void onGetSkyProperties(CallbackInfoReturnable<DimensionEffects> info)
+       目标方法: getDimensionEffects
+       目的: 修改维度天空效果（用于Ambience模块）。
+    4. private void onGetSkyColor(Vec3d cameraPos, float tickDelta, CallbackInfoReturnable<Integer> cir)
+       目标方法: getSkyColor
+       目的: 修改天空颜色（用于Ambience模块）。
+    5. private void onGetCloudsColor(float tickDelta, CallbackInfoReturnable<Integer> info)
+       目标方法: getCloudsColor
+       目的: 修改云颜色（用于Ambience模块）。
+- @ModifyArgs方法 (1个):
+    private void doRandomBlockDisplayTicks(Args args)
+    目标方法: doRandomBlockDisplayTicks
+    目的: 修改随机方块显示刻，将屏障粒子改为其他方块（用于NoRender模块）。
+
+【目标类】: CobwebBlock (蜘蛛网方块)
+- Mixin类名: CobwebBlockMixin (抽象类)
+- @Inject方法:
+    private void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler, CallbackInfo info)
+    目标方法: onEntityCollision
+    目的: 在实体碰撞蜘蛛网时，如果玩家且启用NoSlow，则取消减速。
+
+【目标类】: CompassState (指南针状态，用于追踪实体)
+- Mixin类名: CompassStateMixin (抽象类)
+- @ModifyExpressionValue方法 (1个):
+    private static float callLivingEntityGetYaw(float original)
+    目标方法: getBodyYaw (静态方法)
+    目的: 当启用Freecam时，使用摄像机Yaw代替实体Yaw。
+- @ModifyReturnValue方法 (1个):
+    private static double modifyGetAngleTo(double original, Entity entity, BlockPos pos)
+    目标方法: getAngleTo (静态方法)
+    目的: 当启用Freecam时，计算到目标位置的角度时使用摄像机位置。
+
+【目标类】: ConnectScreen (连接服务器屏幕)
+- Mixin类名: ConnectScreenMixin (抽象类)
+- @Inject方法:
+    private void tryConnectEvent(MinecraftClient client, ServerAddress address, ServerInfo info, CookieStorage cookieStorage, CallbackInfo ci)
+    目标方法: connect
+    目的: 在尝试连接服务器时触发 ServerConnectBeginEvent。
+
+【目标类】: ContainerComponent (容器组件，如潜影盒)
+- Mixin类名: ContainerComponentAccessor (接口)
+- @Accessor方法: DefaultedList<ItemStack> meteor$getStacks()
+- Mixin类名: ContainerComponentMixin (抽象类)
+- @Shadow字段: @Final private DefaultedList<ItemStack> stacks
+- @Inject方法:
+    private void onAppendTooltip(Item.TooltipContext context, Consumer<Text> textConsumer, TooltipType type, ComponentsAccess components, CallbackInfo ci)
+    目标方法: appendTooltip
+    目的: 在生成容器工具提示时，根据BetterTooltips模块取消或修改提示。
+
+【目标类】: CrashReport (崩溃报告)
+- Mixin类名: CrashReportMixin (抽象类)
+- @Inject方法:
+    private void onAddDetails(StringBuilder sb, CallbackInfo info)
+    目标方法: addDetails
+    目的: 在生成崩溃报告时，添加Meteor客户端信息、激活的模块和HUD元素。
+
+【目标类】: CreativeInventoryScreen (创造模式物品栏)
+- Mixin类名: CreativeInventoryScreenAccessor (接口)
+- @Accessor方法: static ItemGroup meteor$getSelectedTab()
+
+【目标类】: CreativeInventoryScreen$CreativeSlot (内部类)
+- Mixin类名: CreativeSlotMixin (抽象类)
+- @Shadow字段: @Final Slot slot
+- 目的: 提供获取槽位ID和索引的方法。
+
+【目标类】: CrossbowItem (弩)
+- Mixin类名: CrossbowItemAccessor (接口)
+- @Invoker方法: static float meteor$getSpeed(ChargedProjectilesComponent itemStack)
+
+【目标类】: DefaultSkinHelper (默认皮肤助手)
+- Mixin类名: DefaultSkinHelperMixin (抽象类)
+- @Inject方法:
+    private static void onShouldUseSlimModel(UUID uuid, CallbackInfoReturnable<Boolean> info)
+    目标方法: getSkinTextures
+    目的: 在主菜单渲染玩家模型时，处理UUID为空的情况。
+
+【目标类】: Direction (方向)
+- Mixin类名: DirectionAccessor (接口)
+- @Accessor方法: static Direction[] meteor$getHorizontal()
+
+【目标类】: DisconnectedScreen (断开连接屏幕)
+- Mixin类名: DisconnectedScreenMixin (抽象类)
+- 父类: Screen
+- 构造函数: protected DisconnectedScreenMixin(Text title)
+- @Shadow字段: @Final private DirectionalLayoutWidget grid
+- @Unique字段: private ButtonWidget reconnectBtn; private double time
+- @Inject方法:
+    private void addButtons(CallbackInfo ci)
+    目标方法: init
+    目的: 在断开连接界面添加“重新连接”和“切换自动重连”按钮。
+- 重写方法: public void tick() 用于自动重连倒计时。
+
+【目标类】: Downloader (资源包下载器)
+- Mixin类名: DownloaderMixin (类)
+- @Shadow字段: @Final private Path directory
+- @ModifyExpressionValue方法:
+    private Path hookResolve(Path original, @Local(argsOnly = true) UUID id)
+    目标方法: method_55485 (私有方法)
+    目的: 修改资源包下载路径，按账户ID和资源包ID组织。
+
+=== 核心信息摘要 ===
+1.  玩家交互 (ClientPlayerInteractionManager): 处理所有玩家与世界的交互（攻击、放置、使用物品、破坏方块），并触发对应事件。是许多PvP和生存辅助模块（如SpeedMine, NoSlow）的基础。
+2.  网络包接收 (ClientPlayNetworkHandler): 处理游戏逻辑相关的网络包（如实体生成、区块加载、声音、聊天），并触发事件。与 ClientConnectionMixin 共同构成完整网络事件系统。
+3.  世界与实体 (ClientWorld): 处理实体添加/移除和世界渲染属性（天空、颜色），触发实体事件。
+4.  界面与体验 (各种Screen): 增强用户界面，如断开连接屏幕的自动重连、创造物品栏的访问等。
+5.  工具与工具提示 (ContainerComponent, BetterTooltips): 修改物品（如潜影盒）的工具提示显示。
+6.  崩溃诊断 (CrashReport): 在崩溃报告中注入Mod状态，便于调试。
+7.  注意: 多个Mixin使用了 `@Local` 注解来捕获局部变量，这是修改方法内部状态的高级技巧。
+
+=== Mixin 信息提取总结 (纯文本版) ===
+
+【目标类】: DrawContext (绘制上下文)
+- Mixin类名: DrawContextMixin (抽象类)
+- @Inject方法:
+    private void onDrawTooltip(TextRenderer textRenderer, List<Text> text, Optional<TooltipData> data, int x, int y, @Nullable Identifier texture, CallbackInfo info, @Local(ordinal = 1) List<TooltipComponent> list)
+    目标方法: drawTooltip(Lnet/minecraft/client/font/TextRenderer;Ljava/util/List;Ljava/util/Optional;IILnet/minecraft/util/Identifier;)V
+    目的: 在绘制工具提示前，如果数据是 MeteorTooltipData 类型，则将其组件添加到绘制列表中。
+- @ModifyReceiver方法:
+    private Optional<TooltipData> onDrawTooltip_modifyIfPresentReceiver(Optional<TooltipData> data, Consumer<TooltipData> consumer)
+    目标方法: drawTooltip (同上)
+    目的: 修改 Optional 接收器，如果数据是 MeteorTooltipData 则返回空，防止原版处理。
+
+【目标类】: ElytraFeatureRenderer (鞘翅渲染器)
+- Mixin类名: ElytraFeatureRendererMixin (抽象类，泛型 <S extends BipedEntityRenderState, M extends EntityModel<S>>)
+- 父类: FeatureRenderer<S, M>
+- 构造函数: public ElytraFeatureRendererMixin(FeatureRendererContext<S, M> context)
+- @ModifyExpressionValue方法:
+    private Identifier modifyCapeTexture(Identifier original, MatrixStack matrices, VertexConsumerProvider consumers, int i, S state, float f, float g)
+    目标方法: render 中对 getTexture(...) 的调用
+    目的: 修改鞘翅纹理，用于自定义披风(Capes)系统。
+
+【目标类】: EnchantingTableBlockEntityRenderer (附魔台方块实体渲染器)
+- Mixin类名: EnchantingTableBlockEntityRendererMixin (抽象类)
+- @WrapWithCondition方法:
+    private boolean onRenderBookModelRenderProxy(BookModel instance, MatrixStack matrixStack, VertexConsumer vertexConsumer, int light, int overlay)
+    目标方法: render 中对 BookModel.render(...) 的调用
+    目的: 根据 NoRender 模块决定是否渲染附魔台上的书。
+
+【目标类】: EndCrystalEntityModel (末影水晶实体模型)
+- Mixin类名: EndCrystalEntityModelMixin (抽象类)
+- @ModifyExpressionValue方法 (2个，均用于 Chams 模块):
+    1. private float setAngles$bounce(float original, EndCrystalEntityRenderState state)
+       目标方法: setAngles 中对 EndCrystalEntityRenderer.getYOffset(...) 的调用
+       目的: 修改末影水晶的上下浮动（弹跳）效果。
+    2. private float modifySpeed(float original)
+       目标方法: setAngles 中对 state.age 字段的访问
+       目的: 修改末影水晶的旋转速度。
+
+【目标类】: EndCrystalEntityRenderer (末影水晶实体渲染器)
+- Mixin类名: EndCrystalEntityRendererMixin (抽象类)
+- @Shadow字段:
+    @Final @Mutable private static RenderLayer END_CRYSTAL
+    @Final private static Identifier TEXTURE
+    @Final private EndCrystalEntityModel model
+- @Unique字段: private Chams chams
+- @Inject方法 (3个):
+    1. private void onInit(CallbackInfo info)
+       目标方法: <init> (构造函数)
+       目的: 在构造函数结束时获取 Chams 模块实例。
+    2. private void render$renderLayer(EndCrystalEntityRenderState endCrystalEntityRenderState, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo ci)
+       目标方法: render (头部)
+       目的: 根据 Chams 模块设置渲染层（使用空白纹理或原版纹理）。
+    3. private void render$scale(EndCrystalEntityRenderState endCrystalEntityRenderState, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo info)
+       目标方法: render 中对 MatrixStack.scale(...) 的调用处
+       目的: 根据 Chams 模块缩放末影水晶模型。
+- @WrapWithCondition方法:
+    private boolean render$color(EndCrystalEntityModel instance, MatrixStack matrices, VertexConsumer vertices, int light, int overlay)
+    目标方法: render 中对 model.render(...) 的调用
+    目的: 根据 Chams 模块使用自定义颜色渲染水晶，并阻止原版渲染调用。
+
+【目标类】: Entity (实体基类)
+- Mixin类名: EntityAccessor (接口)
+- @Accessor方法: void meteor$setInWater(boolean touchingWater)
+- Mixin类名: EntityMixin (抽象类)
+- @ModifyExpressionValue方法 (3个):
+    1. private Vec3d updateMovementInFluidFluidStateGetVelocity(Vec3d vec)
+       目标方法: updateMovementInFluid 中对 FluidState.getVelocity(...) 的调用
+       目的: 修改玩家在流体中的移动速度（用于Velocity模块）。
+    2. private Block modifyVelocityMultiplierBlock(Block original)
+       目标方法: getVelocityMultiplier 中对 BlockState.getBlock() 的调用
+       目的: 修改影响速度的方块（如灵魂沙、蜂蜜块），用于NoSlow模块。
+    3. private boolean isSubmergedInWater(boolean submerged)
+       目标方法: updateSwimming 中对 isSubmergedInWater() 的调用
+       目的: 修改玩家是否浸没在水中的判定，用于NoSlow和Flight模块。
+- @Inject方法 (共12个):
+    1. private void isTouchingWater(CallbackInfoReturnable<Boolean> info)
+       目标方法: isTouchingWater
+       目的: 修改玩家是否接触水的判定，用于Flight和NoSlow模块。
+    2. private void isInLava(CallbackInfoReturnable<Boolean> info)
+       目标方法: isInLava
+       目的: 修改玩家是否在岩浆中的判定，用于Flight和NoSlow模块。
+    3. private void onBubbleColumnSurfaceCollision(CallbackInfo info)
+       目标方法: onBubbleColumnSurfaceCollision
+       目的: 当玩家与气泡柱表面碰撞时，标记Jesus模块状态。
+    4. private void onBubbleColumnCollision(CallbackInfo info)
+       目标方法: onBubbleColumnCollision
+       目的: 当玩家与气泡柱碰撞时，标记Jesus模块状态。
+    5. private void onMove(MovementType type, Vec3d movement, CallbackInfo info)
+       目标方法: move
+       目的: 在实体移动时触发 PlayerMoveEvent 或 LivingEntityMoveEvent。
+    6. private void onGetTeamColorValue(CallbackInfoReturnable<Integer> info)
+       目标方法: getTeamColorValue
+       目的: 在ESP后处理着色器渲染时，使用ESP模块的颜色覆盖队伍颜色。
+    7. private void isGlowing(CallbackInfoReturnable<Boolean> info)
+       目标方法: isGlowing
+       目的: 根据NoRender模块取消发光效果。
+    8. private void onGetTargetingMargin(CallbackInfoReturnable<Float> info)
+       目标方法: getTargetingMargin
+       目的: 根据Hitboxes模块修改实体的选中框（hitbox）大小。
+    9. private void onIsInvisibleTo(PlayerEntity player, CallbackInfoReturnable<Boolean> info)
+       目标方法: isInvisibleTo
+       目的: 处理玩家参数为空的边界情况。
+    10. private void getPoseHook(CallbackInfoReturnable<EntityPose> info)
+       目标方法: getPose
+       目的: 为玩家强制设置滑翔姿态（用于ElytraFly模块）。
+    11. private void changeLookDirection(double cursorDeltaX, double cursorDeltaY, CallbackInfo ci)
+       目标方法: changeLookDirection
+       目的: 修改玩家视角转动逻辑，用于Freecam、HighwayBuilder、FreeLook模块。
+- @ModifyArgs方法 (1个):
+    private void onPushAwayFrom(Args args, Entity entity)
+    目标方法: pushAwayFrom 中对 addVelocity(...) 的调用
+    目的: 修改实体间的推开速度（用于Velocity模块），或处理FakePlayerEntity。
+- @ModifyReturnValue方法 (5个):
+    1. private float onGetJumpVelocityMultiplier(float original)
+       目标方法: getJumpVelocityMultiplier
+       目的: 修改玩家的跳跃速度乘数（触发JumpVelocityMultiplierEvent）。
+    2. private boolean isInvisibleToCanceller(boolean original)
+       目标方法: isInvisibleTo
+       目的: 根据NoRender或ESP模块取消实体的隐形效果。
+    3. private EntityPose modifyGetPose(EntityPose original)
+       目标方法: getPose
+       目的: 修正玩家的姿态（当蹲下但未按潜行键时恢复站立）。
+    4. private boolean cancelBounce(boolean original)
+       目标方法: bypassesLandingEffects
+       目的: 根据NoFall模块取消落地弹跳效果。
+
+【目标类】: EntityRenderDispatcher (实体渲染调度器)
+- Mixin类名: EntityRenderDispatcherMixin (抽象类)
+- @Shadow字段: public Camera camera
+- @Inject方法 (共8个):
+    1. private <E extends Entity, S extends EntityRenderState> void render(E entity, double x, double y, double z, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, EntityRenderer<? super E, S> renderer, CallbackInfo info)
+       目标方法: render
+       目的: 在渲染实体前，如果是FakePlayerEntity且位于摄像机内则取消渲染。
+    2. private void renderHitboxes$setEntity(MatrixStack matrices, EntityRenderState state, EntityHitboxAndView hitbox, VertexConsumerProvider vertexConsumers, CallbackInfo info)
+       目标方法: renderHitboxes
+       目的: 在渲染选中框前，记录当前实体。
+    3. private void renderHitboxes$unsetEntity(MatrixStack matrices, EntityRenderState state, EntityHitboxAndView hitbox, VertexConsumerProvider vertexConsumers, CallbackInfo info)
+       目标方法: renderHitboxes
+       目的: 在渲染选中框后，清除记录的实体。
+    4. private static void renderHitbox$scale(MatrixStack matrices, VertexConsumer vertexConsumer, EntityHitbox hitbox, CallbackInfo info)
+       目标方法: renderHitbox (静态方法)
+       目的: 根据Hitboxes模块缩放选中框。
+    5. private static void onRenderShadow(MatrixStack matrices, VertexConsumerProvider vertexConsumers, EntityRenderState renderState, float opacity, WorldView world, float radius, CallbackInfo info)
+       目标方法: renderShadow (静态方法)
+       目的: 在后处理着色器渲染时或根据NoRender模块取消实体阴影。
+    6. private void onGetSquaredDistanceToCameraEntity(Entity entity, CallbackInfoReturnable<Double> info)
+       目标方法: getSquaredDistanceToCamera(Lnet/minecraft/entity/Entity;)D
+       目的: 当摄像机为空时返回0距离。
+    7. private void onGetSquaredDistanceToCameraXYZ(double x, double y, double z, CallbackInfoReturnable<Double> info)
+       目标方法: getSquaredDistanceToCamera(DDD)D
+       目的: 同上，处理坐标参数版本。
+- @ModifyExpressionValue方法 (1个):
+    private <E extends Entity, S extends EntityRenderState> S render$getAndUpdateRenderState(S state, E entity, ...)
+    目标方法: render 中对 EntityRenderer.getAndUpdateRenderState(...) 的调用
+    目的: 将实体对象设置到渲染状态中（用于IEntityRenderState接口）。
+
+【目标类】: EntityRenderer (实体渲染器基类，泛型 <T extends Entity, S extends EntityRenderState>)
+- Mixin类名: EntityRendererMixin (抽象类)
+- @Inject方法 (2个):
+    1. private void onRenderLabel(T entity, CallbackInfoReturnable<Text> cir)
+       目标方法: getDisplayName
+       目的: 在后处理渲染、NoRender生效或Nametags模块处理玩家时，取消名称标签渲染。
+    2. private void shouldRender(T entity, Frustum frustum, double x, double y, double z, CallbackInfoReturnable<Boolean> cir)
+       目标方法: shouldRender
+       目的: 根据NoRender模块决定是否渲染特定实体或掉落方块实体。
+- @ModifyReturnValue方法 (2个):
+    1. private int onGetSkyLight(int original)
+       目标方法: getSkyLight
+       目的: 应用Fullbright模块的天空光亮度。
+    2. private int onGetBlockLight(int original)
+       目标方法: getBlockLight
+       目的: 应用Fullbright模块的方块光亮度。
+- @ModifyExpressionValue方法 (1个):
+    private int onGetLightLevel(int original)
+    目标方法: updateRenderState 中对 World.getLightLevel(...) 的调用
+    目的: 同上，应用Fullbright模块的亮度。
+
+【目标类】: EntityRenderState (实体渲染状态)
+- Mixin类名: EntityRenderStateMixin (抽象类)
+- 实现接口: IEntityRenderState
+- @Unique字段: private Entity entity
+- 目的: 为渲染状态添加获取和设置关联实体的方法。
+
+【目标类】: EntityTrackingSection (实体追踪区块)
+- Mixin类名: EntityTrackingSectionAccessor (接口)
+- @Accessor方法: <T> TypeFilterableList<T> meteor$getCollection()
+  目的: 获取区块内的实体集合。
+
+【目标类】: EntityVelocityUpdateS2CPacket (实体速度更新数据包)
+- Mixin类名: EntityVelocityUpdateS2CPacketAccessor (接口)
+- @Mutable @Accessor方法 (3个):
+    void meteor$setX(int velocityX)
+    void meteor$setY(int velocityY)
+    void meteor$setZ(int velocityZ)
+  目的: 提供修改数据包中速度分量的方法。
+
+【目标类】: ExplosionS2CPacket (爆炸数据包)
+- Mixin类名: ExplosionS2CPacketMixin (抽象类)
+- 实现接口: IExplosionS2CPacket
+- @Shadow字段: @Final @Mutable private Optional<Vec3d> playerKnockback
+- 接口方法 (3个):
+    void meteor$setVelocityX(float velocity)
+    void meteor$setVelocityY(float velocity)
+    void meteor$setVelocityZ(float velocity)
+  目的: 提供修改爆炸对玩家击退速度的方法（用于Velocity模块）。
+
+【目标类】: PlayerSkinProvider.FileCache (内部类)
+- Mixin类名: FileCacheAccessor (接口)
+- @Accessor方法: Path meteor$getDirectory()
+  目的: 获取皮肤缓存目录。
+
+=== 核心信息摘要 ===
+1.  渲染与视觉效果: 大量Mixin修改了实体（玩家、末影水晶）、方块实体（附魔台）和UI（工具提示）的渲染。涉及模块：Chams (水晶特效)、ESP (高亮)、Nametags (名牌)、NoRender (取消渲染)、Fullbright (全亮)、Capes (披风)。
+2.  实体行为与物理: EntityMixin 是修改实体物理属性的核心，处理移动、速度、流体交互、跳跃、碰撞箱、姿态等。涉及模块：Velocity (击退)、NoSlow (减速抗性)、Flight (飞行)、Jesus (水上行走)、Hitboxes (击中框)、ElytraFly (鞘翅飞行)、Freecam/FreeLook (自由视角)。
+3.  事件系统: 触发了 PlayerMoveEvent, LivingEntityMoveEvent, JumpVelocityMultiplierEvent 等多个事件。
+4.  数据包修改: 提供了修改 EntityVelocityUpdateS2CPacket 和 ExplosionS2CPacket 的能力，用于Velocity模块。
+5.  高级技巧: 广泛使用 @Local 捕获局部变量，@ModifyExpressionValue 精确修改表达式，@WrapWithCondition 条件包装方法调用。

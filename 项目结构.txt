@@ -1,0 +1,147 @@
+TianyiClient/   mc1.21.8版本
+├── src/main/java/com/example/tianyiclient/
+│   ├── TianyiClient.java                  # 主入口类
+│   ├── managers/
+│   │   ├── ModuleManager.java            # 模块管理器
+│   │   ├── Manager.java                  # 管理器基类
+│   │   ├── KeybindManager.java           # 按键绑定管理器
+│   │   └── HudManager.java               # HUD管理器（已移动到hud/）
+│   ├── modules/
+│   │   ├── Module.java                   # 模块基类
+│   │   ├── Category.java                 # 分类枚举
+│   │   ├── client/
+│   │   ├── combat/
+│   │   ├    └── AutoTotem.java
+│   │   ├── movement/
+│   │   │   └── Flight.java              # 飞行模块
+│   │   ├── render/
+│   │   │   ├── Fullbright.java          # 夜视模块//没用
+│   │   │   ├── HUD.java                 # HUD控制模块（原HUDModule.java已删除）
+│   │   │   └── EntityInfoModule.java    # 实体信息模块
+│   │   ├── player/
+│   │   ├── misc/
+│   │   ├── test/
+│   │   │   ├── DebugModule.java
+│   │   │   ├── TestModule.java
+│   │   │   └── EventBusTestHudDebugModule.java
+│   │   ├── impl/hud/
+│   │   │   └── HudEditModule.java       # HUD编辑模块
+│   │   └── settings/SettingGroup.java
+│   ├── event/
+│   │   ├── Event.java                    # 事件基类
+│   │   ├── Cancelable.java               # 可取消接口
+│   │   ├── Priority.java                 # 优先级枚举
+│   │   ├── EventHandler.java             # 事件处理器注解
+│   │   ├── EventBus.java                 # 事件总线
+│   │   └── events/
+│   │       ├── client/
+│   │       │   ├── TickEvent.java
+│   │       │   ├── KeyEvent.java
+│   │       │   ├── MouseEvent.java
+│   │       │   ├── GameJoinedEvent.java
+│   │       │   └── GameLeftEvent.java
+│   │       ├── render/
+│   │       │   ├── RenderEvent.java
+│   │       │   ├── HudRenderEvent.java
+│   │       │   ├── WorldRenderEvent.java
+│   │       │   └── NametagRenderEvent.java
+│   │       ├── world/
+│   │       │   ├── BlockUpdateEvent.java
+│   │       │   ├── EntityAddedEvent.java
+│   │       │   ├── EntityRemovedEvent.java
+│   │       │   └── ChunkDataEvent.java
+│   │       ├── network/
+│   │       │   ├── PacketEvent.java           // abstract class PacketEvent
+│   │       │   ├── PacketReceiveEvent.java    // public class PacketReceiveEvent
+│   │       │   ├── PacketSendEvent.java       // public class PacketSendEvent
+│   │       │   ├── PacketEventHelper
+│   │       │   └── ChatMessageEvent.java
+│   │       └── player/
+│   │           ├── MoveEvent.java
+│   │           ├── JumpEvent.java
+│   │           └── DeathEvent.java
+│   ├── settings/
+│   │   ├── Setting.java                  # 设置基类
+│   │   ├── BoolSetting.java              # 布尔设置
+│   │   ├── BindSetting.java              # 绑定设置
+│   │   ├── ColorSetting.java             # 颜色设置
+│   │   ├── DoubleSetting.java            # 双精度设置
+│   │   ├── EnumSetting.java              # 枚举设置
+│   │   ├── KeybindSetting.java           # 按键绑定设置
+│   │   ├── NumberSetting.java            # 数字设置
+│   │   ├── IntegerSetting.java           # 整数设置
+│   │   ├── StringSetting.java            # 字符串设置
+│   │   └── SettingGroup.java             # 设置分组
+│   │── utils/
+│   │     ├── FullScanInventoryManager.java
+│   ├── gui/
+│   │   ├── ClickGUI.java                 # 点击GUI
+│   │   ├── ClickGuiWindow.java           # GUI窗口
+│   │   └── hud/                          # 【新增】HUD编辑器GUI
+│   │       └── HudEditorScreen.java     # HUD可视化编辑器
+│   └── hud/                              # HUD系统（重构后）
+│       ├── HudManager.java               # HUD管理器（实际实现）
+│       ├── HudElement.java               # HUD元素基类（已增强）
+│       ├── HudRenderer.java              # HUD渲染器（旧的，建议逐渐废弃）
+│       ├── elements/                     # HUD元素实现
+│       │   ├── WatermarkElement.java    # 水印元素
+│       │   ├── FpsElement.java          # FPS显示
+│       │   ├── CoordinatesElement.java  # 坐标显示
+│       │   ├── ModuleListElement.java   # 模块列表
+│       │   ├── PlayerStatusElement.java # 玩家状态
+│       │   ├── PerformanceMonitorElement.java # 性能监控
+│       │   ├── EnemyStatusElement.java  # 敌人状态
+│       │   ├── GameInfoElement.java     # 游戏信息
+│       │   ├── NetworkInfoElement.java  # 网络信息
+│       │   └── EntityInfoElement.java   # 实体信息
+│       ├── binding/                      # 【新增】数据绑定系统
+│       │   ├── DataBinding.java         # 数据绑定类
+│       │   └── DataProviderRegistry.java # 数据提供器注册表
+│       └── config/
+│           └── HudConfig.java           # HUD配置
+└── mixin/
+    ├── ClientPlayerEntityMixin.java
+    ├── ClientPlayNetworkHandlerMixin.java//这个是空的
+    ├── ExampleMixin.java
+    ├── InGameHudMixin.java
+    ├── KeyboardMixin.java
+    ├── MinecraftClientMixin.java
+    └── TitleScreenMixin.java
+目标：
+    主要内容模块：
+
+    EventBus 使用
+
+    按键检测
+
+    Settings（设置系统）
+
+    Render2D（二维渲染）  
+
+------------------------------------------------------------------------------------------------------
+
+    设置标题与图标
+
+    打包 Mod
+
+    Command（命令系统）
+    功能模块，示例
+    杀戮光辉
+    水晶光辉
+    重生锚光辉
+    自动图腾
+
+
+--------------------------------------------------------------------------------------------------------------
+
+    反射的简单应用（两部分）
+
+    使用热交换
+
+    Mixin @Accessor
+
+    配置系统 ConfigManager（两部分）
+
+
+----------------------------------------------------------------------------------------------------------------------
+    Notification（通知系统）

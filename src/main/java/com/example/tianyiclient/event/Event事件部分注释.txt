@@ -1,0 +1,128 @@
+TianyiClient 事件系统原理说明
+=============================
+
+1. 事件系统的目的
+-----------------
+事件系统（Event System / Event Bus）是客户端模块化开发的基础。它允许模块
+独立于 Minecraft 核心逻辑监听和响应游戏事件，比如每帧 Tick、渲染、按键、
+移动、网络数据包等。
+
+核心思想：
+- 模块不直接处理 Minecraft 原生事件
+- 通过事件总线（EventBus）统一分发
+- 模块只需声明自己感兴趣的事件即可
+
+优点：
+- 高度解耦
+- 易于扩展（添加新的事件类型）
+- 模块间互不干扰
+
+---
+
+2. 事件系统组成
+-----------------
+目录结构示例：
+event/
+├── Event.java          # 所有事件的基类
+├── EventBus.java       # 核心总线，负责注册和分发事件
+├── EventHandler.java   # 注解，标记模块监听方法
+└── events/
+    ├── TickEvent.java
+    ├── RenderEvent.java
+    └── ...             # 可扩展其他事件，如 MoveEvent, PacketEvent
+
+说明：
+- Event.java：所有事件都继承此类，可加入通用字段
+- EventBus.java：保存注册的监听器对象，广播事件时通过反射调用标记了 @EventHandler 的方法
+- EventHandler.java：注解，用于标记模块中监听事件的方法
+- events/*.java：具体事件类型（TickEvent, RenderEvent 等）
+
+---
+
+3. EventBus 工作原理
+----------------------
+核心类：EventBus
+
+功能：
+1. 注册监听器对象（通常是模块）
+   register(Object listener)
+2. 注销监听器对象
+   unregister(Object listener)
+3. 广播事件
+   post(T event)
+
+流程：
+1. 当模块注册到 EventBus 时，EventBus 会保存这个对象
+2. 调用 post(event) 时：
+   a. 遍历所有注册的对象
+   b. 遍历对象的方法，找到带 @EventHandler 注解的方法
+   c. 检查方法参数类型是否与 event 类型匹配
+   d. 如果匹配，使用反射调用方法
+3. 模块方法被调用，执行事件逻辑
+
+---
+
+4. 如何在模块中使用事件
+-------------------------
+示例：
+
+1. 模块注册 EventBus
+
+public class Flight extends Module {
+    public Flight() {
+        TianyiClient.EVENT_BUS.register(this);
+    }
+}
+
+2. 模块监听 TickEvent
+
+@EventHandler
+private void onTick(TickEvent event) {
+    // 每帧执行逻辑
+}
+
+3. 模块监听 RenderEvent
+
+@EventHandler
+private void onRender(RenderEvent event) {
+    // 渲染逻辑，例如 ESP、全亮、HUD
+}
+
+---
+
+5. 事件触发
+-------------
+TianyiClient 主类通过 Fabric API 注册游戏事件，然后通过 EventBus 分发：
+
+1. TickEvent
+
+ClientTickEvents.END_CLIENT_TICK.register(client -> {
+    EVENT_BUS.post(new TickEvent());
+});
+
+2. RenderEvent
+
+WorldRenderEvents.AFTER_TRANSLUCENT.register(context -> {
+    EVENT_BUS.post(new RenderEvent(context.tickDelta()));
+});
+
+注意：
+- 事件触发本身由主类负责
+- EventBus 只做分发
+- 模块只需专注自己的逻辑
+
+---
+
+6. 总结
+---------
+事件系统是模块化客户端的核心：
+- 允许模块监听游戏事件而无需耦合 Minecraft 逻辑
+- 高度可扩展，可加入任意类型事件
+- 基于注解 + 反射机制，自动调用模块方法
+- 模块只需注册到 EventBus 并使用 @EventHandler，即可响应事件
+
+模块开发流程：
+1. 定义新的事件类，继承 Event
+2. 模块注册 EventBus
+3. 模块方法加 @EventHandler
+4. 主类触发事件 → 模块逻辑执行

@@ -1,0 +1,453 @@
+
+========= TIANYI CLIENT 模块开发参考手册 =========
+📦 项目版本：Minecraft 1.21.8
+📍 基础包路径：com.example.tianyiclient
+🔧 1. MODULE 基类结构
+1.1 构造函数
+java
+public Module(String name, String description, Category category)
+参数说明：
+
+name: 模块名称（显示在界面中）
+
+description: 模块描述
+
+category: 分类枚举（战斗、移动、渲染、玩家、世界、其他）
+
+1.2 继承时需要重写的方法
+java
+@Override
+protected void onEnable() {
+    // 模块启用时调用 - 初始化逻辑
+}
+
+@Override
+protected void onDisable() {
+    // 模块禁用时调用 - 清理逻辑
+}
+
+// 可选：每个tick调用的方法（非事件驱动）
+@Override
+public void onTick() {
+    // 每个游戏tick都会调用
+}
+1.3 常用方法
+java
+// 控制方法
+public void enable()              // 启用模块
+public void disable()             // 禁用模块
+public void toggle()              // 切换开关状态
+public boolean isEnabled()        // 检查是否启用
+
+// 快捷键相关
+public void setKeybind(int key)   // 设置快捷键（GLFW键码）
+public int getKeybind()           // 获取快捷键
+
+// 设置项管理
+public <T extends Setting<?>> T addSetting(T setting)  // 添加设置项
+public List<Setting<?>> getSettings()                   // 获取所有设置
+public Setting<?> getSettingByName(String name)        // 根据名称获取设置
+
+// 实用方法
+public boolean getBoolSettingValue(String name)        // 获取布尔设置值
+public double getDoubleSettingValue(String name)       // 获取Double设置值
+1.4 重要字段
+java
+// 在Module中已自动初始化的MinecraftClient实例
+protected final MinecraftClient mc = MinecraftClient.getInstance();
+
+// 使用示例：
+if (mc.player != null && mc.world != null) {
+    // 安全地访问游戏对象
+    float health = mc.player.getHealth();
+}
+1.5 模块继承示例
+java
+package com.example.tianyiclient.modules.combat;
+
+import com.example.tianyiclient.modules.Module;
+import com.example.tianyiclient.modules.Category;
+
+public class MyModule extends Module {
+    public MyModule() {
+        super("模块名", "模块描述", Category.战斗);  // 必须调用父类构造函数
+    }
+    
+    @Override
+    protected void onEnable() {
+        // 模块启用逻辑
+    }
+    
+    @Override
+    protected void onDisable() {
+        // 模块禁用逻辑
+    }
+}
+⚙️ 2. SETTING 系统
+2.1 Setting基类
+java
+// 构造函数
+Setting(String name, String description, T defaultValue)
+
+// 通用方法
+getName()        // 获取设置名称
+getDescription() // 获取描述
+getValue()       // 获取当前值
+setValue(T)      // 设置值
+2.2 BoolSetting（布尔设置）
+java
+// 构造函数
+BoolSetting(String name, String description, boolean defaultValue)
+
+// 示例
+BoolSetting showInfo = new BoolSetting("显示信息", "是否显示额外信息", true);
+addSetting(showInfo);
+
+// 使用
+boolean isEnabled = showInfo.getValue();  // 获取布尔值
+showInfo.setValue(false);                 // 设置布尔值
+showInfo.toggle();                        // 切换布尔值
+showInfo.isEnabled();                     // 检查是否启用
+2.3 IntegerSetting（整数设置）
+java
+// 构造函数（带范围）
+IntegerSetting(String name, String description, Integer defaultValue, int min, int max)
+
+// 示例
+IntegerSetting cps = new IntegerSetting("CPS", "每秒点击次数", 10, 1, 20);
+addSetting(cps);
+
+// 使用
+int value = cps.getValue();      // 获取整数值
+cps.setValue(15);                // 设置整数值
+cps.getMin();                    // 获取最小值
+cps.getMax();                    // 获取最大值
+2.4 DoubleSetting（双精度设置）
+java
+// 构造函数
+DoubleSetting(String name, String description, double defaultValue, double min, double max)
+
+// 示例
+DoubleSetting speed = new DoubleSetting("速度", "移动速度倍数", 1.5, 0.1, 5.0);
+addSetting(speed);
+
+// 使用
+double value = speed.getValue();  // 获取双精度值
+2.5 KeybindSetting（快捷键设置）
+java
+// 构造函数
+KeybindSetting(String name, String description, Module module)
+
+// 注意：此设置项会自动创建，不需要手动添加
+// 模块会自动包含一个KeybindSetting
+2.6 设置项添加流程
+java
+public class MyModule extends Module {
+    // 声明为字段
+    private final BoolSetting setting1;
+    private final IntegerSetting setting2;
+    
+    public MyModule() {
+        super("模块名", "描述", Category.战斗);
+        
+        // 初始化并添加设置
+        setting1 = addSetting(new BoolSetting("开关", "启用/禁用功能", true));
+        setting2 = addSetting(new IntegerSetting("次数", "重复次数", 5, 1, 20));
+    }
+}
+🎯 3. CATEGORY 枚举
+java
+// 可用分类（对应中文显示）：
+Category.战斗     // Combat
+Category.移动     // Movement  
+Category.渲染     // Render
+Category.玩家     // Player
+Category.世界     // World
+Category.其他     // Miscellaneous
+
+// 使用示例：
+public class MyModule extends Module {
+    public MyModule() {
+        super("模块名", "描述", Category.战斗);  // 选择对应分类
+    }
+}
+⚡ 4. EVENT 事件系统
+4.1 事件处理器注解
+java
+// 基本用法
+@EventHandler
+public void onEventName(EventType event) {
+    // 事件处理逻辑
+}
+
+// 完整注解参数
+@EventHandler(
+    priority = Priority.NORMAL,     // 优先级：HIGHEST, HIGH, NORMAL, LOW, LOWEST
+    receiveCancelled = false,       // 是否接收已取消的事件
+    ignoreCancelled = false         // 是否忽略事件取消状态
+)
+public void onEvent(EventType event) {
+    // 逻辑
+}
+4.2 TickEvent（游戏tick事件）
+java
+// 导入路径
+import com.example.tianyiclient.event.events.client.TickEvent;
+
+// 监听方法
+@EventHandler
+public void onTick(TickEvent event) {
+    // 重要：检查模块是否启用
+    if (!isEnabled()) return;
+    
+    // 检查游戏对象是否可用
+    if (mc.player == null || mc.world == null) return;
+    
+    // 获取事件信息
+    TickEvent.Phase phase = event.getPhase();        // START 或 END
+    long tickCount = event.getTickCount();           // tick计数器
+    float partialTicks = event.getPartialTicks();    // 部分tick时间
+    
+    // 模块逻辑...
+}
+
+// 阶段判断示例
+@EventHandler
+public void onTick(TickEvent event) {
+    if (!isEnabled()) return;
+    
+    if (event.getPhase() == TickEvent.Phase.START) {
+        // 每tick开始时执行
+    } else if (event.getPhase() == TickEvent.Phase.END) {
+        // 每tick结束时执行
+    }
+}
+4.3 其他可用事件（根据项目结构推测）
+java
+// 渲染事件
+@EventHandler
+public void onRender(RenderEvent event) {
+    // 渲染逻辑
+}
+
+// 按键事件
+@EventHandler
+public void onKey(KeyEvent event) {
+    // 按键处理
+}
+
+// 网络包事件
+@EventHandler
+public void onPacket(PacketEvent event) {
+    // 数据包处理
+}
+🔗 5. 实用工具和访问器
+5.1 Minecraft客户端访问
+java
+// Module基类已提供mc实例，直接使用：
+mc.player                // 当前玩家实体（可能为null）
+mc.world                 // 当前世界（可能为null）
+mc.interactionManager    // 交互管理器
+mc.textRenderer          // 文本渲染器
+mc.options               // 游戏选项
+mc.getWindow()           // 游戏窗口
+mc.currentScreen         // 当前屏幕
+
+// 安全访问模式
+if (mc.player != null && mc.world != null) {
+    // 安全地访问游戏对象
+    float health = mc.player.getHealth();
+    BlockPos pos = mc.player.getBlockPos();
+}
+5.2 物品栏和物品操作
+java
+// 检查副手物品
+ItemStack offhand = mc.player.getOffHandStack();
+if (offhand.getItem() == Items.TOTEM_OF_UNDYING) {
+    // 副手有图腾
+}
+
+// 遍历物品栏
+for (int i = 0; i < mc.player.getInventory().size(); i++) {
+    ItemStack stack = mc.player.getInventory().getStack(i);
+    if (stack.getItem() == Items.DIAMOND) {
+        // 找到钻石
+        int slot = i;  // 记住槽位
+    }
+}
+
+// 物品槽位说明：
+// 0-8:    快捷栏
+// 9-35:   背包
+// 36-44:  无效（？请确认）
+// 45:     副手槽位
+
+// 移动物品（交换槽位）
+mc.interactionManager.clickSlot(
+    mc.player.currentScreenHandler.syncId,  // 容器同步ID（0为玩家物品栏）
+    fromSlot,                               // 源槽位（0-45）
+    toSlot,                                 // 目标槽位（45是副手）
+    SlotActionType.PICKUP,                  // 操作类型：PICKUP, QUICK_MOVE等
+    mc.player                               // 玩家实体
+);
+
+// 完整的物品移动方法
+private void moveItem(int fromSlot, int toSlot) {
+    if (mc.player == null || mc.interactionManager == null) return;
+    
+    int syncId = mc.player.currentScreenHandler.syncId;
+    mc.interactionManager.clickSlot(syncId, fromSlot, 0, SlotActionType.PICKUP, mc.player);
+    mc.interactionManager.clickSlot(syncId, toSlot, 0, SlotActionType.PICKUP, mc.player);
+    
+    // 如果源槽位还有物品（交换时），需要再次点击
+    if (!mc.player.getInventory().getStack(fromSlot).isEmpty()) {
+        mc.interactionManager.clickSlot(syncId, fromSlot, 0, SlotActionType.PICKUP, mc.player);
+    }
+}
+5.3 玩家和实体操作
+java
+// 玩家属性
+float health = mc.player.getHealth();              // 生命值
+float absorption = mc.player.getAbsorptionAmount(); // 吸收护盾
+Vec3d pos = mc.player.getPos();                    // 位置坐标
+float yaw = mc.player.getYaw();                    // 水平视角
+float pitch = mc.player.getPitch();                // 垂直视角
+
+// 移动控制
+mc.player.setVelocity(x, y, z);                   // 设置速度
+mc.player.addVelocity(x, y, z);                   // 添加速度
+
+// 发送数据包（模拟动作）
+mc.player.networkHandler.sendPacket(...);
+5.4 渲染和HUD
+java
+// 文本渲染
+mc.textRenderer.drawWithShadow(
+    matrices,      // MatrixStack
+    text,          // 文本内容
+    x, y,          // 屏幕坐标
+    color          // ARGB颜色（0xAARRGGBB）
+);
+
+// 获取文本宽度
+int width = mc.textRenderer.getWidth("文本内容");
+
+// 屏幕尺寸
+int screenWidth = mc.getWindow().getScaledWidth();
+int screenHeight = mc.getWindow().getScaledHeight();
+
+// 绘制矩形
+context.fill(x1, y1, x2, y2, color);  // 填充矩形
+📝 6. 完整模块开发模板
+java
+package com.example.tianyiclient.modules.[category];
+
+import com.example.tianyiclient.modules.Module;
+import com.example.tianyiclient.modules.Category;
+import com.example.tianyiclient.settings.*;
+import com.example.tianyiclient.event.EventHandler;
+import com.example.tianyiclient.event.events.client.TickEvent;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.screen.slot.SlotActionType;
+
+public class ModuleTemplate extends Module {
+    
+    // 1. 声明设置项（使用final修饰）
+    private final BoolSetting setting1;
+    private final IntegerSetting setting2;
+    private final DoubleSetting setting3;
+    
+    // 2. 声明状态变量
+    private int counter = 0;
+    private boolean isWorking = false;
+    
+    public ModuleTemplate() {
+        // 3. 调用父类构造函数（必须）
+        super("模块名称", "模块功能描述", Category.战斗);
+        
+        // 4. 初始化设置项并添加到模块
+        setting1 = addSetting(new BoolSetting(
+            "功能开关", 
+            "启用或禁用主要功能", 
+            true  // 默认值
+        ));
+        
+        setting2 = addSetting(new IntegerSetting(
+            "重复次数",
+            "功能执行的重复次数",
+            5,    // 默认值
+            1,    // 最小值
+            20    // 最大值
+        ));
+        
+        setting3 = addSetting(new DoubleSetting(
+            "强度设置",
+            "功能效果的强度",
+            1.0,  // 默认值
+            0.1,  // 最小值
+            5.0   // 最大值
+        ));
+        
+        // 5. 可选：设置默认快捷键（GLFW键码）
+        setKeybind(org.lwjgl.glfw.GLFW.GLFW_KEY_R);
+    }
+    
+    @Override
+    protected void onEnable() {
+        // 6. 模块启用时的初始化
+        counter = 0;
+        isWorking = false;
+        
+        // 可选：打印调试信息
+        System.out.println("[模块名称] 已启用");
+    }
+    
+    @Override
+    protected void onDisable() {
+        // 7. 模块禁用时的清理
+        isWorking = false;
+        
+        // 可选：打印调试信息
+        System.out.println("[模块名称] 已禁用");
+    }
+    
+    @EventHandler
+    public void onTick(TickEvent event) {
+        // 8. 安全检查（必须）
+        if (!isEnabled()) return;
+        if (mc.player == null || mc.world == null) return;
+        
+        // 9. 获取设置值
+        boolean shouldWork = setting1.getValue();
+        int repeatCount = setting2.getValue();
+        double strength = setting3.getValue();
+        
+        // 10. 模块主要逻辑
+        if (shouldWork && !isWorking) {
+            startWorking(repeatCount, strength);
+        }
+        
+        // 11. 持续的逻辑处理
+        if (isWorking) {
+            processWorking();
+        }
+    }
+    
+    // 12. 私有辅助方法
+    private void startWorking(int count, double strength) {
+        isWorking = true;
+        counter = count;
+        // 具体逻辑...
+    }
+    
+    private void processWorking() {
+        if (counter > 0) {
+            counter--;
+            // 每次tick执行的操作...
+        } else {
+            isWorking = false;
+        }
+    }
+}
