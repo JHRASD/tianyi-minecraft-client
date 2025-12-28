@@ -220,7 +220,7 @@ public abstract class HudElement {
      * 旧的兼容方法 - 通过描述查找设置
      */
     @SuppressWarnings("unchecked")
-    protected <T> T getSettingByDescription(String descriptionPart, Class<T> type) {
+    public <T> T getSettingByDescription(String descriptionPart, Class<T> type) {
         for (Setting<?> setting : allSettings) {
             if (setting.getDescription().contains(descriptionPart)) {
                 Object value = setting.getValue();

@@ -102,6 +102,7 @@ TianyiClient/   mc1.21.8版本
 └── mixin/
     ├── ClientPlayerEntityMixin.java
     ├── ClientPlayNetworkHandlerMixin.java//这个是空的
+    ├── ClientConnectionMixin.java.java
     ├── ExampleMixin.java
     ├── InGameHudMixin.java
     ├── KeyboardMixin.java

@@ -1,6 +1,6 @@
 package com.example.tianyiclient.managers;
 
-
+import com.example.tianyiclient.event.EventBus;
 import com.example.tianyiclient.modules.Module;
 import com.example.tianyiclient.modules.Category;
 
@@ -10,7 +10,6 @@ import java.util.List;
 public class ModuleManager {
     private final List<Module> modules = new ArrayList<>();
     private KeybindManager keybindManager;
-
 
     /** 初始化管理器（在主客户端类中调用） */
     public void init() {
@@ -24,19 +23,19 @@ public class ModuleManager {
         System.out.println("[ModuleManager] 初始化完成");
     }
 
-
-
     /** 注册模块 */
     public void register(Module module) {
         modules.add(module);
         System.out.println("[ModuleManager] 注册模块: " + module.getName());
 
+        // 新增：将模块注册到EventBus
+        EventBus.getInstance().register(module);
+        System.out.println("[ModuleManager] 模块注册到EventBus: " + module.getName());
+
         // 注册模块的快捷键（如果存在）
         if (module.getKeybind() != 0 && keybindManager != null) {
             keybindManager.registerKeybind(module, module.getKeybind());
         }
-
-
     }
 
     /** 注册所有模块的快捷键 */
@@ -95,6 +94,4 @@ public class ModuleManager {
             registerAllKeybinds();
         }
     }
-
-
 }

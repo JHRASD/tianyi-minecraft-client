@@ -28,12 +28,13 @@ dependencies {
 	// Fabric API
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fapi_version}"
 
-	// Mixin 依赖 - 使用 Meteor 的方式
+	// Mixin 依赖 -
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	compileOnly 'org.spongepowered:mixin:0.8.5'
 
 	// JSON 库
 	implementation 'org.json:json:20230227'
+	implementation 'com.google.code.gson:gson:2.10.1'
 }
 
 loom {

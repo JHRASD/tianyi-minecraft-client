@@ -1,5 +1,7 @@
 package com.example.tianyiclient.settings;
 
+import com.example.tianyiclient.config.ConfigManager;
+
 public abstract class Setting<T> {
     private final String name;
     private final String description;
@@ -15,6 +17,12 @@ public abstract class Setting<T> {
     public String getDescription() { return description; }
 
     public T getValue() { return value; }
-    public void setValue(T value) { this.value = value; }
 
+    public void setValue(T value) {
+        if (this.value != value) {
+            this.value = value;
+            // 标记配置需要保存
+            ConfigManager.getInstance().markDirty();
+        }
+    }
 }
