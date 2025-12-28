@@ -1,5 +1,5 @@
 tianyi-minecraft-client
-一个由大语言模型开发Minecraft 1.21.8 客户端模组，项目已暂停，烂在GitHub上吧
+一个由大语言模型开发Minecraft 1.21.8 客户端模组，项目已暂停，烂在GitHub上罢
 
 折腾几个月实在是累了（给了AI那些方法类，却还是猜项目中并不存在的方法名和类结构，为了纠正AI的一个错误，我需要反复向它提供项目结构、已有类代码，并解释错误信息.
 Mixin更是费劲，网上找不到那些映射方法名，只好去复制meteor开源项目的mixin来让ai知道映射方法名...然而还是一堆奇奇怪怪的问题，一个全亮的模块都写不好.）
@@ -10,6 +10,7 @@ Mixin更是费劲，网上找不到那些映射方法名，只好去复制meteor
 ![运行图像](docs/2.png)
 ![运行图像](docs/3.png)
 ![运行图像](docs/4.png)
+
 
 TianyiClient/   mc1.21.8版本
 ├── src/main/java/com/example/tianyiclient/
