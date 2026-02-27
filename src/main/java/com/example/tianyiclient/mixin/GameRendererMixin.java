@@ -1,27 +1,24 @@
-// mixin/LightmapTextureManagerMixin.java
 package com.example.tianyiclient.mixin;
 
-import com.example.tianyiclient.modules.render.Fullbright;
-import com.example.tianyiclient.TianyiClient;
-import net.minecraft.client.render.LightmapTextureManager;
+import net.minecraft.client.render.Camera;
+import net.minecraft.client.render.GameRenderer;
+import net.minecraft.client.render.RenderTickCounter;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(LightmapTextureManager.class)
+@Mixin(GameRenderer.class)
 public class GameRendererMixin {
 
-    @Inject(method = "getBrightness", at = @At("HEAD"), cancellable = true)
-    private static void onGetBrightness(CallbackInfoReturnable<Float> cir) {
-        // 检查Fullbright模块是否启用
-        Fullbright module = (Fullbright) TianyiClient.getInstance()
-                .getModuleManager()
-                .getModuleByName("夜视");
+    @Inject(method = "renderWorld", at = @At("HEAD"))
+    private void onRenderWorld(RenderTickCounter tickCounter, CallbackInfo ci) {
+        // 发布 WorldRenderEvent（世界渲染前）
+    }
 
-        if (module != null && module.isEnabled()) {
-            // 返回最大亮度
-            cir.setReturnValue(1.0F);
-        }
+    @Inject(method = "getFov", at = @At("RETURN"), cancellable = true)
+    private void onGetFov(Camera camera, float tickDelta, boolean changingFov, CallbackInfoReturnable<Double> cir) {
+        // 修改 FOV
     }
 }

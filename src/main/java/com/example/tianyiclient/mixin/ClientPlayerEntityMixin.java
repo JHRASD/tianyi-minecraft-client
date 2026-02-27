@@ -1,43 +1,42 @@
 package com.example.tianyiclient.mixin;
 
-import com.example.tianyiclient.event.EventBus;
-import com.example.tianyiclient.event.events.player.MoveEvent;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ClientPlayerEntity.class)
-public class ClientPlayerEntityMixin {
+public abstract class ClientPlayerEntityMixin {
 
-    @Unique
-    private Vec3d tianyi$previousPosition;
+    @Shadow private boolean lastSprinting;            // field_3919
+    @Shadow private boolean lastOnGround;             // field_3920
+    @Shadow private boolean autoJumpEnabled;          // field_3927
 
-    /**
-     * 注入到 ClientPlayerEntity 的 tick() 方法开头。
-     * tick() 方法是肯定存在的，可以确保Mixin能正常注入，验证事件系统连通性。
-     */
-    @Inject(method = "tick", at = @At("HEAD"))
-    private void onTickStart(CallbackInfo ci) {
-        ClientPlayerEntity player = (ClientPlayerEntity)(Object)this;
-        this.tianyi$previousPosition = player.getPos();
+    // 辅助方法
+    public boolean getLastSprinting() { return this.lastSprinting; }
+    public boolean getLastOnGround() { return this.lastOnGround; }
+    public boolean isAutoJumpEnabled() { return this.autoJumpEnabled; }
+
+    @Inject(method = "sendMovementPackets", at = @At("HEAD"), cancellable = true)
+    private void onSendMovementPackets(CallbackInfo ci) {
+        // 取消发送移动包
     }
 
-    /**
-     * 注入到 ClientPlayerEntity 的 tick() 方法末尾。
-     * 比较移动前后的位置，如果发生变化则触发 MoveEvent。
-     */
-    @Inject(method = "tick", at = @At("TAIL"))
-    private void onTickEnd(CallbackInfo ci) {
-        ClientPlayerEntity player = (ClientPlayerEntity)(Object)this;
-        Vec3d currentPosition = player.getPos();
+    @Inject(method = "pushOutOfBlocks", at = @At("HEAD"), cancellable = true)
+    private void onPushOutOfBlocks(double x, double z, CallbackInfo ci) {
+        // 取消方块推送
+    }
 
-        // 安全判断：如果记录过之前的位置且位置发生了变化
-        if (this.tianyi$previousPosition != null && !this.tianyi$previousPosition.equals(currentPosition)) {
-            EventBus.getInstance().post(new MoveEvent(this.tianyi$previousPosition, currentPosition));
-        }
+    @Inject(method = "hasMovementInput", at = @At("RETURN"), cancellable = true)
+    private void onHasMovementInput(CallbackInfoReturnable<Boolean> cir) {
+        // 强制认为有移动输入：cir.setReturnValue(true);
+    }
+
+    @Inject(method = "shouldSlowDown", at = @At("RETURN"), cancellable = true)
+    private void onShouldSlowDown(CallbackInfoReturnable<Boolean> cir) {
+        // 取消减速（灵魂沙等）：cir.setReturnValue(false);
     }
 }

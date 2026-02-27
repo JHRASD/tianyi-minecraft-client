@@ -14,9 +14,6 @@ repositories {
 	maven {
 		url 'https://maven.fabricmc.net/'
 	}
-	maven {
-		url 'https://repo.spongepowered.org/repository/maven-public/'
-	}
 }
 
 dependencies {
@@ -28,10 +25,6 @@ dependencies {
 	// Fabric API
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fapi_version}"
 
-	// Mixin 依赖 -
-	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-	compileOnly 'org.spongepowered:mixin:0.8.5'
-
 	// JSON 库
 	implementation 'org.json:json:20230227'
 	implementation 'com.google.code.gson:gson:2.10.1'
@@ -40,7 +33,33 @@ dependencies {
 loom {
 	// Mixin 配置
 	mixin {
-		defaultRefmapName = "tianyiclient-refmap.json"
+		defaultRefmapName = "${project.archives_base_name}-refmap.json"
+		// 强制使用默认的 refmap 策略
+		useLegacyMixinAp = false
+	}
+
+	// 暂时注释掉 access widener
+	// accessWidenerPath = file("src/main/resources/tianyiclient.accesswidener")
+
+	// 添加运行配置
+	runs {
+		client {
+			client()
+			setConfigName("Fabric Client")
+			ideConfigGenerated(true)
+			runDir("run")
+			// 添加 VM 参数，输出 Mixin 调试信息
+			vmArg "-Dmixin.debug.export=true"
+			vmArg "-Dmixin.debug.verbose=true"
+			vmArg "-Dmixin.debug.countInjections=true"
+		}
+
+		server {
+			server()
+			setConfigName("Fabric Server")
+			ideConfigGenerated(true)
+			runDir("run")
+		}
 	}
 }
 
@@ -58,6 +77,7 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 21
+	it.options.encoding = "UTF-8"
 }
 
 java {
@@ -66,19 +86,26 @@ java {
 	targetCompatibility = JavaVersion.VERSION_21
 }
 
+// runClient 配置
+tasks.named('runClient') {
+	jvmArgs '-Dfile.encoding=UTF-8'
+}
+
+// 添加一个任务来查看映射
+tasks.register('printMappings') {
+	doLast {
+		println "Minecraft Version: ${project.minecraft_version}"
+		println "Yarn Mappings: ${project.yarn_mappings}"
+		println "Loader Version: ${project.loader_version}"
+		println "Fabric API Version: ${project.fapi_version}"
+	}
+}
+
 publishing {
 	publications {
 		create("mavenJava", MavenPublication) {
 			artifactId = project.archives_base_name
 			from components.java
 		}
-	}
-
-	repositories {
-		// 配置发布仓库（可选）
-	}
-	// ✅ 正确的位置：runClient 任务配置应该放在文件根层级，与其他任务（如java）并列
-	tasks.named('runClient') {
-		jvmArgs '-Dfile.encoding=UTF-8'
 	}
 }

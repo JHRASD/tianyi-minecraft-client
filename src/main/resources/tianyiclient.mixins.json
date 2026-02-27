@@ -1,16 +1,30 @@
 {
 	"required": true,
-	"minVersion": "0.8",
+	"minVersion": "0.8.5",
 	"package": "com.example.tianyiclient.mixin",
-	"compatibilityLevel": "JAVA_21",
+	"compatibilityLevel": "JAVA_17",
 	"client": [
-		"ClientPlayerEntityMixin",
+
 		"ClientConnectionMixin",
-		"ClientPlayNetworkHandlerMixin",
-		"KeyboardMixin",
+		"PlayerMoveC2SPacketMixin",
+		"EntityVelocityUpdateS2CPacketMixin",
+		"EntitySpawnS2CPacketMixin",
+
+		"LivingEntityMixin",
+		"PlayerEntityMixin",
+		"ClientPlayerEntityMixin",
+		"EntityMixin",
+
+
+		"InGameHudMixin",
+		"GameRendererMixin",
+		"WorldRendererMixin",
+		"EntityRendererMixin",
+
+
 		"MinecraftClientMixin",
-		"TitleScreenMixin",
-		"InGameHudMixin"
+		"KeyboardMixin",
+		"MouseMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

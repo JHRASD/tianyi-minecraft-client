@@ -1,0 +1,2203 @@
+卷 系统 的文件夹 PATH 列表
+卷序列号为 88F5-E5D8
+C:.
+│  .gitattributes
+│  .gitignore
+│  build.gradle
+│  gradle.properties
+│  gradlew
+│  gradlew.bat
+│  LICENSE
+│  Mixin一些签名.txt
+│  project_structure.txt
+│  README.md
+│  settings.gradle
+│  TIANYI CLIENT 模块开发参考手册.txt
+│  如何写端‘.txt
+│  开发摘要.md
+│  核心CPVP Mixin，以下是所有关键方法的完整签名：.txt
+│  目标.txt
+│  项目结构.txt
+│  
+├─.github
+│  └─workflows
+│          build.yml
+│          
+├─.gradle
+│  │  file-system.probe
+│  │  gradle-8.11.1-bin.zip
+│  │  
+│  ├─8.14.2
+│  │  │  gc.properties
+│  │  │  
+│  │  ├─checksums
+│  │  │      checksums.lock
+│  │  │      md5-checksums.bin
+│  │  │      sha1-checksums.bin
+│  │  │      
+│  │  ├─executionHistory
+│  │  │      executionHistory.bin
+│  │  │      executionHistory.lock
+│  │  │      
+│  │  ├─expanded
+│  │  ├─fileChanges
+│  │  │      last-build.bin
+│  │  │      
+│  │  ├─fileHashes
+│  │  │      fileHashes.bin
+│  │  │      fileHashes.lock
+│  │  │      resourceHashesCache.bin
+│  │  │      
+│  │  └─vcsMetadata
+│  ├─8.14.3
+│  │  │  gc.properties
+│  │  │  
+│  │  ├─checksums
+│  │  │      checksums.lock
+│  │  │      md5-checksums.bin
+│  │  │      sha1-checksums.bin
+│  │  │      
+│  │  ├─expanded
+│  │  ├─fileChanges
+│  │  │      last-build.bin
+│  │  │      
+│  │  ├─fileHashes
+│  │  │      fileHashes.lock
+│  │  │      
+│  │  └─vcsMetadata
+│  ├─9.1.0
+│  │  │  gc.properties
+│  │  │  
+│  │  ├─checksums
+│  │  │      checksums.lock
+│  │  │      md5-checksums.bin
+│  │  │      sha1-checksums.bin
+│  │  │      
+│  │  ├─executionHistory
+│  │  │      executionHistory.bin
+│  │  │      executionHistory.lock
+│  │  │      
+│  │  ├─expanded
+│  │  │      expanded.lock
+│  │  │      
+│  │  ├─fileChanges
+│  │  │      last-build.bin
+│  │  │      
+│  │  ├─fileHashes
+│  │  │      fileHashes.bin
+│  │  │      fileHashes.lock
+│  │  │      resourceHashesCache.bin
+│  │  │      
+│  │  └─vcsMetadata
+│  ├─buildOutputCleanup
+│  │      buildOutputCleanup.lock
+│  │      cache.properties
+│  │      outputFiles.bin
+│  │      
+│  ├─loom-cache
+│  │  │  launch.cfg
+│  │  │  log4j.xml
+│  │  │  remapClasspath.txt
+│  │  │  
+│  │  ├─minecraftMaven
+│  │  │  └─net
+│  │  │      └─minecraft
+│  │  │          ├─minecraft-merged-503b555a3d
+│  │  │          │  ├─1.21.8-loom.mappings.1_21_8.layered+hash.2198-v2
+│  │  │          │  │      minecraft-merged-503b555a3d-1.21.8-loom.mappings.1_21_8.layered+hash.2198-v2.jar
+│  │  │          │  │      minecraft-merged-503b555a3d-1.21.8-loom.mappings.1_21_8.layered+hash.2198-v2.pom
+│  │  │          │  │      
+│  │  │          │  └─1.21.8-net.fabricmc.yarn.1_21_8.1.21.8+build.1-v2
+│  │  │          │          minecraft-merged-503b555a3d-1.21.8-net.fabricmc.yarn.1_21_8.1.21.8+build.1-v2.jar
+│  │  │          │          minecraft-merged-503b555a3d-1.21.8-net.fabricmc.yarn.1_21_8.1.21.8+build.1-v2.pom
+│  │  │          │          
+│  │  │          └─minecraft-merged-b07cf08c30
+│  │  │              └─1.21.8-net.fabricmc.yarn.1_21_8.1.21.8+build.1-v2
+│  │  │                      minecraft-merged-b07cf08c30-1.21.8-net.fabricmc.yarn.1_21_8.1.21.8+build.1-v2.jar
+│  │  │                      minecraft-merged-b07cf08c30-1.21.8-net.fabricmc.yarn.1_21_8.1.21.8+build.1-v2.pom
+│  │  │                      
+│  │  ├─natives
+│  │  │  └─1.21.8
+│  │  ├─remapped_mods
+│  │  │  ├─net_fabricmc_yarn_1_21_8_1_21_8_build_1_v2
+│  │  │  │  └─net
+│  │  │  │      └─fabricmc
+│  │  │  │          └─fabric-api
+│  │  │  │              ├─fabric-api
+│  │  │  │              │  └─0.129.0+1.21.8
+│  │  │  │              │          fabric-api-0.129.0+1.21.8-sources.jar
+│  │  │  │              │          fabric-api-0.129.0+1.21.8.jar
+│  │  │  │              │          fabric-api-0.129.0+1.21.8.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-api-base
+│  │  │  │              │  └─0.4.64+9ec45cd8f3
+│  │  │  │              │          fabric-api-base-0.4.64+9ec45cd8f3-sources.jar
+│  │  │  │              │          fabric-api-base-0.4.64+9ec45cd8f3.jar
+│  │  │  │              │          fabric-api-base-0.4.64+9ec45cd8f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-api-lookup-api-v1
+│  │  │  │              │  └─1.6.100+946bf4c3f3
+│  │  │  │              │          fabric-api-lookup-api-v1-1.6.100+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-api-lookup-api-v1-1.6.100+946bf4c3f3.jar
+│  │  │  │              │          fabric-api-lookup-api-v1-1.6.100+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-biome-api-v1
+│  │  │  │              │  └─16.0.11+946bf4c3f3
+│  │  │  │              │          fabric-biome-api-v1-16.0.11+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-biome-api-v1-16.0.11+946bf4c3f3.jar
+│  │  │  │              │          fabric-biome-api-v1-16.0.11+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-block-api-v1
+│  │  │  │              │  └─1.1.3+946bf4c3f3
+│  │  │  │              │          fabric-block-api-v1-1.1.3+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-block-api-v1-1.1.3+946bf4c3f3.jar
+│  │  │  │              │          fabric-block-api-v1-1.1.3+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-block-view-api-v2
+│  │  │  │              │  └─1.0.31+946bf4c3f3
+│  │  │  │              │          fabric-block-view-api-v2-1.0.31+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-block-view-api-v2-1.0.31+946bf4c3f3.jar
+│  │  │  │              │          fabric-block-view-api-v2-1.0.31+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-client-gametest-api-v1
+│  │  │  │              │  └─4.2.5+8a98c3fcf3
+│  │  │  │              │          fabric-client-gametest-api-v1-4.2.5+8a98c3fcf3-sources.jar
+│  │  │  │              │          fabric-client-gametest-api-v1-4.2.5+8a98c3fcf3.jar
+│  │  │  │              │          fabric-client-gametest-api-v1-4.2.5+8a98c3fcf3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-command-api-v2
+│  │  │  │              │  └─2.2.53+946bf4c3f3
+│  │  │  │              │          fabric-command-api-v2-2.2.53+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-command-api-v2-2.2.53+946bf4c3f3.jar
+│  │  │  │              │          fabric-command-api-v2-2.2.53+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-content-registries-v0
+│  │  │  │              │  └─10.0.18+946bf4c3f3
+│  │  │  │              │          fabric-content-registries-v0-10.0.18+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-content-registries-v0-10.0.18+946bf4c3f3.jar
+│  │  │  │              │          fabric-content-registries-v0-10.0.18+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-convention-tags-v1
+│  │  │  │              │  └─2.1.40+7f945d5bf3
+│  │  │  │              │          fabric-convention-tags-v1-2.1.40+7f945d5bf3-sources.jar
+│  │  │  │              │          fabric-convention-tags-v1-2.1.40+7f945d5bf3.jar
+│  │  │  │              │          fabric-convention-tags-v1-2.1.40+7f945d5bf3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-convention-tags-v2
+│  │  │  │              │  └─2.15.5+eb5df52ff3
+│  │  │  │              │          fabric-convention-tags-v2-2.15.5+eb5df52ff3-sources.jar
+│  │  │  │              │          fabric-convention-tags-v2-2.15.5+eb5df52ff3.jar
+│  │  │  │              │          fabric-convention-tags-v2-2.15.5+eb5df52ff3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-crash-report-info-v1
+│  │  │  │              │  └─0.3.15+946bf4c3f3
+│  │  │  │              │          fabric-crash-report-info-v1-0.3.15+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-crash-report-info-v1-0.3.15+946bf4c3f3.jar
+│  │  │  │              │          fabric-crash-report-info-v1-0.3.15+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-data-attachment-api-v1
+│  │  │  │              │  └─1.8.10+946bf4c3f3
+│  │  │  │              │          fabric-data-attachment-api-v1-1.8.10+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-data-attachment-api-v1-1.8.10+946bf4c3f3.jar
+│  │  │  │              │          fabric-data-attachment-api-v1-1.8.10+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-data-generation-api-v1
+│  │  │  │              │  └─23.2.4+55e55d29f3
+│  │  │  │              │          fabric-data-generation-api-v1-23.2.4+55e55d29f3-sources.jar
+│  │  │  │              │          fabric-data-generation-api-v1-23.2.4+55e55d29f3.jar
+│  │  │  │              │          fabric-data-generation-api-v1-23.2.4+55e55d29f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-dimensions-v1
+│  │  │  │              │  └─4.0.19+946bf4c3f3
+│  │  │  │              │          fabric-dimensions-v1-4.0.19+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-dimensions-v1-4.0.19+946bf4c3f3.jar
+│  │  │  │              │          fabric-dimensions-v1-4.0.19+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-entity-events-v1
+│  │  │  │              │  └─2.1.1+c9e47273f3
+│  │  │  │              │          fabric-entity-events-v1-2.1.1+c9e47273f3-sources.jar
+│  │  │  │              │          fabric-entity-events-v1-2.1.1+c9e47273f3.jar
+│  │  │  │              │          fabric-entity-events-v1-2.1.1+c9e47273f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-events-interaction-v0
+│  │  │  │              │  └─4.0.23+946bf4c3f3
+│  │  │  │              │          fabric-events-interaction-v0-4.0.23+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-events-interaction-v0-4.0.23+946bf4c3f3.jar
+│  │  │  │              │          fabric-events-interaction-v0-4.0.23+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-game-rule-api-v1
+│  │  │  │              │  └─1.0.73+c64c9c5bf3
+│  │  │  │              │          fabric-game-rule-api-v1-1.0.73+c64c9c5bf3-sources.jar
+│  │  │  │              │          fabric-game-rule-api-v1-1.0.73+c64c9c5bf3.jar
+│  │  │  │              │          fabric-game-rule-api-v1-1.0.73+c64c9c5bf3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-gametest-api-v1
+│  │  │  │              │  └─3.1.9+39ce47f5f3
+│  │  │  │              │          fabric-gametest-api-v1-3.1.9+39ce47f5f3-sources.jar
+│  │  │  │              │          fabric-gametest-api-v1-3.1.9+39ce47f5f3.jar
+│  │  │  │              │          fabric-gametest-api-v1-3.1.9+39ce47f5f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-item-api-v1
+│  │  │  │              │  └─11.4.3+946bf4c3f3
+│  │  │  │              │          fabric-item-api-v1-11.4.3+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-item-api-v1-11.4.3+946bf4c3f3.jar
+│  │  │  │              │          fabric-item-api-v1-11.4.3+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-item-group-api-v1
+│  │  │  │              │  └─4.2.13+946bf4c3f3
+│  │  │  │              │          fabric-item-group-api-v1-4.2.13+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-item-group-api-v1-4.2.13+946bf4c3f3.jar
+│  │  │  │              │          fabric-item-group-api-v1-4.2.13+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-key-binding-api-v1
+│  │  │  │              │  └─1.0.65+946bf4c3f3
+│  │  │  │              │          fabric-key-binding-api-v1-1.0.65+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-key-binding-api-v1-1.0.65+946bf4c3f3.jar
+│  │  │  │              │          fabric-key-binding-api-v1-1.0.65+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-lifecycle-events-v1
+│  │  │  │              │  └─2.6.3+db4dfd85f3
+│  │  │  │              │          fabric-lifecycle-events-v1-2.6.3+db4dfd85f3-sources.jar
+│  │  │  │              │          fabric-lifecycle-events-v1-2.6.3+db4dfd85f3.jar
+│  │  │  │              │          fabric-lifecycle-events-v1-2.6.3+db4dfd85f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-loot-api-v2
+│  │  │  │              │  └─3.0.55+3f89f5a5f3
+│  │  │  │              │          fabric-loot-api-v2-3.0.55+3f89f5a5f3-sources.jar
+│  │  │  │              │          fabric-loot-api-v2-3.0.55+3f89f5a5f3.jar
+│  │  │  │              │          fabric-loot-api-v2-3.0.55+3f89f5a5f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-loot-api-v3
+│  │  │  │              │  └─2.0.2+946bf4c3f3
+│  │  │  │              │          fabric-loot-api-v3-2.0.2+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-loot-api-v3-2.0.2+946bf4c3f3.jar
+│  │  │  │              │          fabric-loot-api-v3-2.0.2+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-message-api-v1
+│  │  │  │              │  └─6.1.1+946bf4c3f3
+│  │  │  │              │          fabric-message-api-v1-6.1.1+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-message-api-v1-6.1.1+946bf4c3f3.jar
+│  │  │  │              │          fabric-message-api-v1-6.1.1+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-model-loading-api-v1
+│  │  │  │              │  └─5.2.5+946bf4c3f3
+│  │  │  │              │          fabric-model-loading-api-v1-5.2.5+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-model-loading-api-v1-5.2.5+946bf4c3f3.jar
+│  │  │  │              │          fabric-model-loading-api-v1-5.2.5+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-networking-api-v1
+│  │  │  │              │  └─5.0.1+946bf4c3f3
+│  │  │  │              │          fabric-networking-api-v1-5.0.1+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-networking-api-v1-5.0.1+946bf4c3f3.jar
+│  │  │  │              │          fabric-networking-api-v1-5.0.1+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-object-builder-api-v1
+│  │  │  │              │  └─21.1.7+946bf4c3f3
+│  │  │  │              │          fabric-object-builder-api-v1-21.1.7+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-object-builder-api-v1-21.1.7+946bf4c3f3.jar
+│  │  │  │              │          fabric-object-builder-api-v1-21.1.7+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-particles-v1
+│  │  │  │              │  └─4.1.7+946bf4c3f3
+│  │  │  │              │          fabric-particles-v1-4.1.7+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-particles-v1-4.1.7+946bf4c3f3.jar
+│  │  │  │              │          fabric-particles-v1-4.1.7+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-recipe-api-v1
+│  │  │  │              │  └─8.1.14+946bf4c3f3
+│  │  │  │              │          fabric-recipe-api-v1-8.1.14+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-recipe-api-v1-8.1.14+946bf4c3f3.jar
+│  │  │  │              │          fabric-recipe-api-v1-8.1.14+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-registry-sync-v0
+│  │  │  │              │  └─6.1.27+946bf4c3f3
+│  │  │  │              │          fabric-registry-sync-v0-6.1.27+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-registry-sync-v0-6.1.27+946bf4c3f3.jar
+│  │  │  │              │          fabric-registry-sync-v0-6.1.27+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-renderer-api-v1
+│  │  │  │              │  └─7.0.2+946bf4c3f3
+│  │  │  │              │          fabric-renderer-api-v1-7.0.2+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-renderer-api-v1-7.0.2+946bf4c3f3.jar
+│  │  │  │              │          fabric-renderer-api-v1-7.0.2+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-renderer-indigo
+│  │  │  │              │  └─4.0.2+946bf4c3f3
+│  │  │  │              │          fabric-renderer-indigo-4.0.2+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-renderer-indigo-4.0.2+946bf4c3f3.jar
+│  │  │  │              │          fabric-renderer-indigo-4.0.2+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-rendering-fluids-v1
+│  │  │  │              │  └─3.1.30+fa6cb72bf3
+│  │  │  │              │          fabric-rendering-fluids-v1-3.1.30+fa6cb72bf3-sources.jar
+│  │  │  │              │          fabric-rendering-fluids-v1-3.1.30+fa6cb72bf3.jar
+│  │  │  │              │          fabric-rendering-fluids-v1-3.1.30+fa6cb72bf3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-rendering-v1
+│  │  │  │              │  └─12.4.0+e8d43c76f3
+│  │  │  │              │          fabric-rendering-v1-12.4.0+e8d43c76f3-sources.jar
+│  │  │  │              │          fabric-rendering-v1-12.4.0+e8d43c76f3.jar
+│  │  │  │              │          fabric-rendering-v1-12.4.0+e8d43c76f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-resource-conditions-api-v1
+│  │  │  │              │  └─5.0.24+946bf4c3f3
+│  │  │  │              │          fabric-resource-conditions-api-v1-5.0.24+946bf4c3f3.jar
+│  │  │  │              │          fabric-resource-conditions-api-v1-5.0.24+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-resource-loader-v0
+│  │  │  │              │  └─3.1.11+946bf4c3f3
+│  │  │  │              │          fabric-resource-loader-v0-3.1.11+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-resource-loader-v0-3.1.11+946bf4c3f3.jar
+│  │  │  │              │          fabric-resource-loader-v0-3.1.11+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-screen-api-v1
+│  │  │  │              │  └─2.1.0+277ecf7df3
+│  │  │  │              │          fabric-screen-api-v1-2.1.0+277ecf7df3-sources.jar
+│  │  │  │              │          fabric-screen-api-v1-2.1.0+277ecf7df3.jar
+│  │  │  │              │          fabric-screen-api-v1-2.1.0+277ecf7df3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-screen-handler-api-v1
+│  │  │  │              │  └─1.3.136+946bf4c3f3
+│  │  │  │              │          fabric-screen-handler-api-v1-1.3.136+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-screen-handler-api-v1-1.3.136+946bf4c3f3.jar
+│  │  │  │              │          fabric-screen-handler-api-v1-1.3.136+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-sound-api-v1
+│  │  │  │              │  └─1.0.42+946bf4c3f3
+│  │  │  │              │          fabric-sound-api-v1-1.0.42+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-sound-api-v1-1.0.42+946bf4c3f3.jar
+│  │  │  │              │          fabric-sound-api-v1-1.0.42+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-tag-api-v1
+│  │  │  │              │  └─1.2.1+946bf4c3f3
+│  │  │  │              │          fabric-tag-api-v1-1.2.1+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-tag-api-v1-1.2.1+946bf4c3f3.jar
+│  │  │  │              │          fabric-tag-api-v1-1.2.1+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              ├─fabric-transfer-api-v1
+│  │  │  │              │  └─6.0.5+946bf4c3f3
+│  │  │  │              │          fabric-transfer-api-v1-6.0.5+946bf4c3f3-sources.jar
+│  │  │  │              │          fabric-transfer-api-v1-6.0.5+946bf4c3f3.jar
+│  │  │  │              │          fabric-transfer-api-v1-6.0.5+946bf4c3f3.pom
+│  │  │  │              │          
+│  │  │  │              └─fabric-transitive-access-wideners-v1
+│  │  │  │                  └─6.4.1+ac3e15d1f3
+│  │  │  └─remapped
+│  │  │      └─net
+│  │  │          └─fabricmc
+│  │  │              └─fabric-api
+│  │  │                  ├─fabric-api-452603ee
+│  │  │                  │  └─0.136.0+1.21.8
+│  │  │                  │          fabric-api-452603ee-0.136.0+1.21.8-sources.jar
+│  │  │                  │          fabric-api-452603ee-0.136.0+1.21.8.jar
+│  │  │                  │          fabric-api-452603ee-0.136.0+1.21.8.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-api-a5b452c0
+│  │  │                  │  └─0.136.0+1.21.8
+│  │  │                  │          fabric-api-a5b452c0-0.136.0+1.21.8-sources.jar
+│  │  │                  │          fabric-api-a5b452c0-0.136.0+1.21.8.jar
+│  │  │                  │          fabric-api-a5b452c0-0.136.0+1.21.8.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-api-base-452603ee
+│  │  │                  │  └─0.5.0+cd8c0daa2c
+│  │  │                  │          fabric-api-base-452603ee-0.5.0+cd8c0daa2c-sources.jar
+│  │  │                  │          fabric-api-base-452603ee-0.5.0+cd8c0daa2c.jar
+│  │  │                  │          fabric-api-base-452603ee-0.5.0+cd8c0daa2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-api-base-a5b452c0
+│  │  │                  │  └─0.5.0+cd8c0daa2c
+│  │  │                  │          fabric-api-base-a5b452c0-0.5.0+cd8c0daa2c-sources.jar
+│  │  │                  │          fabric-api-base-a5b452c0-0.5.0+cd8c0daa2c.jar
+│  │  │                  │          fabric-api-base-a5b452c0-0.5.0+cd8c0daa2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-api-lookup-api-v1-452603ee
+│  │  │                  │  └─1.6.101+946bf4c32c
+│  │  │                  │          fabric-api-lookup-api-v1-452603ee-1.6.101+946bf4c32c-sources.jar
+│  │  │                  │          fabric-api-lookup-api-v1-452603ee-1.6.101+946bf4c32c.jar
+│  │  │                  │          fabric-api-lookup-api-v1-452603ee-1.6.101+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-api-lookup-api-v1-a5b452c0
+│  │  │                  │  └─1.6.101+946bf4c32c
+│  │  │                  │          fabric-api-lookup-api-v1-a5b452c0-1.6.101+946bf4c32c-sources.jar
+│  │  │                  │          fabric-api-lookup-api-v1-a5b452c0-1.6.101+946bf4c32c.jar
+│  │  │                  │          fabric-api-lookup-api-v1-a5b452c0-1.6.101+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-biome-api-v1-452603ee
+│  │  │                  │  └─16.1.0+c21d71cc2c
+│  │  │                  │          fabric-biome-api-v1-452603ee-16.1.0+c21d71cc2c-sources.jar
+│  │  │                  │          fabric-biome-api-v1-452603ee-16.1.0+c21d71cc2c.jar
+│  │  │                  │          fabric-biome-api-v1-452603ee-16.1.0+c21d71cc2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-biome-api-v1-a5b452c0
+│  │  │                  │  └─16.1.0+c21d71cc2c
+│  │  │                  │          fabric-biome-api-v1-a5b452c0-16.1.0+c21d71cc2c-sources.jar
+│  │  │                  │          fabric-biome-api-v1-a5b452c0-16.1.0+c21d71cc2c.jar
+│  │  │                  │          fabric-biome-api-v1-a5b452c0-16.1.0+c21d71cc2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-block-api-v1-452603ee
+│  │  │                  │  └─1.1.3+946bf4c32c
+│  │  │                  │          fabric-block-api-v1-452603ee-1.1.3+946bf4c32c-sources.jar
+│  │  │                  │          fabric-block-api-v1-452603ee-1.1.3+946bf4c32c.jar
+│  │  │                  │          fabric-block-api-v1-452603ee-1.1.3+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-block-api-v1-a5b452c0
+│  │  │                  │  └─1.1.3+946bf4c32c
+│  │  │                  │          fabric-block-api-v1-a5b452c0-1.1.3+946bf4c32c-sources.jar
+│  │  │                  │          fabric-block-api-v1-a5b452c0-1.1.3+946bf4c32c.jar
+│  │  │                  │          fabric-block-api-v1-a5b452c0-1.1.3+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-block-view-api-v2-452603ee
+│  │  │                  │  └─1.0.31+946bf4c32c
+│  │  │                  │          fabric-block-view-api-v2-452603ee-1.0.31+946bf4c32c-sources.jar
+│  │  │                  │          fabric-block-view-api-v2-452603ee-1.0.31+946bf4c32c.jar
+│  │  │                  │          fabric-block-view-api-v2-452603ee-1.0.31+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-block-view-api-v2-a5b452c0
+│  │  │                  │  └─1.0.31+946bf4c32c
+│  │  │                  │          fabric-block-view-api-v2-a5b452c0-1.0.31+946bf4c32c-sources.jar
+│  │  │                  │          fabric-block-view-api-v2-a5b452c0-1.0.31+946bf4c32c.jar
+│  │  │                  │          fabric-block-view-api-v2-a5b452c0-1.0.31+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-client-gametest-api-v1-452603ee
+│  │  │                  │  └─4.2.5+8a98c3fc2c
+│  │  │                  │          fabric-client-gametest-api-v1-452603ee-4.2.5+8a98c3fc2c-sources.jar
+│  │  │                  │          fabric-client-gametest-api-v1-452603ee-4.2.5+8a98c3fc2c.jar
+│  │  │                  │          fabric-client-gametest-api-v1-452603ee-4.2.5+8a98c3fc2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-client-gametest-api-v1-a5b452c0
+│  │  │                  │  └─4.2.5+8a98c3fc2c
+│  │  │                  │          fabric-client-gametest-api-v1-a5b452c0-4.2.5+8a98c3fc2c-sources.jar
+│  │  │                  │          fabric-client-gametest-api-v1-a5b452c0-4.2.5+8a98c3fc2c.jar
+│  │  │                  │          fabric-client-gametest-api-v1-a5b452c0-4.2.5+8a98c3fc2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-command-api-v2-452603ee
+│  │  │                  │  └─2.3.1+52fff9ec2c
+│  │  │                  │          fabric-command-api-v2-452603ee-2.3.1+52fff9ec2c-sources.jar
+│  │  │                  │          fabric-command-api-v2-452603ee-2.3.1+52fff9ec2c.jar
+│  │  │                  │          fabric-command-api-v2-452603ee-2.3.1+52fff9ec2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-command-api-v2-a5b452c0
+│  │  │                  │  └─2.3.1+52fff9ec2c
+│  │  │                  │          fabric-command-api-v2-a5b452c0-2.3.1+52fff9ec2c-sources.jar
+│  │  │                  │          fabric-command-api-v2-a5b452c0-2.3.1+52fff9ec2c.jar
+│  │  │                  │          fabric-command-api-v2-a5b452c0-2.3.1+52fff9ec2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-content-registries-v0-452603ee
+│  │  │                  │  └─10.1.0+c75de69d2c
+│  │  │                  │          fabric-content-registries-v0-452603ee-10.1.0+c75de69d2c-sources.jar
+│  │  │                  │          fabric-content-registries-v0-452603ee-10.1.0+c75de69d2c.jar
+│  │  │                  │          fabric-content-registries-v0-452603ee-10.1.0+c75de69d2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-content-registries-v0-a5b452c0
+│  │  │                  │  └─10.1.0+c75de69d2c
+│  │  │                  │          fabric-content-registries-v0-a5b452c0-10.1.0+c75de69d2c-sources.jar
+│  │  │                  │          fabric-content-registries-v0-a5b452c0-10.1.0+c75de69d2c.jar
+│  │  │                  │          fabric-content-registries-v0-a5b452c0-10.1.0+c75de69d2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-convention-tags-v1-452603ee
+│  │  │                  │  └─2.1.41+7f945d5b2c
+│  │  │                  │          fabric-convention-tags-v1-452603ee-2.1.41+7f945d5b2c-sources.jar
+│  │  │                  │          fabric-convention-tags-v1-452603ee-2.1.41+7f945d5b2c.jar
+│  │  │                  │          fabric-convention-tags-v1-452603ee-2.1.41+7f945d5b2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-convention-tags-v1-a5b452c0
+│  │  │                  │  └─2.1.41+7f945d5b2c
+│  │  │                  │          fabric-convention-tags-v1-a5b452c0-2.1.41+7f945d5b2c-sources.jar
+│  │  │                  │          fabric-convention-tags-v1-a5b452c0-2.1.41+7f945d5b2c.jar
+│  │  │                  │          fabric-convention-tags-v1-a5b452c0-2.1.41+7f945d5b2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-convention-tags-v2-452603ee
+│  │  │                  │  └─2.15.6+eb5df52f2c
+│  │  │                  │          fabric-convention-tags-v2-452603ee-2.15.6+eb5df52f2c-sources.jar
+│  │  │                  │          fabric-convention-tags-v2-452603ee-2.15.6+eb5df52f2c.jar
+│  │  │                  │          fabric-convention-tags-v2-452603ee-2.15.6+eb5df52f2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-convention-tags-v2-a5b452c0
+│  │  │                  │  └─2.15.6+eb5df52f2c
+│  │  │                  │          fabric-convention-tags-v2-a5b452c0-2.15.6+eb5df52f2c-sources.jar
+│  │  │                  │          fabric-convention-tags-v2-a5b452c0-2.15.6+eb5df52f2c.jar
+│  │  │                  │          fabric-convention-tags-v2-a5b452c0-2.15.6+eb5df52f2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-crash-report-info-v1-452603ee
+│  │  │                  │  └─0.3.15+946bf4c32c
+│  │  │                  │          fabric-crash-report-info-v1-452603ee-0.3.15+946bf4c32c-sources.jar
+│  │  │                  │          fabric-crash-report-info-v1-452603ee-0.3.15+946bf4c32c.jar
+│  │  │                  │          fabric-crash-report-info-v1-452603ee-0.3.15+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-crash-report-info-v1-a5b452c0
+│  │  │                  │  └─0.3.15+946bf4c32c
+│  │  │                  │          fabric-crash-report-info-v1-a5b452c0-0.3.15+946bf4c32c-sources.jar
+│  │  │                  │          fabric-crash-report-info-v1-a5b452c0-0.3.15+946bf4c32c.jar
+│  │  │                  │          fabric-crash-report-info-v1-a5b452c0-0.3.15+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-data-attachment-api-v1-452603ee
+│  │  │                  │  └─1.8.14+97214db32c
+│  │  │                  │          fabric-data-attachment-api-v1-452603ee-1.8.14+97214db32c-sources.jar
+│  │  │                  │          fabric-data-attachment-api-v1-452603ee-1.8.14+97214db32c.jar
+│  │  │                  │          fabric-data-attachment-api-v1-452603ee-1.8.14+97214db32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-data-attachment-api-v1-a5b452c0
+│  │  │                  │  └─1.8.14+97214db32c
+│  │  │                  │          fabric-data-attachment-api-v1-a5b452c0-1.8.14+97214db32c-sources.jar
+│  │  │                  │          fabric-data-attachment-api-v1-a5b452c0-1.8.14+97214db32c.jar
+│  │  │                  │          fabric-data-attachment-api-v1-a5b452c0-1.8.14+97214db32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-data-generation-api-v1-452603ee
+│  │  │                  │  └─23.2.8+2e1c6d322c
+│  │  │                  │          fabric-data-generation-api-v1-452603ee-23.2.8+2e1c6d322c-sources.jar
+│  │  │                  │          fabric-data-generation-api-v1-452603ee-23.2.8+2e1c6d322c.jar
+│  │  │                  │          fabric-data-generation-api-v1-452603ee-23.2.8+2e1c6d322c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-data-generation-api-v1-a5b452c0
+│  │  │                  │  └─23.2.8+2e1c6d322c
+│  │  │                  │          fabric-data-generation-api-v1-a5b452c0-23.2.8+2e1c6d322c-sources.jar
+│  │  │                  │          fabric-data-generation-api-v1-a5b452c0-23.2.8+2e1c6d322c.jar
+│  │  │                  │          fabric-data-generation-api-v1-a5b452c0-23.2.8+2e1c6d322c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-dimensions-v1-452603ee
+│  │  │                  │  └─4.0.20+948fc79a2c
+│  │  │                  │          fabric-dimensions-v1-452603ee-4.0.20+948fc79a2c-sources.jar
+│  │  │                  │          fabric-dimensions-v1-452603ee-4.0.20+948fc79a2c.jar
+│  │  │                  │          fabric-dimensions-v1-452603ee-4.0.20+948fc79a2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-dimensions-v1-a5b452c0
+│  │  │                  │  └─4.0.20+948fc79a2c
+│  │  │                  │          fabric-dimensions-v1-a5b452c0-4.0.20+948fc79a2c-sources.jar
+│  │  │                  │          fabric-dimensions-v1-a5b452c0-4.0.20+948fc79a2c.jar
+│  │  │                  │          fabric-dimensions-v1-a5b452c0-4.0.20+948fc79a2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-entity-events-v1-452603ee
+│  │  │                  │  └─2.1.2+c9e472732c
+│  │  │                  │          fabric-entity-events-v1-452603ee-2.1.2+c9e472732c-sources.jar
+│  │  │                  │          fabric-entity-events-v1-452603ee-2.1.2+c9e472732c.jar
+│  │  │                  │          fabric-entity-events-v1-452603ee-2.1.2+c9e472732c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-entity-events-v1-a5b452c0
+│  │  │                  │  └─2.1.2+c9e472732c
+│  │  │                  │          fabric-entity-events-v1-a5b452c0-2.1.2+c9e472732c-sources.jar
+│  │  │                  │          fabric-entity-events-v1-a5b452c0-2.1.2+c9e472732c.jar
+│  │  │                  │          fabric-entity-events-v1-a5b452c0-2.1.2+c9e472732c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-events-interaction-v0-452603ee
+│  │  │                  │  └─4.0.26+946bf4c32c
+│  │  │                  │          fabric-events-interaction-v0-452603ee-4.0.26+946bf4c32c-sources.jar
+│  │  │                  │          fabric-events-interaction-v0-452603ee-4.0.26+946bf4c32c.jar
+│  │  │                  │          fabric-events-interaction-v0-452603ee-4.0.26+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-events-interaction-v0-a5b452c0
+│  │  │                  │  └─4.0.26+946bf4c32c
+│  │  │                  │          fabric-events-interaction-v0-a5b452c0-4.0.26+946bf4c32c-sources.jar
+│  │  │                  │          fabric-events-interaction-v0-a5b452c0-4.0.26+946bf4c32c.jar
+│  │  │                  │          fabric-events-interaction-v0-a5b452c0-4.0.26+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-game-rule-api-v1-452603ee
+│  │  │                  │  └─1.0.73+c64c9c5b2c
+│  │  │                  │          fabric-game-rule-api-v1-452603ee-1.0.73+c64c9c5b2c-sources.jar
+│  │  │                  │          fabric-game-rule-api-v1-452603ee-1.0.73+c64c9c5b2c.jar
+│  │  │                  │          fabric-game-rule-api-v1-452603ee-1.0.73+c64c9c5b2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-game-rule-api-v1-a5b452c0
+│  │  │                  │  └─1.0.73+c64c9c5b2c
+│  │  │                  │          fabric-game-rule-api-v1-a5b452c0-1.0.73+c64c9c5b2c-sources.jar
+│  │  │                  │          fabric-game-rule-api-v1-a5b452c0-1.0.73+c64c9c5b2c.jar
+│  │  │                  │          fabric-game-rule-api-v1-a5b452c0-1.0.73+c64c9c5b2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-gametest-api-v1-452603ee
+│  │  │                  │  └─3.1.10+39ce47f52c
+│  │  │                  │          fabric-gametest-api-v1-452603ee-3.1.10+39ce47f52c-sources.jar
+│  │  │                  │          fabric-gametest-api-v1-452603ee-3.1.10+39ce47f52c.jar
+│  │  │                  │          fabric-gametest-api-v1-452603ee-3.1.10+39ce47f52c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-gametest-api-v1-a5b452c0
+│  │  │                  │  └─3.1.10+39ce47f52c
+│  │  │                  │          fabric-gametest-api-v1-a5b452c0-3.1.10+39ce47f52c-sources.jar
+│  │  │                  │          fabric-gametest-api-v1-a5b452c0-3.1.10+39ce47f52c.jar
+│  │  │                  │          fabric-gametest-api-v1-a5b452c0-3.1.10+39ce47f52c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-item-api-v1-452603ee
+│  │  │                  │  └─11.5.0+02ce13f42c
+│  │  │                  │          fabric-item-api-v1-452603ee-11.5.0+02ce13f42c-sources.jar
+│  │  │                  │          fabric-item-api-v1-452603ee-11.5.0+02ce13f42c.jar
+│  │  │                  │          fabric-item-api-v1-452603ee-11.5.0+02ce13f42c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-item-api-v1-a5b452c0
+│  │  │                  │  └─11.5.0+02ce13f42c
+│  │  │                  │          fabric-item-api-v1-a5b452c0-11.5.0+02ce13f42c-sources.jar
+│  │  │                  │          fabric-item-api-v1-a5b452c0-11.5.0+02ce13f42c.jar
+│  │  │                  │          fabric-item-api-v1-a5b452c0-11.5.0+02ce13f42c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-item-group-api-v1-452603ee
+│  │  │                  │  └─4.2.14+c5f9bbc12c
+│  │  │                  │          fabric-item-group-api-v1-452603ee-4.2.14+c5f9bbc12c-sources.jar
+│  │  │                  │          fabric-item-group-api-v1-452603ee-4.2.14+c5f9bbc12c.jar
+│  │  │                  │          fabric-item-group-api-v1-452603ee-4.2.14+c5f9bbc12c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-item-group-api-v1-a5b452c0
+│  │  │                  │  └─4.2.14+c5f9bbc12c
+│  │  │                  │          fabric-item-group-api-v1-a5b452c0-4.2.14+c5f9bbc12c-sources.jar
+│  │  │                  │          fabric-item-group-api-v1-a5b452c0-4.2.14+c5f9bbc12c.jar
+│  │  │                  │          fabric-item-group-api-v1-a5b452c0-4.2.14+c5f9bbc12c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-key-binding-api-v1-452603ee
+│  │  │                  │  └─1.0.65+946bf4c32c
+│  │  │                  │          fabric-key-binding-api-v1-452603ee-1.0.65+946bf4c32c-sources.jar
+│  │  │                  │          fabric-key-binding-api-v1-452603ee-1.0.65+946bf4c32c.jar
+│  │  │                  │          fabric-key-binding-api-v1-452603ee-1.0.65+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-key-binding-api-v1-a5b452c0
+│  │  │                  │  └─1.0.65+946bf4c32c
+│  │  │                  │          fabric-key-binding-api-v1-a5b452c0-1.0.65+946bf4c32c-sources.jar
+│  │  │                  │          fabric-key-binding-api-v1-a5b452c0-1.0.65+946bf4c32c.jar
+│  │  │                  │          fabric-key-binding-api-v1-a5b452c0-1.0.65+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-lifecycle-events-v1-452603ee
+│  │  │                  │  └─2.6.4+db4dfd852c
+│  │  │                  │          fabric-lifecycle-events-v1-452603ee-2.6.4+db4dfd852c-sources.jar
+│  │  │                  │          fabric-lifecycle-events-v1-452603ee-2.6.4+db4dfd852c.jar
+│  │  │                  │          fabric-lifecycle-events-v1-452603ee-2.6.4+db4dfd852c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-lifecycle-events-v1-a5b452c0
+│  │  │                  │  └─2.6.4+db4dfd852c
+│  │  │                  │          fabric-lifecycle-events-v1-a5b452c0-2.6.4+db4dfd852c-sources.jar
+│  │  │                  │          fabric-lifecycle-events-v1-a5b452c0-2.6.4+db4dfd852c.jar
+│  │  │                  │          fabric-lifecycle-events-v1-a5b452c0-2.6.4+db4dfd852c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-loot-api-v2-452603ee
+│  │  │                  │  └─3.0.56+3f89f5a52c
+│  │  │                  │          fabric-loot-api-v2-452603ee-3.0.56+3f89f5a52c-sources.jar
+│  │  │                  │          fabric-loot-api-v2-452603ee-3.0.56+3f89f5a52c.jar
+│  │  │                  │          fabric-loot-api-v2-452603ee-3.0.56+3f89f5a52c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-loot-api-v2-a5b452c0
+│  │  │                  │  └─3.0.56+3f89f5a52c
+│  │  │                  │          fabric-loot-api-v2-a5b452c0-3.0.56+3f89f5a52c-sources.jar
+│  │  │                  │          fabric-loot-api-v2-a5b452c0-3.0.56+3f89f5a52c.jar
+│  │  │                  │          fabric-loot-api-v2-a5b452c0-3.0.56+3f89f5a52c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-loot-api-v3-452603ee
+│  │  │                  │  └─2.0.3+946bf4c32c
+│  │  │                  │          fabric-loot-api-v3-452603ee-2.0.3+946bf4c32c-sources.jar
+│  │  │                  │          fabric-loot-api-v3-452603ee-2.0.3+946bf4c32c.jar
+│  │  │                  │          fabric-loot-api-v3-452603ee-2.0.3+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-loot-api-v3-a5b452c0
+│  │  │                  │  └─2.0.3+946bf4c32c
+│  │  │                  │          fabric-loot-api-v3-a5b452c0-2.0.3+946bf4c32c-sources.jar
+│  │  │                  │          fabric-loot-api-v3-a5b452c0-2.0.3+946bf4c32c.jar
+│  │  │                  │          fabric-loot-api-v3-a5b452c0-2.0.3+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-message-api-v1-452603ee
+│  │  │                  │  └─6.1.2+946bf4c32c
+│  │  │                  │          fabric-message-api-v1-452603ee-6.1.2+946bf4c32c-sources.jar
+│  │  │                  │          fabric-message-api-v1-452603ee-6.1.2+946bf4c32c.jar
+│  │  │                  │          fabric-message-api-v1-452603ee-6.1.2+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-message-api-v1-a5b452c0
+│  │  │                  │  └─6.1.2+946bf4c32c
+│  │  │                  │          fabric-message-api-v1-a5b452c0-6.1.2+946bf4c32c-sources.jar
+│  │  │                  │          fabric-message-api-v1-a5b452c0-6.1.2+946bf4c32c.jar
+│  │  │                  │          fabric-message-api-v1-a5b452c0-6.1.2+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-model-loading-api-v1-452603ee
+│  │  │                  │  └─5.2.7+946bf4c32c
+│  │  │                  │          fabric-model-loading-api-v1-452603ee-5.2.7+946bf4c32c-sources.jar
+│  │  │                  │          fabric-model-loading-api-v1-452603ee-5.2.7+946bf4c32c.jar
+│  │  │                  │          fabric-model-loading-api-v1-452603ee-5.2.7+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-model-loading-api-v1-a5b452c0
+│  │  │                  │  └─5.2.7+946bf4c32c
+│  │  │                  │          fabric-model-loading-api-v1-a5b452c0-5.2.7+946bf4c32c-sources.jar
+│  │  │                  │          fabric-model-loading-api-v1-a5b452c0-5.2.7+946bf4c32c.jar
+│  │  │                  │          fabric-model-loading-api-v1-a5b452c0-5.2.7+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-networking-api-v1-452603ee
+│  │  │                  │  └─5.1.0+57cb96dd2c
+│  │  │                  │          fabric-networking-api-v1-452603ee-5.1.0+57cb96dd2c-sources.jar
+│  │  │                  │          fabric-networking-api-v1-452603ee-5.1.0+57cb96dd2c.jar
+│  │  │                  │          fabric-networking-api-v1-452603ee-5.1.0+57cb96dd2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-networking-api-v1-a5b452c0
+│  │  │                  │  └─5.1.0+57cb96dd2c
+│  │  │                  │          fabric-networking-api-v1-a5b452c0-5.1.0+57cb96dd2c-sources.jar
+│  │  │                  │          fabric-networking-api-v1-a5b452c0-5.1.0+57cb96dd2c.jar
+│  │  │                  │          fabric-networking-api-v1-a5b452c0-5.1.0+57cb96dd2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-object-builder-api-v1-452603ee
+│  │  │                  │  └─21.1.10+946bf4c32c
+│  │  │                  │          fabric-object-builder-api-v1-452603ee-21.1.10+946bf4c32c-sources.jar
+│  │  │                  │          fabric-object-builder-api-v1-452603ee-21.1.10+946bf4c32c.jar
+│  │  │                  │          fabric-object-builder-api-v1-452603ee-21.1.10+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-object-builder-api-v1-a5b452c0
+│  │  │                  │  └─21.1.10+946bf4c32c
+│  │  │                  │          fabric-object-builder-api-v1-a5b452c0-21.1.10+946bf4c32c-sources.jar
+│  │  │                  │          fabric-object-builder-api-v1-a5b452c0-21.1.10+946bf4c32c.jar
+│  │  │                  │          fabric-object-builder-api-v1-a5b452c0-21.1.10+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-particles-v1-452603ee
+│  │  │                  │  └─4.1.10+946bf4c32c
+│  │  │                  │          fabric-particles-v1-452603ee-4.1.10+946bf4c32c-sources.jar
+│  │  │                  │          fabric-particles-v1-452603ee-4.1.10+946bf4c32c.jar
+│  │  │                  │          fabric-particles-v1-452603ee-4.1.10+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-particles-v1-a5b452c0
+│  │  │                  │  └─4.1.10+946bf4c32c
+│  │  │                  │          fabric-particles-v1-a5b452c0-4.1.10+946bf4c32c-sources.jar
+│  │  │                  │          fabric-particles-v1-a5b452c0-4.1.10+946bf4c32c.jar
+│  │  │                  │          fabric-particles-v1-a5b452c0-4.1.10+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-recipe-api-v1-452603ee
+│  │  │                  │  └─8.1.17+946bf4c32c
+│  │  │                  │          fabric-recipe-api-v1-452603ee-8.1.17+946bf4c32c-sources.jar
+│  │  │                  │          fabric-recipe-api-v1-452603ee-8.1.17+946bf4c32c.jar
+│  │  │                  │          fabric-recipe-api-v1-452603ee-8.1.17+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-recipe-api-v1-a5b452c0
+│  │  │                  │  └─8.1.17+946bf4c32c
+│  │  │                  │          fabric-recipe-api-v1-a5b452c0-8.1.17+946bf4c32c-sources.jar
+│  │  │                  │          fabric-recipe-api-v1-a5b452c0-8.1.17+946bf4c32c.jar
+│  │  │                  │          fabric-recipe-api-v1-a5b452c0-8.1.17+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-registry-sync-v0-452603ee
+│  │  │                  │  └─6.1.30+946bf4c32c
+│  │  │                  │          fabric-registry-sync-v0-452603ee-6.1.30+946bf4c32c-sources.jar
+│  │  │                  │          fabric-registry-sync-v0-452603ee-6.1.30+946bf4c32c.jar
+│  │  │                  │          fabric-registry-sync-v0-452603ee-6.1.30+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-registry-sync-v0-a5b452c0
+│  │  │                  │  └─6.1.30+946bf4c32c
+│  │  │                  │          fabric-registry-sync-v0-a5b452c0-6.1.30+946bf4c32c-sources.jar
+│  │  │                  │          fabric-registry-sync-v0-a5b452c0-6.1.30+946bf4c32c.jar
+│  │  │                  │          fabric-registry-sync-v0-a5b452c0-6.1.30+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-renderer-api-v1-452603ee
+│  │  │                  │  └─7.0.4+208eed172c
+│  │  │                  │          fabric-renderer-api-v1-452603ee-7.0.4+208eed172c-sources.jar
+│  │  │                  │          fabric-renderer-api-v1-452603ee-7.0.4+208eed172c.jar
+│  │  │                  │          fabric-renderer-api-v1-452603ee-7.0.4+208eed172c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-renderer-api-v1-a5b452c0
+│  │  │                  │  └─7.0.4+208eed172c
+│  │  │                  │          fabric-renderer-api-v1-a5b452c0-7.0.4+208eed172c-sources.jar
+│  │  │                  │          fabric-renderer-api-v1-a5b452c0-7.0.4+208eed172c.jar
+│  │  │                  │          fabric-renderer-api-v1-a5b452c0-7.0.4+208eed172c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-renderer-indigo-452603ee
+│  │  │                  │  └─4.0.4+946bf4c32c
+│  │  │                  │          fabric-renderer-indigo-452603ee-4.0.4+946bf4c32c-sources.jar
+│  │  │                  │          fabric-renderer-indigo-452603ee-4.0.4+946bf4c32c.jar
+│  │  │                  │          fabric-renderer-indigo-452603ee-4.0.4+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-renderer-indigo-a5b452c0
+│  │  │                  │  └─4.0.4+946bf4c32c
+│  │  │                  │          fabric-renderer-indigo-a5b452c0-4.0.4+946bf4c32c-sources.jar
+│  │  │                  │          fabric-renderer-indigo-a5b452c0-4.0.4+946bf4c32c.jar
+│  │  │                  │          fabric-renderer-indigo-a5b452c0-4.0.4+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-rendering-fluids-v1-452603ee
+│  │  │                  │  └─3.1.31+fa6cb72b2c
+│  │  │                  │          fabric-rendering-fluids-v1-452603ee-3.1.31+fa6cb72b2c-sources.jar
+│  │  │                  │          fabric-rendering-fluids-v1-452603ee-3.1.31+fa6cb72b2c.jar
+│  │  │                  │          fabric-rendering-fluids-v1-452603ee-3.1.31+fa6cb72b2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-rendering-fluids-v1-a5b452c0
+│  │  │                  │  └─3.1.31+fa6cb72b2c
+│  │  │                  │          fabric-rendering-fluids-v1-a5b452c0-3.1.31+fa6cb72b2c-sources.jar
+│  │  │                  │          fabric-rendering-fluids-v1-a5b452c0-3.1.31+fa6cb72b2c.jar
+│  │  │                  │          fabric-rendering-fluids-v1-a5b452c0-3.1.31+fa6cb72b2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-rendering-v1-452603ee
+│  │  │                  │  └─12.5.1+fbe231d52c
+│  │  │                  │          fabric-rendering-v1-452603ee-12.5.1+fbe231d52c-sources.jar
+│  │  │                  │          fabric-rendering-v1-452603ee-12.5.1+fbe231d52c.jar
+│  │  │                  │          fabric-rendering-v1-452603ee-12.5.1+fbe231d52c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-rendering-v1-a5b452c0
+│  │  │                  │  └─12.5.1+fbe231d52c
+│  │  │                  │          fabric-rendering-v1-a5b452c0-12.5.1+fbe231d52c-sources.jar
+│  │  │                  │          fabric-rendering-v1-a5b452c0-12.5.1+fbe231d52c.jar
+│  │  │                  │          fabric-rendering-v1-a5b452c0-12.5.1+fbe231d52c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-resource-conditions-api-v1-452603ee
+│  │  │                  │  └─5.0.25+98e6d6db2c
+│  │  │                  │          fabric-resource-conditions-api-v1-452603ee-5.0.25+98e6d6db2c-sources.jar
+│  │  │                  │          fabric-resource-conditions-api-v1-452603ee-5.0.25+98e6d6db2c.jar
+│  │  │                  │          fabric-resource-conditions-api-v1-452603ee-5.0.25+98e6d6db2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-resource-conditions-api-v1-a5b452c0
+│  │  │                  │  └─5.0.25+98e6d6db2c
+│  │  │                  │          fabric-resource-conditions-api-v1-a5b452c0-5.0.25+98e6d6db2c-sources.jar
+│  │  │                  │          fabric-resource-conditions-api-v1-a5b452c0-5.0.25+98e6d6db2c.jar
+│  │  │                  │          fabric-resource-conditions-api-v1-a5b452c0-5.0.25+98e6d6db2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-resource-loader-v0-452603ee
+│  │  │                  │  └─3.1.12+020423442c
+│  │  │                  │          fabric-resource-loader-v0-452603ee-3.1.12+020423442c-sources.jar
+│  │  │                  │          fabric-resource-loader-v0-452603ee-3.1.12+020423442c.jar
+│  │  │                  │          fabric-resource-loader-v0-452603ee-3.1.12+020423442c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-resource-loader-v0-a5b452c0
+│  │  │                  │  └─3.1.12+020423442c
+│  │  │                  │          fabric-resource-loader-v0-a5b452c0-3.1.12+020423442c-sources.jar
+│  │  │                  │          fabric-resource-loader-v0-a5b452c0-3.1.12+020423442c.jar
+│  │  │                  │          fabric-resource-loader-v0-a5b452c0-3.1.12+020423442c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-screen-api-v1-452603ee
+│  │  │                  │  └─2.2.0+e0cb65d02c
+│  │  │                  │          fabric-screen-api-v1-452603ee-2.2.0+e0cb65d02c-sources.jar
+│  │  │                  │          fabric-screen-api-v1-452603ee-2.2.0+e0cb65d02c.jar
+│  │  │                  │          fabric-screen-api-v1-452603ee-2.2.0+e0cb65d02c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-screen-api-v1-a5b452c0
+│  │  │                  │  └─2.2.0+e0cb65d02c
+│  │  │                  │          fabric-screen-api-v1-a5b452c0-2.2.0+e0cb65d02c-sources.jar
+│  │  │                  │          fabric-screen-api-v1-a5b452c0-2.2.0+e0cb65d02c.jar
+│  │  │                  │          fabric-screen-api-v1-a5b452c0-2.2.0+e0cb65d02c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-screen-handler-api-v1-452603ee
+│  │  │                  │  └─1.3.139+946bf4c32c
+│  │  │                  │          fabric-screen-handler-api-v1-452603ee-1.3.139+946bf4c32c-sources.jar
+│  │  │                  │          fabric-screen-handler-api-v1-452603ee-1.3.139+946bf4c32c.jar
+│  │  │                  │          fabric-screen-handler-api-v1-452603ee-1.3.139+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-screen-handler-api-v1-a5b452c0
+│  │  │                  │  └─1.3.139+946bf4c32c
+│  │  │                  │          fabric-screen-handler-api-v1-a5b452c0-1.3.139+946bf4c32c-sources.jar
+│  │  │                  │          fabric-screen-handler-api-v1-a5b452c0-1.3.139+946bf4c32c.jar
+│  │  │                  │          fabric-screen-handler-api-v1-a5b452c0-1.3.139+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-serialization-api-v1-452603ee
+│  │  │                  │  └─1.0.0+fc0e5aba2c
+│  │  │                  │          fabric-serialization-api-v1-452603ee-1.0.0+fc0e5aba2c-sources.jar
+│  │  │                  │          fabric-serialization-api-v1-452603ee-1.0.0+fc0e5aba2c.jar
+│  │  │                  │          fabric-serialization-api-v1-452603ee-1.0.0+fc0e5aba2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-serialization-api-v1-a5b452c0
+│  │  │                  │  └─1.0.0+fc0e5aba2c
+│  │  │                  │          fabric-serialization-api-v1-a5b452c0-1.0.0+fc0e5aba2c-sources.jar
+│  │  │                  │          fabric-serialization-api-v1-a5b452c0-1.0.0+fc0e5aba2c.jar
+│  │  │                  │          fabric-serialization-api-v1-a5b452c0-1.0.0+fc0e5aba2c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-sound-api-v1-452603ee
+│  │  │                  │  └─1.0.42+946bf4c32c
+│  │  │                  │          fabric-sound-api-v1-452603ee-1.0.42+946bf4c32c-sources.jar
+│  │  │                  │          fabric-sound-api-v1-452603ee-1.0.42+946bf4c32c.jar
+│  │  │                  │          fabric-sound-api-v1-452603ee-1.0.42+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-sound-api-v1-a5b452c0
+│  │  │                  │  └─1.0.42+946bf4c32c
+│  │  │                  │          fabric-sound-api-v1-a5b452c0-1.0.42+946bf4c32c-sources.jar
+│  │  │                  │          fabric-sound-api-v1-a5b452c0-1.0.42+946bf4c32c.jar
+│  │  │                  │          fabric-sound-api-v1-a5b452c0-1.0.42+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-tag-api-v1-452603ee
+│  │  │                  │  └─1.2.2+946bf4c32c
+│  │  │                  │          fabric-tag-api-v1-452603ee-1.2.2+946bf4c32c-sources.jar
+│  │  │                  │          fabric-tag-api-v1-452603ee-1.2.2+946bf4c32c.jar
+│  │  │                  │          fabric-tag-api-v1-452603ee-1.2.2+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-tag-api-v1-a5b452c0
+│  │  │                  │  └─1.2.2+946bf4c32c
+│  │  │                  │          fabric-tag-api-v1-a5b452c0-1.2.2+946bf4c32c-sources.jar
+│  │  │                  │          fabric-tag-api-v1-a5b452c0-1.2.2+946bf4c32c.jar
+│  │  │                  │          fabric-tag-api-v1-a5b452c0-1.2.2+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-transfer-api-v1-452603ee
+│  │  │                  │  └─6.0.6+946bf4c32c
+│  │  │                  │          fabric-transfer-api-v1-452603ee-6.0.6+946bf4c32c-sources.jar
+│  │  │                  │          fabric-transfer-api-v1-452603ee-6.0.6+946bf4c32c.jar
+│  │  │                  │          fabric-transfer-api-v1-452603ee-6.0.6+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-transfer-api-v1-a5b452c0
+│  │  │                  │  └─6.0.6+946bf4c32c
+│  │  │                  │          fabric-transfer-api-v1-a5b452c0-6.0.6+946bf4c32c-sources.jar
+│  │  │                  │          fabric-transfer-api-v1-a5b452c0-6.0.6+946bf4c32c.jar
+│  │  │                  │          fabric-transfer-api-v1-a5b452c0-6.0.6+946bf4c32c.pom
+│  │  │                  │          
+│  │  │                  ├─fabric-transitive-access-wideners-v1-452603ee
+│  │  │                  │  └─6.5.0+c847ce762c
+│  │  │                  │          fabric-transitive-access-wideners-v1-452603ee-6.5.0+c847ce762c-sources.jar
+│  │  │                  │          fabric-transitive-access-wideners-v1-452603ee-6.5.0+c847ce762c.jar
+│  │  │                  │          fabric-transitive-access-wideners-v1-452603ee-6.5.0+c847ce762c.pom
+│  │  │                  │          
+│  │  │                  └─fabric-transitive-access-wideners-v1-a5b452c0
+│  │  │                      └─6.5.0+c847ce762c
+│  │  │                              fabric-transitive-access-wideners-v1-a5b452c0-6.5.0+c847ce762c-sources.jar
+│  │  │                              fabric-transitive-access-wideners-v1-a5b452c0-6.5.0+c847ce762c.jar
+│  │  │                              fabric-transitive-access-wideners-v1-a5b452c0-6.5.0+c847ce762c.pom
+│  │  │                              
+│  │  └─source_mappings
+│  │          503b555a3d21aecdf998f0777630998492fde925.tiny
+│  │          b07cf08c30b5f305700b5075675404956dfcbab8.tiny
+│  │          
+│  └─vcs-1
+│          gc.properties
+│          
+├─.idea
+│  │  compiler.xml
+│  │  gradle.xml
+│  │  misc.xml
+│  │  modules.xml
+│  │  vcs.xml
+│  │  workspace.xml
+│  │  
+│  ├─modules
+│  │      tianyiclient-template-1.21.8.main.iml
+│  │      tianyiclient-template-1.21.8.test.iml
+│  │      tianyiclient-template-1.21.8新.main.iml
+│  │      tianyiclient-template-1.21.8新.test.iml
+│  │      
+│  └─runConfigurations
+│          Minecraft_Client.xml
+│          Minecraft_Server.xml
+│          
+├─build
+│  ├─classes
+│  │  └─java
+│  │      └─main
+│  │          │  tianyiclient-refmap.json
+│  │          │  
+│  │          └─com
+│  │              └─example
+│  │                  └─tianyiclient
+│  │                      │  TianyiClient.class
+│  │                      │  
+│  │                      ├─commands
+│  │                      │      SilentAimTestCommand.class
+│  │                      │      
+│  │                      ├─config
+│  │                      │  │  ClientConfig.class
+│  │                      │  │  ConfigManager.class
+│  │                      │  │  ConfigVersion.class
+│  │                      │  │  HudConfig$HudElementData.class
+│  │                      │  │  HudConfig.class
+│  │                      │  │  JsonConfig.class
+│  │                      │  │  KeybindConfig.class
+│  │                      │  │  ModuleConfig$ModuleData$SettingValue.class
+│  │                      │  │  ModuleConfig$ModuleData.class
+│  │                      │  │  ModuleConfig.class
+│  │                      │  │  
+│  │                      │  └─migrations
+│  │                      │      │  ConfigMigration.class
+│  │                      │      │  
+│  │                      │      └─migrations
+│  │                      │              Migration_v1_to_v2.class
+│  │                      │              
+│  │                      ├─event
+│  │                      │  │  Cancelable.class
+│  │                      │  │  Event.class
+│  │                      │  │  EventBus$1.class
+│  │                      │  │  EventBus$2.class
+│  │                      │  │  EventBus$Listener.class
+│  │                      │  │  EventBus$Subscription.class
+│  │                      │  │  EventBus.class
+│  │                      │  │  EventHandler.class
+│  │                      │  │  Priority.class
+│  │                      │  │  
+│  │                      │  └─events
+│  │                      │      │  RenderEvent.class
+│  │                      │      │  Subscribe.class
+│  │                      │      │  
+│  │                      │      ├─client
+│  │                      │      │      BeforeGameLeftEvent.class
+│  │                      │      │      CharTypedEvent.class
+│  │                      │      │      ClientEvents.class
+│  │                      │      │      GameJoinAttemptEvent.class
+│  │                      │      │      GameJoinedEvent$JoinType.class
+│  │                      │      │      GameJoinedEvent.class
+│  │                      │      │      GameLeftEvent$LeaveReason.class
+│  │                      │      │      GameLeftEvent.class
+│  │                      │      │      KeyEvent$State.class
+│  │                      │      │      KeyEvent.class
+│  │                      │      │      MouseButtonEvent.class
+│  │                      │      │      MouseCursorEvent$CursorAction.class
+│  │                      │      │      MouseCursorEvent.class
+│  │                      │      │      MouseEvent.class
+│  │                      │      │      MouseMoveEvent.class
+│  │                      │      │      MouseScrollEvent.class
+│  │                      │      │      TickEvent$Phase.class
+│  │                      │      │      TickEvent.class
+│  │                      │      │      
+│  │                      │      ├─network
+│  │                      │      │      ChatMessageEvent$MessageType.class
+│  │                      │      │      ChatMessageEvent.class
+│  │                      │      │      PacketEvent.class
+│  │                      │      │      PacketEventHelper.class
+│  │                      │      │      PacketReceiveEvent.class
+│  │                      │      │      PacketSendEvent.class
+│  │                      │      │      PacketUtils.class
+│  │                      │      │      
+│  │                      │      ├─player
+│  │                      │      │      DeathEvent.class
+│  │                      │      │      JumpEvent.class
+│  │                      │      │      MoveEvent.class
+│  │                      │      │      
+│  │                      │      ├─render
+│  │                      │      │      HudRenderEvent$Phase.class
+│  │                      │      │      HudRenderEvent.class
+│  │                      │      │      NametagRenderEvent.class
+│  │                      │      │      PostNametagRenderEvent.class
+│  │                      │      │      PostRenderEvent.class
+│  │                      │      │      PreNametagRenderEvent.class
+│  │                      │      │      PreRenderEvent.class
+│  │                      │      │      RenderEvent.class
+│  │                      │      │      WorldRenderEvent$Phase.class
+│  │                      │      │      WorldRenderEvent.class
+│  │                      │      │      WorldRenderPostEvent.class
+│  │                      │      │      
+│  │                      │      └─world
+│  │                      │              BlockUpdateEvent$UpdateReason.class
+│  │                      │              BlockUpdateEvent.class
+│  │                      │              ChunkDataEvent$EventType.class
+│  │                      │              ChunkDataEvent.class
+│  │                      │              EntityAddedEvent.class
+│  │                      │              EntityRemovedEvent$RemoveReason.class
+│  │                      │              EntityRemovedEvent.class
+│  │                      │              
+│  │                      ├─gui
+│  │                      │  │  ClickGUI$Colors.class
+│  │                      │  │  ClickGUI.class
+│  │                      │  │  ClickGuiWindow.class
+│  │                      │  │  
+│  │                      │  └─hud
+│  │                      │          HudEditorScreen.class
+│  │                      │          
+│  │                      ├─hud
+│  │                      │  │  HudElement.class
+│  │                      │  │  HudManager.class
+│  │                      │  │  HudRenderer.class
+│  │                      │  │  
+│  │                      │  ├─binding
+│  │                      │  │      DataBinding$ValueProvider.class
+│  │                      │  │      DataBinding.class
+│  │                      │  │      DataProviderRegistry.class
+│  │                      │  │      
+│  │                      │  ├─config
+│  │                      │  │      HudConfig.class
+│  │                      │  │      
+│  │                      │  └─elements
+│  │                      │          CoordinatesElement.class
+│  │                      │          EnemyStatusElement.class
+│  │                      │          EntityInfoElement.class
+│  │                      │          FpsElement.class
+│  │                      │          GameInfoElement.class
+│  │                      │          ModuleListElement.class
+│  │                      │          NetworkInfoElement.class
+│  │                      │          PerformanceMonitorElement.class
+│  │                      │          PlayerStatusElement.class
+│  │                      │          TextHudElement.class
+│  │                      │          WatermarkElement.class
+│  │                      │          
+│  │                      ├─managers
+│  │                      │      KeybindManager.class
+│  │                      │      Manager.class
+│  │                      │      ModuleManager.class
+│  │                      │      OptimizedPacketManager$PacketInterceptor.class
+│  │                      │      OptimizedPacketManager.class
+│  │                      │      PacketManager$PacketInterceptor.class
+│  │                      │      PacketManager.class
+│  │                      │      RotationManager$RotationMode.class
+│  │                      │      RotationManager.class
+│  │                      │      
+│  │                      ├─mixin
+│  │                      │  │  ClientConnectionMixin.class
+│  │                      │  │  ClientPlayerEntityMixin.class
+│  │                      │  │  ClientPlayNetworkHandlerMixin.class
+│  │                      │  │  ExampleMixin.class
+│  │                      │  │  GameRendererMixin.class
+│  │                      │  │  InGameHudMixin.class
+│  │                      │  │  KeyboardMixin.class
+│  │                      │  │  MinecraftClientMixin.class
+│  │                      │  │  TitleScreenMixin.class
+│  │                      │  │  
+│  │                      │  └─accessor
+│  │                      │          MinecraftClientAccessor.class
+│  │                      │          
+│  │                      ├─modules
+│  │                      │  │  Category.class
+│  │                      │  │  Module.class
+│  │                      │  │  TestModule.class
+│  │                      │  │  
+│  │                      │  ├─combat
+│  │                      │  │      AutoAttack.class
+│  │                      │  │      AutoTotem.class
+│  │                      │  │      EnhancedSilentAimModule$TargetInfo.class
+│  │                      │  │      EnhancedSilentAimModule.class
+│  │                      │  │      SilentAimModule.class
+│  │                      │  │      
+│  │                      │  ├─impl
+│  │                      │  │  └─hud
+│  │                      │  │          HudEditModule.class
+│  │                      │  │          
+│  │                      │  ├─misc
+│  │                      │  │      MiddleClickItem.class
+│  │                      │  │      PacketLoggerModule.class
+│  │                      │  │      
+│  │                      │  ├─movement
+│  │                      │  │      Flight.class
+│  │                      │  │      
+│  │                      │  ├─render
+│  │                      │  │      EntityInfoModule.class
+│  │                      │  │      Fullbright.class
+│  │                      │  │      HUD.class
+│  │                      │  │      
+│  │                      │  ├─settings
+│  │                      │  │      SettingGroup.class
+│  │                      │  │      
+│  │                      │  └─test
+│  │                      │          DebugModule.class
+│  │                      │          EventBusTest$TestListener.class
+│  │                      │          EventBusTest.class
+│  │                      │          PacketBlockerModule.class
+│  │                      │          PacketTestModule.class
+│  │                      │          TestModule.class
+│  │                      │          
+│  │                      ├─network
+│  │                      │      PacketWrapper$Direction.class
+│  │                      │      PacketWrapper.class
+│  │                      │      UnifiedPacketManager$DelayedPacket.class
+│  │                      │      UnifiedPacketManager$InjectionStrategy.class
+│  │                      │      UnifiedPacketManager$PacketModification.class
+│  │                      │      UnifiedPacketManager$PacketModifier.class
+│  │                      │      UnifiedPacketManager.class
+│  │                      │      
+│  │                      ├─settings
+│  │                      │      BindSetting.class
+│  │                      │      BooleanSetting.class
+│  │                      │      BoolSetting.class
+│  │                      │      ColorSetting.class
+│  │                      │      DoubleSetting.class
+│  │                      │      EnumSetting.class
+│  │                      │      IntegerSetting.class
+│  │                      │      KeybindSetting.class
+│  │                      │      NumberSetting.class
+│  │                      │      Setting.class
+│  │                      │      SettingGroup.class
+│  │                      │      StringSetting.class
+│  │                      │      
+│  │                      └─utils
+│  │                              AutoLook.class
+│  │                              FullScanInventoryManager.class
+│  │                              PacketManager.class
+│  │                              PacketRotation.class
+│  │                              PacketRotationUtils.class
+│  │                              PacketTool.class
+│  │                              Rotation.class
+│  │                              
+│  ├─devlibs
+│  │      tianyiclient-1.0.0-dev.jar
+│  │      tianyiclient-1.0.0-sources.jar
+│  │      
+│  ├─generated
+│  │  └─sources
+│  │      ├─annotationProcessor
+│  │      │  └─java
+│  │      │      └─main
+│  │      └─headers
+│  │          └─java
+│  │              └─main
+│  ├─libs
+│  │      tianyiclient-1.0.0-sources.jar
+│  │      tianyiclient-1.0.0.jar
+│  │      
+│  ├─loom-cache
+│  │      mixin-map-net.fabricmc.yarn.1_21_8.1.21.8+build.1-v2.main.tiny
+│  │      
+│  ├─processIncludeJars
+│  ├─reports
+│  │  └─problems
+│  │          problems-report.html
+│  │          
+│  ├─resources
+│  │  └─main
+│  │      │  fabric.mod.json
+│  │      │  tianyiclient.mixins.json
+│  │      │  
+│  │      └─assets
+│  │          └─tianyiclient
+│  │              │  icon.png
+│  │              │  icon1.png
+│  │              │  
+│  │              └─lang
+│  │                      zh_cn.json
+│  │                      
+│  └─tmp
+│      ├─compileJava
+│      │      previous-compilation-data.bin
+│      │      
+│      ├─jar
+│      │      MANIFEST.MF
+│      │      
+│      ├─remapJar
+│      │      MANIFEST.MF
+│      │      
+│      ├─remapSourcesJar
+│      │      MANIFEST.MF
+│      │      
+│      └─sourcesJar
+│              MANIFEST.MF
+│              
+├─docs
+│      1.png
+│      2.png
+│      3.png
+│      4.png
+│      
+├─gradle
+│  └─wrapper
+│          gradle-wrapper.jar
+│          gradle-wrapper.properties
+│          
+├─run
+│  │  command_history.txt
+│  │  options.txt
+│  │  servers.dat
+│  │  servers.dat_old
+│  │  usercache.json
+│  │  
+│  ├─config
+│  │  ├─fabric
+│  │  │      indigo-renderer.properties
+│  │  │      
+│  │  └─TianyiClient
+│  │          client.json
+│  │          hud.json
+│  │          modules.json
+│  │          
+│  ├─crash-reports
+│  │      crash-2025-12-12_22.22.50-client.txt
+│  │      crash-2025-12-18_00.23.17-client.txt
+│  │      crash-2025-12-19_21.42.54-client.txt
+│  │      crash-2025-12-27_01.13.43-client.txt
+│  │      crash-2025-12-27_01.15.33-client.txt
+│  │      crash-2025-12-27_01.17.32-client.txt
+│  │      crash-2025-12-27_18.48.35-client.txt
+│  │      crash-2025-12-28_15.59.37-client.txt
+│  │      
+│  ├─data
+│  │      fabricDefaultResourcePacks.dat
+│  │      
+│  ├─downloads
+│  │      log.json
+│  │      
+│  ├─logs
+│  │  │  2025-12-03-1.log.gz
+│  │  │  2025-12-03-2.log.gz
+│  │  │  2025-12-03-3.log.gz
+│  │  │  2025-12-04-1.log.gz
+│  │  │  2025-12-04-2.log.gz
+│  │  │  2025-12-04-3.log.gz
+│  │  │  2025-12-04-4.log.gz
+│  │  │  2025-12-04-5.log.gz
+│  │  │  2025-12-04-6.log.gz
+│  │  │  2025-12-05-1.log.gz
+│  │  │  2025-12-05-2.log.gz
+│  │  │  2025-12-12-1.log.gz
+│  │  │  2025-12-12-2.log.gz
+│  │  │  2025-12-12-3.log.gz
+│  │  │  2025-12-12-4.log.gz
+│  │  │  2025-12-12-5.log.gz
+│  │  │  2025-12-12-6.log.gz
+│  │  │  2025-12-13-1.log.gz
+│  │  │  2025-12-13-2.log.gz
+│  │  │  2025-12-14-1.log.gz
+│  │  │  2025-12-14-2.log.gz
+│  │  │  2025-12-14-3.log.gz
+│  │  │  2025-12-14-4.log.gz
+│  │  │  2025-12-14-5.log.gz
+│  │  │  2025-12-14-6.log.gz
+│  │  │  2025-12-17-1.log.gz
+│  │  │  2025-12-17-2.log.gz
+│  │  │  2025-12-18-1.log.gz
+│  │  │  2025-12-18-2.log.gz
+│  │  │  2025-12-18-3.log.gz
+│  │  │  2025-12-18-4.log.gz
+│  │  │  2025-12-18-5.log.gz
+│  │  │  2025-12-18-6.log.gz
+│  │  │  2025-12-19-1.log.gz
+│  │  │  2025-12-19-2.log.gz
+│  │  │  2025-12-19-3.log.gz
+│  │  │  2025-12-19-4.log.gz
+│  │  │  2025-12-19-5.log.gz
+│  │  │  2025-12-19-6.log.gz
+│  │  │  2025-12-20-1.log.gz
+│  │  │  2025-12-20-2.log.gz
+│  │  │  2025-12-20-3.log.gz
+│  │  │  2025-12-20-4.log.gz
+│  │  │  2025-12-20-5.log.gz
+│  │  │  2025-12-20-6.log.gz
+│  │  │  2025-12-22-1.log.gz
+│  │  │  2025-12-22-2.log.gz
+│  │  │  2025-12-22-3.log.gz
+│  │  │  2025-12-22-4.log.gz
+│  │  │  2025-12-22-5.log.gz
+│  │  │  2025-12-22-6.log.gz
+│  │  │  2025-12-23-1.log.gz
+│  │  │  2025-12-23-2.log.gz
+│  │  │  2025-12-23-3.log.gz
+│  │  │  2025-12-23-4.log.gz
+│  │  │  2025-12-23-5.log.gz
+│  │  │  2025-12-23-6.log.gz
+│  │  │  2025-12-25-1.log.gz
+│  │  │  2025-12-25-2.log.gz
+│  │  │  2025-12-26-1.log.gz
+│  │  │  2025-12-26-2.log.gz
+│  │  │  2025-12-26-3.log.gz
+│  │  │  2025-12-26-4.log.gz
+│  │  │  2025-12-26-5.log.gz
+│  │  │  2025-12-26-6.log.gz
+│  │  │  2025-12-27-1.log.gz
+│  │  │  2025-12-27-2.log.gz
+│  │  │  2025-12-27-3.log.gz
+│  │  │  2025-12-27-4.log.gz
+│  │  │  2025-12-27-5.log.gz
+│  │  │  2025-12-27-6.log.gz
+│  │  │  2025-12-28-1.log.gz
+│  │  │  2025-12-28-2.log.gz
+│  │  │  2025-12-28-3.log.gz
+│  │  │  2025-12-28-4.log.gz
+│  │  │  2025-12-28-5.log.gz
+│  │  │  2025-12-28-6.log.gz
+│  │  │  2025-12-30-1.log.gz
+│  │  │  2025-12-31-1.log.gz
+│  │  │  2025-12-31-2.log.gz
+│  │  │  2025-12-31-3.log.gz
+│  │  │  2025-12-31-4.log.gz
+│  │  │  2025-12-31-5.log.gz
+│  │  │  2025-12-31-6.log.gz
+│  │  │  debug-1.log.gz
+│  │  │  debug-2.log.gz
+│  │  │  debug-3.log.gz
+│  │  │  debug-4.log.gz
+│  │  │  debug-5.log.gz
+│  │  │  debug.log
+│  │  │  latest.log
+│  │  │  
+│  │  └─telemetry
+│  ├─mods
+│  ├─resourcepacks
+│  ├─resources
+│  ├─saves
+│  │  └─新的世界
+│  │      │  icon.png
+│  │      │  level.dat
+│  │      │  level.dat_old
+│  │      │  session.lock
+│  │      │  
+│  │      ├─advancements
+│  │      │      005a1bfb-b3e4-37aa-87e8-3ba2c8463cf4.json
+│  │      │      01d9f825-5509-3b83-aacf-c98ce0dce1c7.json
+│  │      │      07f066df-e334-33b1-a24c-2ec414c5ef02.json
+│  │      │      0c8f54b5-758c-3933-9675-7dfb411a82a2.json
+│  │      │      0d1798c0-e9c5-3a83-99d9-4cf400fcf12a.json
+│  │      │      0de21b13-73b3-37ba-84f2-92c78b6712c2.json
+│  │      │      10093cea-54e5-30aa-8af3-58e53a90cf15.json
+│  │      │      11e12ca9-fda1-31b6-8f92-6e251e7a18f2.json
+│  │      │      130bfefb-ac8d-3a05-b27c-6205f9d12a06.json
+│  │      │      157dadc9-e980-331f-9b9a-60b0f155ef62.json
+│  │      │      1714a812-885f-3243-b534-9a660fba6e8b.json
+│  │      │      183eef8c-2608-3c01-af67-e8b358459ccf.json
+│  │      │      19f51a77-b6fb-3469-a8b6-228ec5ce5961.json
+│  │      │      1acd01f1-1c8b-3758-959b-fdf4d16bd5de.json
+│  │      │      1c6ab893-c8be-3ad8-a14c-5cafcb89dfd5.json
+│  │      │      1ef891cf-32a6-31f4-b463-6277834cb67f.json
+│  │      │      20c1711e-6e1a-34df-86a3-92ae832d2f9f.json
+│  │      │      241b8068-7327-314d-abe2-ee7690220b50.json
+│  │      │      2654e3c3-150d-3857-a426-0b141796a4e0.json
+│  │      │      27903c96-6327-3ab4-9463-21017fd8955d.json
+│  │      │      27fc360e-fa24-3dff-9bfe-79a065a3b88e.json
+│  │      │      2814925e-9add-35ba-8fa3-433e445fe43d.json
+│  │      │      2854591c-b60f-3cde-b807-30391bb3ef3d.json
+│  │      │      28de3746-47a4-326a-afac-3983252542f7.json
+│  │      │      2a17739c-8096-3f15-9cf7-abffa922ad8e.json
+│  │      │      2aad58e3-54f7-330f-a72b-452f50ba116d.json
+│  │      │      2b83ebdc-0604-37b1-94a0-4298b1021b84.json
+│  │      │      2c9d87c8-64e7-3ca8-861e-e4a9ef3d93bc.json
+│  │      │      2e2bad62-fd9f-3bb5-a89e-b314a4f30e73.json
+│  │      │      3155dd2a-f684-3928-a1f6-f0dff831507f.json
+│  │      │      337a131b-860d-346e-a281-649e07daeae5.json
+│  │      │      393f993c-07f1-322f-8af5-e61da4aa15d9.json
+│  │      │      39a095b5-aea9-3421-a918-d077b0105370.json
+│  │      │      3c7cef0c-c4d3-3eb2-a04d-c369cce398ef.json
+│  │      │      3ebb1391-453f-3fbc-829d-8510c6e3c283.json
+│  │      │      3f18158e-f2c1-3129-a134-25632e6b98da.json
+│  │      │      42c8facc-cbd2-36d2-8ac3-7dd20c6ce2a1.json
+│  │      │      446355e4-985a-3d9c-a63c-4d95aa4b0dff.json
+│  │      │      44d903f8-18c4-31d1-b8f3-054c7e2bcb1f.json
+│  │      │      44e8d65a-a4b2-3c63-9ef0-950bb5685028.json
+│  │      │      453f7d61-95c2-3540-9f32-1609f539a60e.json
+│  │      │      483a9f6c-d89c-3cd9-9ee4-92f25a76c0c5.json
+│  │      │      49b1c99f-ddf7-3830-8802-b69461c51429.json
+│  │      │      538c2a55-7afc-37c7-ab76-b8f0ee8467dd.json
+│  │      │      56194db1-2459-3533-bada-8561030dd064.json
+│  │      │      5648fab5-fa61-330e-8fa7-aea962bdfd7c.json
+│  │      │      57e72990-8f4d-370a-9882-2dee063faae3.json
+│  │      │      58b4dcc6-56fd-3122-a1b7-3d72cc687631.json
+│  │      │      5a8bc451-c1a7-3b73-97ff-34b045dbb0ff.json
+│  │      │      5b0c46c0-894b-30a6-bd31-bf02da63882f.json
+│  │      │      63112fde-b0db-328f-b581-077db247c627.json
+│  │      │      6421d26c-b813-3e76-bed7-39f6f8e7da7e.json
+│  │      │      64579c2e-a410-37b0-995d-5aa98a8b0304.json
+│  │      │      67e4079e-4cf5-3669-9343-c8d0c03a90f2.json
+│  │      │      6b70ab1d-ea1f-3080-82f2-6a9952eea911.json
+│  │      │      6f525ab9-4df4-3875-8280-4904a48f9cd7.json
+│  │      │      71ee4b7e-330e-3d50-90a4-3d964a618ea8.json
+│  │      │      75e52373-1963-3666-bda9-8904d639e38b.json
+│  │      │      76a85934-d1dc-3e22-b48f-18504df540b9.json
+│  │      │      7c2fb32a-48f4-3632-92b4-de6db3581064.json
+│  │      │      7de0b911-1474-3b51-bbfc-d3e0a184ff98.json
+│  │      │      7eabe93c-dd7d-38e8-9271-2dd9ed4d2fa5.json
+│  │      │      7fc02cf2-da5a-351c-a700-aaa88bd6d88d.json
+│  │      │      80366950-5482-38de-842a-c4cdd5802ec2.json
+│  │      │      83f835f2-20fa-325d-8039-400fcc96db8c.json
+│  │      │      87838b30-d4f9-3495-97a3-26161a757982.json
+│  │      │      88b1442b-3f7c-34cb-9b8b-19f2bae6b8af.json
+│  │      │      9033e00b-50d9-3cb5-b190-7fa9d916bd8f.json
+│  │      │      942531dd-7690-3c0a-ad42-657bb212e7b6.json
+│  │      │      945b4d90-8964-318c-b289-be6438caa78f.json
+│  │      │      9662db8b-9062-3256-9f5d-83caa676c3d7.json
+│  │      │      984cf274-9eed-399c-97dc-353ad10f84a8.json
+│  │      │      9ba1d9fb-277b-3ec4-9552-50e8dd85d3d4.json
+│  │      │      9df70e84-3251-33fb-9047-d59112057246.json
+│  │      │      9f83efe4-f945-3a62-8c8a-b62cdf1ee258.json
+│  │      │      a4081500-9e8c-36ae-a97c-f165f9882cba.json
+│  │      │      a40967fe-53e3-3428-b2d4-e5dfaa3ad087.json
+│  │      │      a7d84b43-620c-3be0-bbc6-d96e040e37ab.json
+│  │      │      a944d272-b5cd-3b57-b4eb-9b34a77b45aa.json
+│  │      │      a9c0d951-c0b6-3353-a779-fe4259ce0834.json
+│  │      │      abd58e08-2462-379a-81f3-fa94df810a52.json
+│  │      │      ac47fd32-de83-3641-a759-130889823db1.json
+│  │      │      acd62baf-1f62-3e9e-a7f5-5e27309e35be.json
+│  │      │      aed5efd4-551b-3965-bc28-ae21aa072a66.json
+│  │      │      b0da1a12-66d3-34d6-99f0-6da43866ed58.json
+│  │      │      b2d19156-5364-397f-8e33-abd769d6319d.json
+│  │      │      b5079939-0881-3d3d-a86e-56223944774f.json
+│  │      │      b63c1160-7834-3764-9276-2fb9c5acd6ce.json
+│  │      │      b6f7a483-95d4-3c1c-a80d-d6147f86003c.json
+│  │      │      c016ab36-f8ab-3a42-9127-a875f53562d0.json
+│  │      │      c17a5542-4699-3d3f-81f1-a187d3ec58fe.json
+│  │      │      c35c79fa-c14d-3173-a5f4-409e5a0c65eb.json
+│  │      │      c645540e-52c6-36d2-bbbe-373fe1591946.json
+│  │      │      c89ac188-5207-3ca2-8ef0-ed700f7bdbef.json
+│  │      │      c98b4c6a-9420-3bf0-87b7-0742781c94c8.json
+│  │      │      ca560dd3-ebf9-3fc9-b2e6-088534082c81.json
+│  │      │      ca94d3c2-08bb-3cb6-9c61-61015e7666c6.json
+│  │      │      ccf0c278-c21f-3ec3-a87c-05202673a5dd.json
+│  │      │      cf6fbb5f-ecf0-3695-8c0e-427c205e2096.json
+│  │      │      d1fadcd5-f8ee-389b-ae76-2112e34d591e.json
+│  │      │      d2fd1c5d-4760-35a0-aa0f-c197e25af2ac.json
+│  │      │      d7375cbd-a871-343c-8b61-9df743b3fcf0.json
+│  │      │      d7cff5a0-f2a0-3727-aca6-d996fc42f55a.json
+│  │      │      d944aee7-2684-33ce-b4ec-6dde00bdf73f.json
+│  │      │      d978d670-4b07-3a90-bfb6-b4e7c70fe7fc.json
+│  │      │      de358e9d-8e5f-32cd-b09f-d8bdf3008cfe.json
+│  │      │      dea644e0-8ac5-3c66-a811-a50bdc003ad8.json
+│  │      │      dfa57433-6d23-31fd-a282-bdca1175e553.json
+│  │      │      e246deab-2680-3623-991e-a2d437bbfbae.json
+│  │      │      e5a660b6-9d51-36ee-858e-f73e02a3f36f.json
+│  │      │      eb3e37b3-0c87-3026-b460-637c38fd4fdd.json
+│  │      │      eed453d8-1b3a-3fa3-9fc5-1cf433d73521.json
+│  │      │      f4642d2b-29f9-34b7-8b90-e6570e856434.json
+│  │      │      f4755d8e-161a-3abe-8338-935e4189097a.json
+│  │      │      f7621ff1-653f-32ec-8621-00c0392bfbcc.json
+│  │      │      f7e77b0e-8c33-3536-90c1-aa6b49a4e946.json
+│  │      │      f8b3cbc3-8889-3cbd-890b-ed87a36c6fe4.json
+│  │      │      fa57a584-be0c-37cc-aa91-b7d78367c493.json
+│  │      │      fb4c6c18-26a1-3d95-a13f-9a47871171a2.json
+│  │      │      fc13d9f9-a806-3ae0-82c2-ce24ef162c15.json
+│  │      │      fd4dff36-f6aa-35f9-8e99-ec749e44651e.json
+│  │      │      
+│  │      ├─data
+│  │      │      chunks.dat
+│  │      │      raids.dat
+│  │      │      random_sequences.dat
+│  │      │      scoreboard.dat
+│  │      │      
+│  │      ├─datapacks
+│  │      ├─DIM-1
+│  │      │  └─data
+│  │      │          chunks.dat
+│  │      │          raids.dat
+│  │      │          
+│  │      ├─DIM1
+│  │      │  └─data
+│  │      │          chunks.dat
+│  │      │          raids_end.dat
+│  │      │          
+│  │      ├─entities
+│  │      │      r.-1.-1.mca
+│  │      │      r.-1.-2.mca
+│  │      │      r.-1.0.mca
+│  │      │      r.-1.1.mca
+│  │      │      r.-1.2.mca
+│  │      │      r.-2.-1.mca
+│  │      │      r.-2.0.mca
+│  │      │      r.-2.1.mca
+│  │      │      r.-2.2.mca
+│  │      │      r.-3.-1.mca
+│  │      │      r.-3.0.mca
+│  │      │      r.0.-1.mca
+│  │      │      r.0.0.mca
+│  │      │      r.0.1.mca
+│  │      │      r.0.2.mca
+│  │      │      r.0.3.mca
+│  │      │      r.1.-1.mca
+│  │      │      r.1.0.mca
+│  │      │      r.1.1.mca
+│  │      │      r.1.2.mca
+│  │      │      r.1.3.mca
+│  │      │      r.2.2.mca
+│  │      │      r.2.3.mca
+│  │      │      
+│  │      ├─playerdata
+│  │      │      005a1bfb-b3e4-37aa-87e8-3ba2c8463cf4.dat
+│  │      │      005a1bfb-b3e4-37aa-87e8-3ba2c8463cf4.dat_old
+│  │      │      01d9f825-5509-3b83-aacf-c98ce0dce1c7.dat
+│  │      │      01d9f825-5509-3b83-aacf-c98ce0dce1c7.dat_old
+│  │      │      07f066df-e334-33b1-a24c-2ec414c5ef02.dat
+│  │      │      07f066df-e334-33b1-a24c-2ec414c5ef02.dat_old
+│  │      │      0c8f54b5-758c-3933-9675-7dfb411a82a2.dat
+│  │      │      0c8f54b5-758c-3933-9675-7dfb411a82a2.dat_old
+│  │      │      0d1798c0-e9c5-3a83-99d9-4cf400fcf12a.dat
+│  │      │      0d1798c0-e9c5-3a83-99d9-4cf400fcf12a.dat_old
+│  │      │      0de21b13-73b3-37ba-84f2-92c78b6712c2.dat
+│  │      │      0de21b13-73b3-37ba-84f2-92c78b6712c2.dat_old
+│  │      │      10093cea-54e5-30aa-8af3-58e53a90cf15.dat
+│  │      │      10093cea-54e5-30aa-8af3-58e53a90cf15.dat_old
+│  │      │      11e12ca9-fda1-31b6-8f92-6e251e7a18f2.dat
+│  │      │      11e12ca9-fda1-31b6-8f92-6e251e7a18f2.dat_old
+│  │      │      130bfefb-ac8d-3a05-b27c-6205f9d12a06.dat
+│  │      │      130bfefb-ac8d-3a05-b27c-6205f9d12a06.dat_old
+│  │      │      157dadc9-e980-331f-9b9a-60b0f155ef62.dat
+│  │      │      157dadc9-e980-331f-9b9a-60b0f155ef62.dat_old
+│  │      │      1714a812-885f-3243-b534-9a660fba6e8b.dat
+│  │      │      1714a812-885f-3243-b534-9a660fba6e8b.dat_old
+│  │      │      183eef8c-2608-3c01-af67-e8b358459ccf.dat
+│  │      │      183eef8c-2608-3c01-af67-e8b358459ccf.dat_old
+│  │      │      19f51a77-b6fb-3469-a8b6-228ec5ce5961.dat
+│  │      │      19f51a77-b6fb-3469-a8b6-228ec5ce5961.dat_old
+│  │      │      1acd01f1-1c8b-3758-959b-fdf4d16bd5de.dat
+│  │      │      1acd01f1-1c8b-3758-959b-fdf4d16bd5de.dat_old
+│  │      │      1c6ab893-c8be-3ad8-a14c-5cafcb89dfd5.dat
+│  │      │      1c6ab893-c8be-3ad8-a14c-5cafcb89dfd5.dat_old
+│  │      │      1ef891cf-32a6-31f4-b463-6277834cb67f.dat
+│  │      │      1ef891cf-32a6-31f4-b463-6277834cb67f.dat_old
+│  │      │      20c1711e-6e1a-34df-86a3-92ae832d2f9f.dat
+│  │      │      20c1711e-6e1a-34df-86a3-92ae832d2f9f.dat_old
+│  │      │      241b8068-7327-314d-abe2-ee7690220b50.dat
+│  │      │      241b8068-7327-314d-abe2-ee7690220b50.dat_old
+│  │      │      2654e3c3-150d-3857-a426-0b141796a4e0.dat
+│  │      │      2654e3c3-150d-3857-a426-0b141796a4e0.dat_old
+│  │      │      27903c96-6327-3ab4-9463-21017fd8955d.dat
+│  │      │      27903c96-6327-3ab4-9463-21017fd8955d.dat_old
+│  │      │      27fc360e-fa24-3dff-9bfe-79a065a3b88e.dat
+│  │      │      2814925e-9add-35ba-8fa3-433e445fe43d.dat
+│  │      │      2814925e-9add-35ba-8fa3-433e445fe43d.dat_old
+│  │      │      2854591c-b60f-3cde-b807-30391bb3ef3d.dat
+│  │      │      2854591c-b60f-3cde-b807-30391bb3ef3d.dat_old
+│  │      │      28de3746-47a4-326a-afac-3983252542f7.dat
+│  │      │      28de3746-47a4-326a-afac-3983252542f7.dat_old
+│  │      │      2a17739c-8096-3f15-9cf7-abffa922ad8e.dat
+│  │      │      2a17739c-8096-3f15-9cf7-abffa922ad8e.dat_old
+│  │      │      2aad58e3-54f7-330f-a72b-452f50ba116d.dat
+│  │      │      2aad58e3-54f7-330f-a72b-452f50ba116d.dat_old
+│  │      │      2b83ebdc-0604-37b1-94a0-4298b1021b84.dat
+│  │      │      2b83ebdc-0604-37b1-94a0-4298b1021b84.dat_old
+│  │      │      2c9d87c8-64e7-3ca8-861e-e4a9ef3d93bc.dat
+│  │      │      2c9d87c8-64e7-3ca8-861e-e4a9ef3d93bc.dat_old
+│  │      │      2e2bad62-fd9f-3bb5-a89e-b314a4f30e73.dat
+│  │      │      2e2bad62-fd9f-3bb5-a89e-b314a4f30e73.dat_old
+│  │      │      3155dd2a-f684-3928-a1f6-f0dff831507f.dat
+│  │      │      3155dd2a-f684-3928-a1f6-f0dff831507f.dat_old
+│  │      │      337a131b-860d-346e-a281-649e07daeae5.dat
+│  │      │      337a131b-860d-346e-a281-649e07daeae5.dat_old
+│  │      │      393f993c-07f1-322f-8af5-e61da4aa15d9.dat
+│  │      │      393f993c-07f1-322f-8af5-e61da4aa15d9.dat_old
+│  │      │      39a095b5-aea9-3421-a918-d077b0105370.dat
+│  │      │      39a095b5-aea9-3421-a918-d077b0105370.dat_old
+│  │      │      3c7cef0c-c4d3-3eb2-a04d-c369cce398ef.dat
+│  │      │      3c7cef0c-c4d3-3eb2-a04d-c369cce398ef.dat_old
+│  │      │      3ebb1391-453f-3fbc-829d-8510c6e3c283.dat
+│  │      │      3ebb1391-453f-3fbc-829d-8510c6e3c283.dat_old
+│  │      │      3f18158e-f2c1-3129-a134-25632e6b98da.dat
+│  │      │      3f18158e-f2c1-3129-a134-25632e6b98da.dat_old
+│  │      │      42c8facc-cbd2-36d2-8ac3-7dd20c6ce2a1.dat
+│  │      │      446355e4-985a-3d9c-a63c-4d95aa4b0dff.dat
+│  │      │      446355e4-985a-3d9c-a63c-4d95aa4b0dff.dat_old
+│  │      │      44d903f8-18c4-31d1-b8f3-054c7e2bcb1f.dat
+│  │      │      44d903f8-18c4-31d1-b8f3-054c7e2bcb1f.dat_old
+│  │      │      44e8d65a-a4b2-3c63-9ef0-950bb5685028.dat
+│  │      │      44e8d65a-a4b2-3c63-9ef0-950bb5685028.dat_old
+│  │      │      453f7d61-95c2-3540-9f32-1609f539a60e.dat
+│  │      │      453f7d61-95c2-3540-9f32-1609f539a60e.dat_old
+│  │      │      483a9f6c-d89c-3cd9-9ee4-92f25a76c0c5.dat
+│  │      │      483a9f6c-d89c-3cd9-9ee4-92f25a76c0c5.dat_old
+│  │      │      49b1c99f-ddf7-3830-8802-b69461c51429.dat
+│  │      │      49b1c99f-ddf7-3830-8802-b69461c51429.dat_old
+│  │      │      538c2a55-7afc-37c7-ab76-b8f0ee8467dd.dat
+│  │      │      538c2a55-7afc-37c7-ab76-b8f0ee8467dd.dat_old
+│  │      │      56194db1-2459-3533-bada-8561030dd064.dat
+│  │      │      56194db1-2459-3533-bada-8561030dd064.dat_old
+│  │      │      5648fab5-fa61-330e-8fa7-aea962bdfd7c.dat
+│  │      │      5648fab5-fa61-330e-8fa7-aea962bdfd7c.dat_old
+│  │      │      57e72990-8f4d-370a-9882-2dee063faae3.dat
+│  │      │      57e72990-8f4d-370a-9882-2dee063faae3.dat_old
+│  │      │      58b4dcc6-56fd-3122-a1b7-3d72cc687631.dat
+│  │      │      58b4dcc6-56fd-3122-a1b7-3d72cc687631.dat_old
+│  │      │      5a8bc451-c1a7-3b73-97ff-34b045dbb0ff.dat
+│  │      │      5a8bc451-c1a7-3b73-97ff-34b045dbb0ff.dat_old
+│  │      │      5b0c46c0-894b-30a6-bd31-bf02da63882f.dat
+│  │      │      5b0c46c0-894b-30a6-bd31-bf02da63882f.dat_old
+│  │      │      63112fde-b0db-328f-b581-077db247c627.dat
+│  │      │      63112fde-b0db-328f-b581-077db247c627.dat_old
+│  │      │      6421d26c-b813-3e76-bed7-39f6f8e7da7e.dat
+│  │      │      6421d26c-b813-3e76-bed7-39f6f8e7da7e.dat_old
+│  │      │      64579c2e-a410-37b0-995d-5aa98a8b0304.dat
+│  │      │      64579c2e-a410-37b0-995d-5aa98a8b0304.dat_old
+│  │      │      67e4079e-4cf5-3669-9343-c8d0c03a90f2.dat
+│  │      │      67e4079e-4cf5-3669-9343-c8d0c03a90f2.dat_old
+│  │      │      6b70ab1d-ea1f-3080-82f2-6a9952eea911.dat
+│  │      │      6b70ab1d-ea1f-3080-82f2-6a9952eea911.dat_old
+│  │      │      6f525ab9-4df4-3875-8280-4904a48f9cd7.dat
+│  │      │      6f525ab9-4df4-3875-8280-4904a48f9cd7.dat_old
+│  │      │      71ee4b7e-330e-3d50-90a4-3d964a618ea8.dat
+│  │      │      71ee4b7e-330e-3d50-90a4-3d964a618ea8.dat_old
+│  │      │      75e52373-1963-3666-bda9-8904d639e38b.dat
+│  │      │      75e52373-1963-3666-bda9-8904d639e38b.dat_old
+│  │      │      76a85934-d1dc-3e22-b48f-18504df540b9.dat
+│  │      │      76a85934-d1dc-3e22-b48f-18504df540b9.dat_old
+│  │      │      7c2fb32a-48f4-3632-92b4-de6db3581064.dat
+│  │      │      7c2fb32a-48f4-3632-92b4-de6db3581064.dat_old
+│  │      │      7de0b911-1474-3b51-bbfc-d3e0a184ff98.dat
+│  │      │      7de0b911-1474-3b51-bbfc-d3e0a184ff98.dat_old
+│  │      │      7eabe93c-dd7d-38e8-9271-2dd9ed4d2fa5.dat
+│  │      │      7eabe93c-dd7d-38e8-9271-2dd9ed4d2fa5.dat_old
+│  │      │      7fc02cf2-da5a-351c-a700-aaa88bd6d88d.dat
+│  │      │      7fc02cf2-da5a-351c-a700-aaa88bd6d88d.dat_old
+│  │      │      80366950-5482-38de-842a-c4cdd5802ec2.dat
+│  │      │      83f835f2-20fa-325d-8039-400fcc96db8c.dat
+│  │      │      83f835f2-20fa-325d-8039-400fcc96db8c.dat_old
+│  │      │      87838b30-d4f9-3495-97a3-26161a757982.dat
+│  │      │      87838b30-d4f9-3495-97a3-26161a757982.dat_old
+│  │      │      88b1442b-3f7c-34cb-9b8b-19f2bae6b8af.dat
+│  │      │      88b1442b-3f7c-34cb-9b8b-19f2bae6b8af.dat_old
+│  │      │      9033e00b-50d9-3cb5-b190-7fa9d916bd8f.dat
+│  │      │      9033e00b-50d9-3cb5-b190-7fa9d916bd8f.dat_old
+│  │      │      942531dd-7690-3c0a-ad42-657bb212e7b6.dat
+│  │      │      942531dd-7690-3c0a-ad42-657bb212e7b6.dat_old
+│  │      │      945b4d90-8964-318c-b289-be6438caa78f.dat
+│  │      │      945b4d90-8964-318c-b289-be6438caa78f.dat_old
+│  │      │      9662db8b-9062-3256-9f5d-83caa676c3d7.dat
+│  │      │      9662db8b-9062-3256-9f5d-83caa676c3d7.dat_old
+│  │      │      984cf274-9eed-399c-97dc-353ad10f84a8.dat
+│  │      │      984cf274-9eed-399c-97dc-353ad10f84a8.dat_old
+│  │      │      9ba1d9fb-277b-3ec4-9552-50e8dd85d3d4.dat
+│  │      │      9ba1d9fb-277b-3ec4-9552-50e8dd85d3d4.dat_old
+│  │      │      9df70e84-3251-33fb-9047-d59112057246.dat
+│  │      │      9df70e84-3251-33fb-9047-d59112057246.dat_old
+│  │      │      9f83efe4-f945-3a62-8c8a-b62cdf1ee258.dat
+│  │      │      9f83efe4-f945-3a62-8c8a-b62cdf1ee258.dat_old
+│  │      │      a4081500-9e8c-36ae-a97c-f165f9882cba.dat
+│  │      │      a4081500-9e8c-36ae-a97c-f165f9882cba.dat_old
+│  │      │      a40967fe-53e3-3428-b2d4-e5dfaa3ad087.dat
+│  │      │      a40967fe-53e3-3428-b2d4-e5dfaa3ad087.dat_old
+│  │      │      a7d84b43-620c-3be0-bbc6-d96e040e37ab.dat
+│  │      │      a7d84b43-620c-3be0-bbc6-d96e040e37ab.dat_old
+│  │      │      a944d272-b5cd-3b57-b4eb-9b34a77b45aa.dat
+│  │      │      a944d272-b5cd-3b57-b4eb-9b34a77b45aa.dat_old
+│  │      │      a9c0d951-c0b6-3353-a779-fe4259ce0834.dat
+│  │      │      a9c0d951-c0b6-3353-a779-fe4259ce0834.dat_old
+│  │      │      abd58e08-2462-379a-81f3-fa94df810a52.dat
+│  │      │      abd58e08-2462-379a-81f3-fa94df810a52.dat_old
+│  │      │      ac47fd32-de83-3641-a759-130889823db1.dat
+│  │      │      ac47fd32-de83-3641-a759-130889823db1.dat_old
+│  │      │      acd62baf-1f62-3e9e-a7f5-5e27309e35be.dat
+│  │      │      acd62baf-1f62-3e9e-a7f5-5e27309e35be.dat_old
+│  │      │      aed5efd4-551b-3965-bc28-ae21aa072a66.dat
+│  │      │      aed5efd4-551b-3965-bc28-ae21aa072a66.dat_old
+│  │      │      b0da1a12-66d3-34d6-99f0-6da43866ed58.dat
+│  │      │      b0da1a12-66d3-34d6-99f0-6da43866ed58.dat_old
+│  │      │      b2d19156-5364-397f-8e33-abd769d6319d.dat
+│  │      │      b2d19156-5364-397f-8e33-abd769d6319d.dat_old
+│  │      │      b5079939-0881-3d3d-a86e-56223944774f.dat
+│  │      │      b63c1160-7834-3764-9276-2fb9c5acd6ce.dat
+│  │      │      b6f7a483-95d4-3c1c-a80d-d6147f86003c.dat
+│  │      │      b6f7a483-95d4-3c1c-a80d-d6147f86003c.dat_old
+│  │      │      c016ab36-f8ab-3a42-9127-a875f53562d0.dat
+│  │      │      c016ab36-f8ab-3a42-9127-a875f53562d0.dat_old
+│  │      │      c17a5542-4699-3d3f-81f1-a187d3ec58fe.dat
+│  │      │      c17a5542-4699-3d3f-81f1-a187d3ec58fe.dat_old
+│  │      │      c35c79fa-c14d-3173-a5f4-409e5a0c65eb.dat
+│  │      │      c35c79fa-c14d-3173-a5f4-409e5a0c65eb.dat_old
+│  │      │      c645540e-52c6-36d2-bbbe-373fe1591946.dat
+│  │      │      c645540e-52c6-36d2-bbbe-373fe1591946.dat_old
+│  │      │      c89ac188-5207-3ca2-8ef0-ed700f7bdbef.dat
+│  │      │      c89ac188-5207-3ca2-8ef0-ed700f7bdbef.dat_old
+│  │      │      c98b4c6a-9420-3bf0-87b7-0742781c94c8.dat
+│  │      │      c98b4c6a-9420-3bf0-87b7-0742781c94c8.dat_old
+│  │      │      ca560dd3-ebf9-3fc9-b2e6-088534082c81.dat
+│  │      │      ca560dd3-ebf9-3fc9-b2e6-088534082c81.dat_old
+│  │      │      ca94d3c2-08bb-3cb6-9c61-61015e7666c6.dat
+│  │      │      ca94d3c2-08bb-3cb6-9c61-61015e7666c6.dat_old
+│  │      │      ccf0c278-c21f-3ec3-a87c-05202673a5dd.dat
+│  │      │      ccf0c278-c21f-3ec3-a87c-05202673a5dd.dat_old
+│  │      │      cf6fbb5f-ecf0-3695-8c0e-427c205e2096.dat
+│  │      │      cf6fbb5f-ecf0-3695-8c0e-427c205e2096.dat_old
+│  │      │      d1fadcd5-f8ee-389b-ae76-2112e34d591e.dat
+│  │      │      d1fadcd5-f8ee-389b-ae76-2112e34d591e.dat_old
+│  │      │      d2fd1c5d-4760-35a0-aa0f-c197e25af2ac.dat
+│  │      │      d2fd1c5d-4760-35a0-aa0f-c197e25af2ac.dat_old
+│  │      │      d7375cbd-a871-343c-8b61-9df743b3fcf0.dat
+│  │      │      d7cff5a0-f2a0-3727-aca6-d996fc42f55a.dat
+│  │      │      d7cff5a0-f2a0-3727-aca6-d996fc42f55a.dat_old
+│  │      │      d944aee7-2684-33ce-b4ec-6dde00bdf73f.dat
+│  │      │      d944aee7-2684-33ce-b4ec-6dde00bdf73f.dat_old
+│  │      │      d978d670-4b07-3a90-bfb6-b4e7c70fe7fc.dat
+│  │      │      d978d670-4b07-3a90-bfb6-b4e7c70fe7fc.dat_old
+│  │      │      de358e9d-8e5f-32cd-b09f-d8bdf3008cfe.dat
+│  │      │      de358e9d-8e5f-32cd-b09f-d8bdf3008cfe.dat_old
+│  │      │      dea644e0-8ac5-3c66-a811-a50bdc003ad8.dat
+│  │      │      dea644e0-8ac5-3c66-a811-a50bdc003ad8.dat_old
+│  │      │      dfa57433-6d23-31fd-a282-bdca1175e553.dat
+│  │      │      dfa57433-6d23-31fd-a282-bdca1175e553.dat_old
+│  │      │      e246deab-2680-3623-991e-a2d437bbfbae.dat
+│  │      │      e246deab-2680-3623-991e-a2d437bbfbae.dat_old
+│  │      │      e5a660b6-9d51-36ee-858e-f73e02a3f36f.dat
+│  │      │      e5a660b6-9d51-36ee-858e-f73e02a3f36f.dat_old
+│  │      │      eb3e37b3-0c87-3026-b460-637c38fd4fdd.dat
+│  │      │      eed453d8-1b3a-3fa3-9fc5-1cf433d73521.dat
+│  │      │      eed453d8-1b3a-3fa3-9fc5-1cf433d73521.dat_old
+│  │      │      f4642d2b-29f9-34b7-8b90-e6570e856434.dat
+│  │      │      f4642d2b-29f9-34b7-8b90-e6570e856434.dat_old
+│  │      │      f4755d8e-161a-3abe-8338-935e4189097a.dat
+│  │      │      f4755d8e-161a-3abe-8338-935e4189097a.dat_old
+│  │      │      f7621ff1-653f-32ec-8621-00c0392bfbcc.dat
+│  │      │      f7621ff1-653f-32ec-8621-00c0392bfbcc.dat_old
+│  │      │      f7e77b0e-8c33-3536-90c1-aa6b49a4e946.dat
+│  │      │      f7e77b0e-8c33-3536-90c1-aa6b49a4e946.dat_old
+│  │      │      f8b3cbc3-8889-3cbd-890b-ed87a36c6fe4.dat
+│  │      │      f8b3cbc3-8889-3cbd-890b-ed87a36c6fe4.dat_old
+│  │      │      fa57a584-be0c-37cc-aa91-b7d78367c493.dat
+│  │      │      fa57a584-be0c-37cc-aa91-b7d78367c493.dat_old
+│  │      │      fb4c6c18-26a1-3d95-a13f-9a47871171a2.dat
+│  │      │      fb4c6c18-26a1-3d95-a13f-9a47871171a2.dat_old
+│  │      │      fc13d9f9-a806-3ae0-82c2-ce24ef162c15.dat
+│  │      │      fc13d9f9-a806-3ae0-82c2-ce24ef162c15.dat_old
+│  │      │      fd4dff36-f6aa-35f9-8e99-ec749e44651e.dat
+│  │      │      fd4dff36-f6aa-35f9-8e99-ec749e44651e.dat_old
+│  │      │      
+│  │      ├─poi
+│  │      │      r.-1.-1.mca
+│  │      │      r.-1.-2.mca
+│  │      │      r.-1.0.mca
+│  │      │      r.-1.1.mca
+│  │      │      r.-1.2.mca
+│  │      │      r.-2.-1.mca
+│  │      │      r.-2.-2.mca
+│  │      │      r.-2.0.mca
+│  │      │      r.-2.1.mca
+│  │      │      r.-2.2.mca
+│  │      │      r.-3.-1.mca
+│  │      │      r.-3.-2.mca
+│  │      │      r.-3.0.mca
+│  │      │      r.-3.1.mca
+│  │      │      r.-3.2.mca
+│  │      │      r.0.-1.mca
+│  │      │      r.0.-2.mca
+│  │      │      r.0.0.mca
+│  │      │      r.0.1.mca
+│  │      │      r.0.2.mca
+│  │      │      r.0.3.mca
+│  │      │      r.0.4.mca
+│  │      │      r.1.-1.mca
+│  │      │      r.1.0.mca
+│  │      │      r.1.1.mca
+│  │      │      r.1.2.mca
+│  │      │      r.1.3.mca
+│  │      │      r.1.4.mca
+│  │      │      r.2.1.mca
+│  │      │      r.2.2.mca
+│  │      │      r.2.3.mca
+│  │      │      r.2.4.mca
+│  │      │      
+│  │      ├─region
+│  │      │      r.-1.-1.mca
+│  │      │      r.-1.-2.mca
+│  │      │      r.-1.0.mca
+│  │      │      r.-1.1.mca
+│  │      │      r.-1.2.mca
+│  │      │      r.-2.-1.mca
+│  │      │      r.-2.-2.mca
+│  │      │      r.-2.0.mca
+│  │      │      r.-2.1.mca
+│  │      │      r.-2.2.mca
+│  │      │      r.-3.-1.mca
+│  │      │      r.-3.-2.mca
+│  │      │      r.-3.0.mca
+│  │      │      r.-3.1.mca
+│  │      │      r.-3.2.mca
+│  │      │      r.0.-1.mca
+│  │      │      r.0.-2.mca
+│  │      │      r.0.0.mca
+│  │      │      r.0.1.mca
+│  │      │      r.0.2.mca
+│  │      │      r.0.3.mca
+│  │      │      r.0.4.mca
+│  │      │      r.1.-1.mca
+│  │      │      r.1.0.mca
+│  │      │      r.1.1.mca
+│  │      │      r.1.2.mca
+│  │      │      r.1.3.mca
+│  │      │      r.1.4.mca
+│  │      │      r.2.1.mca
+│  │      │      r.2.2.mca
+│  │      │      r.2.3.mca
+│  │      │      r.2.4.mca
+│  │      │      
+│  │      └─stats
+│  │              005a1bfb-b3e4-37aa-87e8-3ba2c8463cf4.json
+│  │              01d9f825-5509-3b83-aacf-c98ce0dce1c7.json
+│  │              07f066df-e334-33b1-a24c-2ec414c5ef02.json
+│  │              0c8f54b5-758c-3933-9675-7dfb411a82a2.json
+│  │              0d1798c0-e9c5-3a83-99d9-4cf400fcf12a.json
+│  │              0de21b13-73b3-37ba-84f2-92c78b6712c2.json
+│  │              10093cea-54e5-30aa-8af3-58e53a90cf15.json
+│  │              11e12ca9-fda1-31b6-8f92-6e251e7a18f2.json
+│  │              130bfefb-ac8d-3a05-b27c-6205f9d12a06.json
+│  │              157dadc9-e980-331f-9b9a-60b0f155ef62.json
+│  │              1714a812-885f-3243-b534-9a660fba6e8b.json
+│  │              183eef8c-2608-3c01-af67-e8b358459ccf.json
+│  │              19f51a77-b6fb-3469-a8b6-228ec5ce5961.json
+│  │              1acd01f1-1c8b-3758-959b-fdf4d16bd5de.json
+│  │              1c6ab893-c8be-3ad8-a14c-5cafcb89dfd5.json
+│  │              1ef891cf-32a6-31f4-b463-6277834cb67f.json
+│  │              20c1711e-6e1a-34df-86a3-92ae832d2f9f.json
+│  │              241b8068-7327-314d-abe2-ee7690220b50.json
+│  │              2654e3c3-150d-3857-a426-0b141796a4e0.json
+│  │              27903c96-6327-3ab4-9463-21017fd8955d.json
+│  │              27fc360e-fa24-3dff-9bfe-79a065a3b88e.json
+│  │              2814925e-9add-35ba-8fa3-433e445fe43d.json
+│  │              2854591c-b60f-3cde-b807-30391bb3ef3d.json
+│  │              28de3746-47a4-326a-afac-3983252542f7.json
+│  │              2a17739c-8096-3f15-9cf7-abffa922ad8e.json
+│  │              2aad58e3-54f7-330f-a72b-452f50ba116d.json
+│  │              2b83ebdc-0604-37b1-94a0-4298b1021b84.json
+│  │              2c9d87c8-64e7-3ca8-861e-e4a9ef3d93bc.json
+│  │              2e2bad62-fd9f-3bb5-a89e-b314a4f30e73.json
+│  │              3155dd2a-f684-3928-a1f6-f0dff831507f.json
+│  │              337a131b-860d-346e-a281-649e07daeae5.json
+│  │              393f993c-07f1-322f-8af5-e61da4aa15d9.json
+│  │              39a095b5-aea9-3421-a918-d077b0105370.json
+│  │              3c7cef0c-c4d3-3eb2-a04d-c369cce398ef.json
+│  │              3ebb1391-453f-3fbc-829d-8510c6e3c283.json
+│  │              3f18158e-f2c1-3129-a134-25632e6b98da.json
+│  │              42c8facc-cbd2-36d2-8ac3-7dd20c6ce2a1.json
+│  │              446355e4-985a-3d9c-a63c-4d95aa4b0dff.json
+│  │              44d903f8-18c4-31d1-b8f3-054c7e2bcb1f.json
+│  │              44e8d65a-a4b2-3c63-9ef0-950bb5685028.json
+│  │              453f7d61-95c2-3540-9f32-1609f539a60e.json
+│  │              483a9f6c-d89c-3cd9-9ee4-92f25a76c0c5.json
+│  │              49b1c99f-ddf7-3830-8802-b69461c51429.json
+│  │              538c2a55-7afc-37c7-ab76-b8f0ee8467dd.json
+│  │              56194db1-2459-3533-bada-8561030dd064.json
+│  │              5648fab5-fa61-330e-8fa7-aea962bdfd7c.json
+│  │              57e72990-8f4d-370a-9882-2dee063faae3.json
+│  │              58b4dcc6-56fd-3122-a1b7-3d72cc687631.json
+│  │              5a8bc451-c1a7-3b73-97ff-34b045dbb0ff.json
+│  │              5b0c46c0-894b-30a6-bd31-bf02da63882f.json
+│  │              63112fde-b0db-328f-b581-077db247c627.json
+│  │              6421d26c-b813-3e76-bed7-39f6f8e7da7e.json
+│  │              64579c2e-a410-37b0-995d-5aa98a8b0304.json
+│  │              67e4079e-4cf5-3669-9343-c8d0c03a90f2.json
+│  │              6b70ab1d-ea1f-3080-82f2-6a9952eea911.json
+│  │              6f525ab9-4df4-3875-8280-4904a48f9cd7.json
+│  │              71ee4b7e-330e-3d50-90a4-3d964a618ea8.json
+│  │              75e52373-1963-3666-bda9-8904d639e38b.json
+│  │              76a85934-d1dc-3e22-b48f-18504df540b9.json
+│  │              7c2fb32a-48f4-3632-92b4-de6db3581064.json
+│  │              7de0b911-1474-3b51-bbfc-d3e0a184ff98.json
+│  │              7eabe93c-dd7d-38e8-9271-2dd9ed4d2fa5.json
+│  │              7fc02cf2-da5a-351c-a700-aaa88bd6d88d.json
+│  │              80366950-5482-38de-842a-c4cdd5802ec2.json
+│  │              83f835f2-20fa-325d-8039-400fcc96db8c.json
+│  │              87838b30-d4f9-3495-97a3-26161a757982.json
+│  │              88b1442b-3f7c-34cb-9b8b-19f2bae6b8af.json
+│  │              9033e00b-50d9-3cb5-b190-7fa9d916bd8f.json
+│  │              942531dd-7690-3c0a-ad42-657bb212e7b6.json
+│  │              945b4d90-8964-318c-b289-be6438caa78f.json
+│  │              9662db8b-9062-3256-9f5d-83caa676c3d7.json
+│  │              984cf274-9eed-399c-97dc-353ad10f84a8.json
+│  │              9ba1d9fb-277b-3ec4-9552-50e8dd85d3d4.json
+│  │              9df70e84-3251-33fb-9047-d59112057246.json
+│  │              9f83efe4-f945-3a62-8c8a-b62cdf1ee258.json
+│  │              a4081500-9e8c-36ae-a97c-f165f9882cba.json
+│  │              a40967fe-53e3-3428-b2d4-e5dfaa3ad087.json
+│  │              a7d84b43-620c-3be0-bbc6-d96e040e37ab.json
+│  │              a944d272-b5cd-3b57-b4eb-9b34a77b45aa.json
+│  │              a9c0d951-c0b6-3353-a779-fe4259ce0834.json
+│  │              abd58e08-2462-379a-81f3-fa94df810a52.json
+│  │              ac47fd32-de83-3641-a759-130889823db1.json
+│  │              acd62baf-1f62-3e9e-a7f5-5e27309e35be.json
+│  │              aed5efd4-551b-3965-bc28-ae21aa072a66.json
+│  │              b0da1a12-66d3-34d6-99f0-6da43866ed58.json
+│  │              b2d19156-5364-397f-8e33-abd769d6319d.json
+│  │              b5079939-0881-3d3d-a86e-56223944774f.json
+│  │              b63c1160-7834-3764-9276-2fb9c5acd6ce.json
+│  │              b6f7a483-95d4-3c1c-a80d-d6147f86003c.json
+│  │              c016ab36-f8ab-3a42-9127-a875f53562d0.json
+│  │              c17a5542-4699-3d3f-81f1-a187d3ec58fe.json
+│  │              c35c79fa-c14d-3173-a5f4-409e5a0c65eb.json
+│  │              c645540e-52c6-36d2-bbbe-373fe1591946.json
+│  │              c89ac188-5207-3ca2-8ef0-ed700f7bdbef.json
+│  │              c98b4c6a-9420-3bf0-87b7-0742781c94c8.json
+│  │              ca560dd3-ebf9-3fc9-b2e6-088534082c81.json
+│  │              ca94d3c2-08bb-3cb6-9c61-61015e7666c6.json
+│  │              ccf0c278-c21f-3ec3-a87c-05202673a5dd.json
+│  │              cf6fbb5f-ecf0-3695-8c0e-427c205e2096.json
+│  │              d1fadcd5-f8ee-389b-ae76-2112e34d591e.json
+│  │              d2fd1c5d-4760-35a0-aa0f-c197e25af2ac.json
+│  │              d7375cbd-a871-343c-8b61-9df743b3fcf0.json
+│  │              d7cff5a0-f2a0-3727-aca6-d996fc42f55a.json
+│  │              d944aee7-2684-33ce-b4ec-6dde00bdf73f.json
+│  │              d978d670-4b07-3a90-bfb6-b4e7c70fe7fc.json
+│  │              de358e9d-8e5f-32cd-b09f-d8bdf3008cfe.json
+│  │              dea644e0-8ac5-3c66-a811-a50bdc003ad8.json
+│  │              dfa57433-6d23-31fd-a282-bdca1175e553.json
+│  │              e246deab-2680-3623-991e-a2d437bbfbae.json
+│  │              e5a660b6-9d51-36ee-858e-f73e02a3f36f.json
+│  │              eb3e37b3-0c87-3026-b460-637c38fd4fdd.json
+│  │              eed453d8-1b3a-3fa3-9fc5-1cf433d73521.json
+│  │              f4642d2b-29f9-34b7-8b90-e6570e856434.json
+│  │              f4755d8e-161a-3abe-8338-935e4189097a.json
+│  │              f7621ff1-653f-32ec-8621-00c0392bfbcc.json
+│  │              f7e77b0e-8c33-3536-90c1-aa6b49a4e946.json
+│  │              f8b3cbc3-8889-3cbd-890b-ed87a36c6fe4.json
+│  │              fa57a584-be0c-37cc-aa91-b7d78367c493.json
+│  │              fb4c6c18-26a1-3d95-a13f-9a47871171a2.json
+│  │              fc13d9f9-a806-3ae0-82c2-ce24ef162c15.json
+│  │              fd4dff36-f6aa-35f9-8e99-ec749e44651e.json
+│  │              
+│  └─screenshots
+│          2025-12-04_23.56.16.png
+│          2025-12-12_20.16.34.png
+│          2025-12-18_18.29.10.png
+│          2025-12-20_12.21.37.png
+│          2025-12-23_19.13.41.png
+│          2025-12-23_22.08.13.png
+│          2025-12-25_19.25.30.png
+│          2025-12-25_19.29.13.png
+│          2025-12-25_19.34.37.png
+│          
+└─src
+    └─main
+        ├─java
+        │  └─com
+        │      └─example
+        │          └─tianyiclient
+        │              │  TianyiClient.java
+        │              │  
+        │              ├─commands
+        │              │      SilentAimTestCommand.java
+        │              │      
+        │              ├─config
+        │              │  │  ClientConfig.java
+        │              │  │  ConfigManager.java
+        │              │  │  ConfigVersion.java
+        │              │  │  HudConfig.java
+        │              │  │  JsonConfig.java
+        │              │  │  KeybindConfig.java
+        │              │  │  ModuleConfig.java
+        │              │  │  
+        │              │  └─migrations
+        │              │      │  ConfigMigration.java
+        │              │      │  
+        │              │      └─migrations
+        │              │              Migration_v1_to_v2.java
+        │              │              
+        │              ├─event
+        │              │  │  Cancelable.java
+        │              │  │  Event.java
+        │              │  │  EventBus.java
+        │              │  │  EventHandler.java
+        │              │  │  Event事件部分注释.txt
+        │              │  │  Priority.java
+        │              │  │  
+        │              │  └─events
+        │              │      │  RenderEvent.java
+        │              │      │  Subscribe.java
+        │              │      │  
+        │              │      ├─client
+        │              │      │      CharTypedEvent.java
+        │              │      │      ClientEvents.java
+        │              │      │      GameJoinedEvent.java
+        │              │      │      GameLeftEvent.java
+        │              │      │      KeyEvent.java
+        │              │      │      MouseEvent.java
+        │              │      │      TickEvent.java
+        │              │      │      事件说明.txt
+        │              │      │      
+        │              │      ├─network
+        │              │      │      ChatMessageEvent.java
+        │              │      │      PacketEvent.java
+        │              │      │      PacketEventHelper.java
+        │              │      │      PacketReceiveEvent.java
+        │              │      │      PacketSendEvent.java
+        │              │      │      PacketUtils.java
+        │              │      │      
+        │              │      ├─player
+        │              │      │      DeathEvent.java
+        │              │      │      JumpEvent.java
+        │              │      │      MoveEvent.java
+        │              │      │      
+        │              │      ├─render
+        │              │      │      HudRenderEvent.java
+        │              │      │      NametagRenderEvent.java
+        │              │      │      RenderEvent.java
+        │              │      │      WorldRenderEvent.java
+        │              │      │      
+        │              │      └─world
+        │              │              BlockUpdateEvent.java
+        │              │              ChunkDataEvent.java
+        │              │              EntityAddedEvent.java
+        │              │              EntityRemovedEvent.java
+        │              │              
+        │              ├─gui
+        │              │  │  ClickGUI.java
+        │              │  │  ClickGuiWindow.java
+        │              │  │  
+        │              │  └─hud
+        │              │          HudEditorScreen.java
+        │              │          
+        │              ├─hud
+        │              │  │  HudElement.java
+        │              │  │  HudManager.java
+        │              │  │  HudRenderer.java
+        │              │  │  
+        │              │  ├─binding
+        │              │  │      DataBinding.java
+        │              │  │      DataProviderRegistry.java
+        │              │  │      
+        │              │  ├─config
+        │              │  │      HudConfig.java
+        │              │  │      
+        │              │  └─elements
+        │              │          CoordinatesElement.java
+        │              │          EnemyStatusElement.java
+        │              │          EntityInfoElement.java
+        │              │          FpsElement.java
+        │              │          GameInfoElement.java
+        │              │          ModuleListElement.java
+        │              │          NetworkInfoElement.java
+        │              │          PerformanceMonitorElement.java
+        │              │          PlayerStatusElement.java
+        │              │          TextHudElement.java
+        │              │          WatermarkElement.java
+        │              │          
+        │              ├─managers
+        │              │      KeybindManager.java
+        │              │      Manager.java
+        │              │      ModuleManager.java
+        │              │      OptimizedPacketManager.java
+        │              │      PacketManager.java
+        │              │      RotationManager.java
+        │              │      
+        │              ├─migrations
+        │              ├─mixin
+        │              │  │  ClientConnectionMixin.java
+        │              │  │  ClientPlayerEntityMixin.java
+        │              │  │  ClientPlayNetworkHandlerMixin.java
+        │              │  │  ExampleMixin.java
+        │              │  │  GameRendererMixin.java
+        │              │  │  InGameHudMixin.java
+        │              │  │  KeyboardMixin.java
+        │              │  │  MinecraftClientMixin.java
+        │              │  │  TitleScreenMixin.java
+        │              │  │  
+        │              │  └─accessor
+        │              │          MinecraftClientAccessor.java
+        │              │          
+        │              ├─modules
+        │              │  │  Category.java
+        │              │  │  Module.java
+        │              │  │  TestModule.java
+        │              │  │  
+        │              │  ├─client
+        │              │  ├─combat
+        │              │  │      AutoAttack.java
+        │              │  │      AutoTotem.java
+        │              │  │      EnhancedSilentAimModule.java
+        │              │  │      SilentAimModule.java
+        │              │  │      
+        │              │  ├─impl
+        │              │  │  └─hud
+        │              │  │          HudEditModule.java
+        │              │  │          
+        │              │  ├─misc
+        │              │  │      MiddleClickItem.java
+        │              │  │      PacketLoggerModule.java
+        │              │  │      
+        │              │  ├─movement
+        │              │  │      Flight.java
+        │              │  │      
+        │              │  ├─player
+        │              │  ├─render
+        │              │  │      EntityInfoModule.java
+        │              │  │      Fullbright.java
+        │              │  │      HUD.java
+        │              │  │      
+        │              │  ├─settings
+        │              │  │      SettingGroup.java
+        │              │  │      
+        │              │  └─test
+        │              │          DebugModule.java
+        │              │          EventBusTest.java
+        │              │          PacketBlockerModule.java
+        │              │          PacketTestModule.java
+        │              │          RotationTestModule.java
+        │              │          TestModule.java
+        │              │          
+        │              ├─network
+        │              │      PacketInjector.java
+        │              │      PacketInterceptorBase.java
+        │              │      PacketThrottle.java
+        │              │      PacketWrapper.java
+        │              │      UnifiedPacketManager.java
+        │              │      
+        │              ├─settings
+        │              │      BindSetting.java
+        │              │      BooleanSetting.java
+        │              │      BoolSetting.java
+        │              │      ColorSetting.java
+        │              │      DoubleSetting.java
+        │              │      EnumSetting.java
+        │              │      IntegerSetting.java
+        │              │      KeybindSetting.java
+        │              │      NumberSetting.java
+        │              │      Setting.java
+        │              │      SettingGroup.java
+        │              │      StringSetting.java
+        │              │      
+        │              └─utils
+        │                      AutoLook.java
+        │                      EnhancedRotation.java
+        │                      FullScanInventoryManager.java
+        │                      PacketManager.java
+        │                      PacketRotation.java
+        │                      PacketRotationUtils.java
+        │                      PacketTool.java
+        │                      RaycastUtils.java
+        │                      Rotation.java
+        │                      SmoothRotationController.java
+        │                      
+        └─resources
+            │  fabric.mod.json
+            │  tianyiclient.mixins.json
+            │  
+            └─assets
+                └─tianyiclient
+                    │  icon.png
+                    │  icon1.png
+                    │  
+                    └─lang
+                            zh_cn.json
+                            

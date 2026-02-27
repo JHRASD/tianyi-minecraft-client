@@ -1,0 +1,234 @@
+Folder PATH listing for volume 系统
+Volume serial number is 88F5-E5D8
+C:.
+|   project_structure_周五 2-26-01.txt
+|   project_structure_周五 2-26-02.txt
+|   生成项目树.bat
+|   
+\---main
+    +---java
+    |   \---com
+    |       \---example
+    |           \---tianyiclient
+    |               |   TianyiClient.java
+    |               |   
+    |               +---commands
+    |               |       PacketTestCommand.java
+    |               |       
+    |               +---config
+    |               |   |   ClientConfig.java
+    |               |   |   ConfigManager.java
+    |               |   |   ConfigVersion.java
+    |               |   |   HudConfig.java
+    |               |   |   JsonConfig.java
+    |               |   |   KeybindConfig.java
+    |               |   |   ModuleConfig.java
+    |               |   |   
+    |               |   \---migrations
+    |               |       |   ConfigMigration.java
+    |               |       |   
+    |               |       \---migrations
+    |               |               Migration_v1_to_v2.java
+    |               |               
+    |               +---event
+    |               |   |   Cancelable.java
+    |               |   |   Event.java
+    |               |   |   EventBus.java
+    |               |   |   EventHandler.java
+    |               |   |   Event事件部分注释.txt
+    |               |   |   Priority.java
+    |               |   |   
+    |               |   \---events
+    |               |       |   RenderEvent.java
+    |               |       |   Subscribe.java
+    |               |       |   
+    |               |       +---client
+    |               |       |       CharTypedEvent.java
+    |               |       |       ClientEvents.java
+    |               |       |       GameJoinedEvent.java
+    |               |       |       GameLeftEvent.java
+    |               |       |       KeyEvent.java
+    |               |       |       MouseEvent.java
+    |               |       |       TickEvent.java
+    |               |       |       事件说明.txt
+    |               |       |       
+    |               |       +---network
+    |               |       |       ChatMessageEvent.java
+    |               |       |       
+    |               |       +---player
+    |               |       |       DeathEvent.java
+    |               |       |       JumpEvent.java
+    |               |       |       MoveEvent.java
+    |               |       |       
+    |               |       +---render
+    |               |       |       HudRenderEvent.java
+    |               |       |       NametagRenderEvent.java
+    |               |       |       RenderEvent.java
+    |               |       |       WorldRenderEvent.java
+    |               |       |       
+    |               |       \---world
+    |               |               BlockUpdateEvent.java
+    |               |               ChunkDataEvent.java
+    |               |               EntityAddedEvent.java
+    |               |               EntityRemovedEvent.java
+    |               |               
+    |               +---gui
+    |               |   |   ClickGUI.java
+    |               |   |   ClickGuiWindow.java
+    |               |   |   
+    |               |   \---hud
+    |               |           HudEditorScreen.java
+    |               |           
+    |               +---hud
+    |               |   |   HudElement.java
+    |               |   |   HudManager.java
+    |               |   |   HudRenderer.java
+    |               |   |   
+    |               |   +---binding
+    |               |   |       DataBinding.java
+    |               |   |       DataProviderRegistry.java
+    |               |   |       
+    |               |   +---config
+    |               |   |       HudConfig.java
+    |               |   |       
+    |               |   \---elements
+    |               |           CoordinatesElement.java
+    |               |           EnemyStatusElement.java
+    |               |           EntityInfoElement.java
+    |               |           FpsElement.java
+    |               |           GameInfoElement.java
+    |               |           ModuleListElement.java
+    |               |           NetworkInfoElement.java
+    |               |           PerformanceMonitorElement.java
+    |               |           PlayerStatusElement.java
+    |               |           TextHudElement.java
+    |               |           WatermarkElement.java
+    |               |           
+    |               +---managers
+    |               |       KeybindManager.java
+    |               |       Manager.java
+    |               |       ModuleManager.java
+    |               |       
+    |               +---mixin
+    |               |   |   ClientConnectionMixin.java
+    |               |   |   ClientPlayerEntityMixin.java
+    |               |   |   EntityMixin.java
+    |               |   |   EntityRendererMixin.java
+    |               |   |   EntitySpawnS2CPacketMixin.java
+    |               |   |   EntityVelocityUpdateS2CPacketMixin.java
+    |               |   |   ExampleMixin.java
+    |               |   |   GameRendererMixin.java
+    |               |   |   InGameHudMixin.java
+    |               |   |   KeyboardMixin.java
+    |               |   |   LivingEntityMixin.java
+    |               |   |   MinecraftClientMixin.java
+    |               |   |   MouseMixin.java
+    |               |   |   PlayerEntityMixin.java
+    |               |   |   PlayerInteractEntityC2SPacketMixin.java
+    |               |   |   PlayerMoveC2SPacketMixin.java
+    |               |   |   TitleScreenMixin.java
+    |               |   |   WorldRendererMixin.java
+    |               |   |   
+    |               |   \---accessor
+    |               |           IClientPlayerEntityAccessor.java
+    |               |           IEntityAccessor.java
+    |               |           IMinecraftClientAccessor.java
+    |               |           IPlayerInteractEntityC2SPacketAccessor.java
+    |               |           MinecraftClientAccessor.java
+    |               |           
+    |               +---modules
+    |               |   |   Category.java
+    |               |   |   Module.java
+    |               |   |   TestModule.java
+    |               |   |   
+    |               |   +---client
+    |               |   +---combat
+    |               |   |       AutoAttackModule.java
+    |               |   |       AutoTotem.java
+    |               |   |       
+    |               |   +---impl
+    |               |   |   \---hud
+    |               |   |           HudEditModule.java
+    |               |   |           
+    |               |   +---misc
+    |               |   |       AntiDetectionModule.java
+    |               |   |       MiddleClickItem.java
+    |               |   |       
+    |               |   +---movement
+    |               |   |       Flight.java
+    |               |   |       
+    |               |   +---player
+    |               |   +---render
+    |               |   |       EntityInfoModule.java
+    |               |   |       Fullbright.java
+    |               |   |       HUD.java
+    |               |   |       
+    |               |   +---settings
+    |               |   |       SettingGroup.java
+    |               |   |       
+    |               |   \---test
+    |               |           DebugModule.java
+    |               |           EventBusTest.java
+    |               |           TestModule.java
+    |               |           
+    |               +---network
+    |               |   |   ClientPacketIntent.java
+    |               |   |   PacketEngine.java
+    |               |   |   PacketModifier.java
+    |               |   |   
+    |               |   +---api
+    |               |   +---bypass
+    |               |   |       BypassContext.java
+    |               |   |       BypassManager.java
+    |               |   |       BypassStrategy.java
+    |               |   |       StatefulBypass.java
+    |               |   |       
+    |               |   +---cache
+    |               |   +---core
+    |               |   +---flow
+    |               |   +---injection
+    |               |   \---modifiers
+    |               |           DelayModifier.java
+    |               |           RedirectAttackModifier.java
+    |               |           SequenceModifier.java
+    |               |           
+    |               +---settings
+    |               |       BindSetting.java
+    |               |       BooleanSetting.java
+    |               |       BoolSetting.java
+    |               |       ColorSetting.java
+    |               |       DoubleSetting.java
+    |               |       EnumSetting.java
+    |               |       IntegerSetting.java
+    |               |       KeybindSetting.java
+    |               |       NumberSetting.java
+    |               |       Setting.java
+    |               |       SettingGroup.java
+    |               |       StringSetting.java
+    |               |       
+    |               \---utils
+    |                   |   FullScanInventoryManager.java
+    |                   |   
+    |                   +---math
+    |                   |       MathUtil.java
+    |                   |       
+    |                   +---render
+    |                   |       ColorUtil.java
+    |                   |       Render2DUtil.java
+    |                   |       
+    |                   \---rotation
+    |                           RotationUtils.java
+    |                           
+    \---resources
+        |   fabric.mod.json
+        |   tianyiclient.accesswidener
+        |   tianyiclient.mixins.json
+        |   
+        \---assets
+            \---tianyiclient
+                |   icon.png
+                |   icon1.png
+                |   
+                \---lang
+                        zh_cn.json
+                        

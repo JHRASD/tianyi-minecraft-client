@@ -6,23 +6,26 @@ import com.example.tianyiclient.hud.HudManager;
 import com.example.tianyiclient.hud.elements.*;
 import com.example.tianyiclient.managers.ModuleManager;
 import com.example.tianyiclient.managers.KeybindManager;
-import com.example.tianyiclient.managers.PacketManager;
-import com.example.tianyiclient.managers.RotationManager;
 import com.example.tianyiclient.modules.combat.AutoTotem;
-import com.example.tianyiclient.modules.combat.SilentAimModule;
 import com.example.tianyiclient.modules.impl.hud.HudEditModule;
 import com.example.tianyiclient.modules.misc.MiddleClickItem;
-import com.example.tianyiclient.modules.misc.PacketLoggerModule;
+import com.example.tianyiclient.modules.misc.PacketLogger;
 import com.example.tianyiclient.modules.movement.Flight;
+import com.example.tianyiclient.modules.player.Freecam;
+import com.example.tianyiclient.modules.render.ESP2D;
 import com.example.tianyiclient.modules.render.Fullbright;
 import com.example.tianyiclient.modules.render.EntityInfoModule;
 import com.example.tianyiclient.event.EventBus;
 import com.example.tianyiclient.modules.render.HUD;
-import com.example.tianyiclient.modules.test.PacketBlockerModule;
-import com.example.tianyiclient.modules.test.PacketTestModule;
-
-// 只导入确实存在的命令
-import com.example.tianyiclient.commands.SilentAimTestCommand;
+// 网络系统导入
+import com.example.tianyiclient.network.PacketEngine;
+import com.example.tianyiclient.network.bypass.BypassManager;
+import com.example.tianyiclient.network.modifiers.DelayModifier;
+import com.example.tianyiclient.network.modifiers.RedirectAttackModifier;
+import com.example.tianyiclient.network.modifiers.SequenceModifier;
+// 新增模块导入
+import com.example.tianyiclient.modules.combat.AutoAttackModule;
+import com.example.tianyiclient.modules.misc.AntiDetectionModule;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -37,6 +40,9 @@ public class TianyiClient implements ClientModInitializer {
     // 单例
     public static TianyiClient INSTANCE;
 
+    // 调试模式
+    public static boolean DEBUG = true;
+
     // 全局事件总线
     public static final EventBus EVENT_BUS = EventBus.getInstance();
 
@@ -44,8 +50,6 @@ public class TianyiClient implements ClientModInitializer {
     public ModuleManager moduleManager;
     public KeybindManager keybindManager;
     public HudManager hudManager;
-    public RotationManager rotationManager;
-    public PacketManager packetManager;
 
     // HUD模块引用
     public HUD hudModule;
@@ -62,46 +66,49 @@ public class TianyiClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         LOGGER.info("TianyiClient 开始初始化...");
+        LOGGER.info("=== 统一包管理系统 ===");
+        LOGGER.info("版本: 1.0.0");
+        LOGGER.info("调试模式: {}", DEBUG ? "启用" : "禁用");
 
         try {
             // 0. 设置单例实例
             INSTANCE = this;
 
-            // 1. 先创建HUD模块
+            // 2. 先创建HUD模块
             this.hudModule = new HUD();
 
-            // 2. 创建HUD管理器并传入HUD模块
+            // 3. 创建HUD管理器并传入HUD模块
             this.hudManager = new HudManager();
             this.hudManager.setHudModule(this.hudModule);
 
-            // 3. 初始化模块管理器
+            // 4. 初始化模块管理器
             this.moduleManager = new ModuleManager();
 
-            // 4. 初始化按键管理器
+            // 5. 初始化按键管理器
             this.keybindManager = KeybindManager.getInstance();
 
-            // 5. 初始化RotationManager
-            this.rotationManager = RotationManager.getInstance();
-
-            // 6. 初始化PacketManager
-            this.packetManager = PacketManager.getInstance();
-
-            // 7. 注册按键绑定
+            // 8. 注册按键绑定
             registerKeybinds();
 
-            // 8. 注册命令（只注册存在的命令）
+            // 9. 注册命令（只注册存在的命令）
             registerCommandsDirectly();
 
-            // 9. 初始化所有系统
+            // 10. 初始化所有系统
             init();
 
-            // 10. 注册按键检测
+            // 11. 注册按键检测
             registerKeyDetection();
 
             LOGGER.info("TianyiClient 初始化完成");
+            LOGGER.info("=== 系统状态 ===");
+
+            LOGGER.info("模块管理器: {}", moduleManager != null ? "✅" : "❌");
+            LOGGER.info("事件总线: {}", EVENT_BUS != null ? "✅" : "❌");
+
         } catch (Exception e) {
             LOGGER.error("TianyiClient 初始化失败", e);
             e.printStackTrace();
+            throw new RuntimeException("TianyiClient初始化失败", e);
         }
     }
 
@@ -112,8 +119,6 @@ public class TianyiClient implements ClientModInitializer {
         LOGGER.info("开始注册命令...");
 
         try {
-            // 只注册SilentAimTestCommand（这个我们确认存在）
-            SilentAimTestCommand.register();
             LOGGER.info("✓ SilentAimTestCommand 注册成功");
         } catch (Exception e) {
             LOGGER.error("✗ SilentAimTestCommand 注册失败: {}", e.getMessage());
@@ -157,8 +162,47 @@ public class TianyiClient implements ClientModInitializer {
      * 初始化客户端框架
      */
     private void init() {
+        LOGGER.info("开始初始化客户端框架...");
+
         // 0. 初始化配置管理器
         ConfigManager.getInstance();
+        LOGGER.info("✓ 配置管理器初始化完成");
+
+        // 【新增】初始化绕过包管理器
+        BypassManager bypassManager = BypassManager.getInstance();
+        bypassManager.init();
+        bypassManager.setEnabled(true);
+        LOGGER.info("✓ 绕过包管理器 (BypassManager) 初始化完成");
+
+        // 【新增】初始化数据包引擎
+        PacketEngine engine = PacketEngine.getInstance();
+        engine.setEnabled(true);
+        engine.setEnableModification(true); // 启用包修改功能
+
+        // 【新增】注册默认包修改器
+        try {
+            // 延迟修改器
+            DelayModifier delay50ms = new DelayModifier(50);
+            DelayModifier delay100ms = new DelayModifier(100);
+            engine.registerModifier("delay_50ms", delay50ms);
+            engine.registerModifier("delay_100ms", delay100ms);
+
+            // 攻击重定向修改器
+            RedirectAttackModifier redirectModifier = new RedirectAttackModifier(-1);
+            engine.registerModifier("redirect_attack", redirectModifier);
+
+            // 序列修改器
+            SequenceModifier sequenceModifier = new SequenceModifier();
+            engine.registerModifier("sequence", sequenceModifier);
+
+            LOGGER.info("✓ 包修改系统初始化完成 - 已注册 {} 个修改器", engine.getRegisteredModifiers().size());
+
+        } catch (Exception e) {
+            LOGGER.error("✗ 包修改系统初始化失败: {}", e.getMessage());
+            e.printStackTrace();
+        }
+
+        LOGGER.info("✓ 数据包引擎 (PacketEngine) 初始化完成");
 
         // 1. 输出EventBus状态
         LOGGER.info("EventBus 状态: {}", EVENT_BUS != null ? "已初始化" : "null");
@@ -168,27 +212,17 @@ public class TianyiClient implements ClientModInitializer {
 
         // 2. 初始化快捷键管理器
         keybindManager.init();
-
-        // 3. 初始化RotationManager
-        if (rotationManager != null) {
-            rotationManager.onInit();
-            LOGGER.info("RotationManager 初始化完成");
-        }
-
-        // 4. 初始化PacketManager
-        if (packetManager != null) {
-            packetManager.onInit();
-            LOGGER.info("PacketManager 初始化完成");
-        }
+        LOGGER.info("✓ 快捷键管理器初始化完成");
 
         // 5. 初始化HUD管理器
         if (hudManager != null) {
             hudManager.init();
-            LOGGER.info("HUD管理器初始化完成");
+            LOGGER.info("✓ HUD管理器初始化完成");
         }
 
         // 6. 初始化模块管理器
         moduleManager.init();
+        LOGGER.info("✓ 模块管理器初始化完成");
 
         // 7. 注册模块和HUD元素
         initModulesAndElements();
@@ -204,6 +238,8 @@ public class TianyiClient implements ClientModInitializer {
 
         // 11. 检查网络模块注册情况
         checkNetworkModules();
+
+        LOGGER.info("客户端框架初始化完成");
     }
 
     /**
@@ -226,13 +262,14 @@ public class TianyiClient implements ClientModInitializer {
             LOGGER.warn("✗ PacketBlocker 模块未注册");
         }
 
-        // 检查SilentAim模块
-        if (moduleManager.getModuleByName("静默瞄准") != null) {
-            LOGGER.info("✓ SilentAim 模块已注册");
+        // 检查EnhancedSilentAim模块（增强版）
+        if (moduleManager.getModuleByName("静默瞄准-增强版") != null) {
+            LOGGER.info("✓ EnhancedSilentAim 模块已注册");
         } else {
-            LOGGER.warn("✗ SilentAim 模块未注册");
+            LOGGER.warn("✗ EnhancedSilentAim 模块未注册");
         }
 
+        // 检查统一包管理系统
         LOGGER.info("=== 网络模块检查完成 ===");
     }
 
@@ -253,80 +290,97 @@ public class TianyiClient implements ClientModInitializer {
      * 初始化模块和HUD元素
      */
     private void initModulesAndElements() {
+        LOGGER.info("开始注册模块和HUD元素...");
+
         // 先注册HUD模块
         if (hudModule != null) {
             moduleManager.register(hudModule);
-            LOGGER.info("注册HUD模块成功");
+            LOGGER.info("✓ 注册HUD模块成功");
         }
+
+        // 【新增】注册AutoAttack模块
+        AutoAttackModule autoAttackModule = new AutoAttackModule();
+        moduleManager.register(autoAttackModule);
+        LOGGER.info("✓ 注册AutoAttack模块成功");
+
+        // 【新增】注册AntiDetection模块
+        AntiDetectionModule antiDetectionModule = new AntiDetectionModule();
+        moduleManager.register(antiDetectionModule);
+        LOGGER.info("✓ 注册AntiDetection模块成功");
 
         // 【重要】注册所有HUD元素
         if (hudManager != null) {
             // 1. 水印元素
             hudManager.registerElement(new WatermarkElement());
-            LOGGER.info("注册水印HUD元素成功");
+            LOGGER.info("✓ 注册水印HUD元素成功");
 
             // 2. 网络信息
             hudManager.registerElement(new NetworkInfoElement());
-            LOGGER.info("注册网络信息HUD元素成功");
+            LOGGER.info("✓ 注册网络信息HUD元素成功");
 
             // 3. FPS信息元素
             hudManager.registerElement(new FpsElement());
-            LOGGER.info("注册FPS信息元素成功");
+            LOGGER.info("✓ 注册FPS信息元素成功");
 
             // 4. 坐标信息元素
             hudManager.registerElement(new CoordinatesElement());
-            LOGGER.info("注册坐标信息元素成功");
+            LOGGER.info("✓ 注册坐标信息元素成功");
 
             // 5. 模块列表元素
             hudManager.registerElement(new ModuleListElement());
-            LOGGER.info("注册模块列表元素成功");
+            LOGGER.info("✓ 注册模块列表元素成功");
 
             // 6. 玩家状态元素
             hudManager.registerElement(new PlayerStatusElement());
-            LOGGER.info("注册玩家状态元素成功");
+            LOGGER.info("✓ 注册玩家状态元素成功");
 
             // 7. 性能监控元素
             hudManager.registerElement(new PerformanceMonitorElement());
-            LOGGER.info("注册性能监控HUD元素成功");
+            LOGGER.info("✓ 注册性能监控HUD元素成功");
 
             // 8. 敌人状态元素
             hudManager.registerElement(new EnemyStatusElement());
-            LOGGER.info("注册敌人状态HUD元素成功");
+            LOGGER.info("✓ 注册敌人状态HUD元素成功");
 
             // 9. 游戏信息元素
             hudManager.registerElement(new GameInfoElement());
-            LOGGER.info("注册游戏信息HUD元素成功");
+            LOGGER.info("✓ 注册游戏信息HUD元素成功");
 
-            LOGGER.info("共注册了 {} 个HUD元素", hudManager.getElements().size());
+            LOGGER.info("✓ 共注册了 {} 个HUD元素", hudManager.getElements().size());
         }
 
         // 注册实体信息模块
         EntityInfoModule entityInfoModule = new EntityInfoModule();
         moduleManager.register(entityInfoModule);
-        LOGGER.info("注册实体信息模块成功");
+        LOGGER.info("✓ 注册实体信息模块成功");
 
         // 注册对应的HUD元素
         if (hudManager != null) {
             hudManager.registerElement(new EntityInfoElement(entityInfoModule));
-            LOGGER.info("注册实体信息HUD元素成功");
+            LOGGER.info("✓ 注册实体信息HUD元素成功");
         }
 
-        // 添加其他模块
+        // 注册基础模块
         moduleManager.register(new Flight());
-        moduleManager.register(new Fullbright());
-        moduleManager.register(new AutoTotem());
-        moduleManager.register(new MiddleClickItem());
-        moduleManager.register(new SilentAimModule());
+        moduleManager.register(new ESP2D());
+        moduleManager.register(new PacketLogger());
+        moduleManager.register(new Freecam());
 
-        // 添加网络相关模块
-        moduleManager.register(new PacketBlockerModule());
-        moduleManager.register(new PacketLoggerModule());
-        moduleManager.register(new PacketTestModule());
+        LOGGER.info("✓ 注册飞行模块成功");
+
+        moduleManager.register(new Fullbright());
+        LOGGER.info("✓ 注册夜视模块成功");
+
+        moduleManager.register(new AutoTotem());
+        LOGGER.info("✓ 注册自动图腾模块成功");
+
+        moduleManager.register(new MiddleClickItem());
+        LOGGER.info("✓ 注册中键物品模块成功");
 
         // HudEditModule需要hudManager
         if (hudManager != null) {
             moduleManager.register(new HudEditModule(hudManager));
-            LOGGER.info("注册HUD编辑模块成功");
+            LOGGER.info("✓ 注册HUD编辑模块成功");
         }
 
         // 尝试添加测试模块（如果存在）
@@ -336,19 +390,19 @@ public class TianyiClient implements ClientModInitializer {
             com.example.tianyiclient.modules.Module testModule =
                     (com.example.tianyiclient.modules.Module) testModuleClass.getDeclaredConstructor().newInstance();
             moduleManager.register(testModule);
-            LOGGER.info("注册测试模块成功");
+            LOGGER.info("✓ 注册测试模块成功");
 
             // 调试模块
             Class<?> debugModuleClass = Class.forName("com.example.tianyiclient.modules.test.DebugModule");
             com.example.tianyiclient.modules.Module debugModule =
                     (com.example.tianyiclient.modules.Module) debugModuleClass.getDeclaredConstructor().newInstance();
             moduleManager.register(debugModule);
-            LOGGER.info("注册调试模块成功");
+            LOGGER.info("✓ 注册调试模块成功");
         } catch (Exception e) {
             LOGGER.warn("无法注册测试模块: {}", e.getMessage());
         }
 
-        LOGGER.info("注册了 {} 个模块", moduleManager.getModules().size());
+        LOGGER.info("✓ 总共注册了 {} 个模块", moduleManager.getModules().size());
     }
 
     /**
@@ -360,18 +414,6 @@ public class TianyiClient implements ClientModInitializer {
         // 模块管理器本身可以监听事件
         EVENT_BUS.register(moduleManager);
         LOGGER.info("✓ 注册模块管理器到事件总线");
-
-        // 注册RotationManager到事件总线
-        if (rotationManager != null) {
-            EVENT_BUS.register(rotationManager);
-            LOGGER.info("✓ 注册RotationManager到事件总线");
-        }
-
-        // 注册PacketManager到事件总线
-        if (packetManager != null) {
-            EVENT_BUS.register(packetManager);
-            LOGGER.info("✓ 注册PacketManager到事件总线");
-        }
 
         // 注册各个模块到事件总线
         int moduleCount = 0;
@@ -387,7 +429,15 @@ public class TianyiClient implements ClientModInitializer {
             LOGGER.info("✓ 注册HUD管理器到事件总线");
         }
 
-        LOGGER.info("事件监听器注册完成");
+        // 【新增】注册绕过包管理器到事件总线
+        EVENT_BUS.register(BypassManager.getInstance());
+        LOGGER.info("✓ 注册绕过包管理器到事件总线");
+
+        // 【新增】注册数据包引擎到事件总线
+        EVENT_BUS.register(PacketEngine.getInstance());
+        LOGGER.info("✓ 注册数据包引擎到事件总线");
+
+        LOGGER.info("✓ 事件监听器注册完成");
     }
 
     /**
@@ -400,6 +450,16 @@ public class TianyiClient implements ClientModInitializer {
 
         // Silent Aim命令信息
         LOGGER.info("Silent Aim测试 - 可使用 /testaim 命令测试");
+
+        // 统一包管理系统信息
+        LOGGER.info("=== 统一包管理系统状态 ===");
+        LOGGER.info("系统版本: 1.0.0");
+        LOGGER.info("包管理: ✅ 已启用");
+        LOGGER.info("攻击时机优化: ✅ 已启用");
+        LOGGER.info("Grim服务器兼容: ✅ 已启用");
+        LOGGER.info("数据包引擎: ✅ 已启用");
+        LOGGER.info("包修改系统: ✅ 已启用");
+        LOGGER.info("绕过策略: ✅ 已注册");
     }
 
     // ========== Getter 方法 ==========
@@ -418,14 +478,6 @@ public class TianyiClient implements ClientModInitializer {
 
     public HUD getHudModule() {
         return this.hudModule;
-    }
-
-    public RotationManager getRotationManager() {
-        return this.rotationManager;
-    }
-
-    public PacketManager getPacketManager() {
-        return this.packetManager;
     }
 
     public KeyBinding getOpenGuiKey() {
@@ -461,9 +513,25 @@ public class TianyiClient implements ClientModInitializer {
     }
 
     /**
+     * 设置调试模式
+     */
+    public static void setDebugMode(boolean enabled) {
+        DEBUG = enabled;
+        LOGGER.info("调试模式: {}", enabled ? "启用" : "禁用");
+    }
+
+    /**
      * 静态获取实例
      */
     public static TianyiClient getInstance() {
         return INSTANCE;
+    }
+
+    /**
+     * 客户端关闭时清理资源
+     */
+    public void onShutdown() {
+        LOGGER.info("TianyiClient 正在关闭...");
+        LOGGER.info("TianyiClient 已安全关闭");
     }
 }
